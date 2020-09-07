@@ -1,0 +1,19 @@
+@keyframes progressTimeLine {
+	from {
+		height: 0px;
+	}
+	to {
+		height: 15rem;
+	}
+}
+
+@media (max-width: 1024.98px) {
+	@keyframes progressTimeLine {
+		from {
+			height: 0px;
+		}
+		to {
+			height: 10rem;
+		}
+	}
+}
