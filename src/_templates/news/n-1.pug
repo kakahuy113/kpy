@@ -1,0 +1,32 @@
+section.news
+	.container
+		.container-custom.size-1365px
+			.news__wrapper
+				.main-title.ta-c
+					h2.cl-main-1.text-uppercase Tin Tức
+				.tab-news
+					a(href="").btn.activity-news Tin Tức Hoạt Động
+					a(href="").btn.activity-news Cẩm nang nội thất
+				.hot-news__wrapper
+					.main-title--small
+						h2 Tin tức hoạt động nổi bật
+					.hot-news--content.row
+						-for(var i = 1 ; i <= 4; i++)
+							.bock-item-style-1.col-md-6.col-sm-12
+								.item__img.ov-h
+									img.fullsize.object-cover(src=`./assets/images/news/hot-news-${i}.png`, alt="hotnews")
+								.item__desc
+									.item__title.lcl.lcl-1 Lorem ipsum dolor sit amet, sed do tempor
+									.item__subtitle.lcl.lcl-1 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa…
+				.offer__wrapper
+					.main-title--small
+						h2 Đề xuất cho bạn
+					.offer--content.row
+						-for(var i = 1 ; i <= 6; i++)
+							.bock-item-style-1.col-md-4.col-sm-6
+								.item__img.ov-h
+									img.fullsize.object-cover(src=`./assets/images/news/offer-${i}.png`, alt="offer")
+								.item__desc
+									.item__title.lcl.lcl-1 Lorem ipsum dolor sit amet, sed do tempor
+									.item__subtitle.lcl.lcl-1 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa…	
+				include ../_layout/_pagination

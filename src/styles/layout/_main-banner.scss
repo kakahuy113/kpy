@@ -213,17 +213,17 @@
 			}
 		}
 	}
-	.socials__wrapper {
-		position: absolute;
-		bottom: 80px;
-		width: 100%;
-		z-index: 10;
-		@media (max-width: 1024.98px) {
-			bottom: 25px;
-		}
-		@media (max-width: 575.98px) {
-			bottom: 10px;
-		}
+}
+.socials__wrapper {
+	position: absolute;
+	bottom: 80px;
+	width: 100%;
+	z-index: 10;
+	@media (max-width: 1024.98px) {
+		bottom: 25px;
+	}
+	@media (max-width: 575.98px) {
+		bottom: 10px;
 	}
 	.list-social {
 		position: relative;
@@ -242,7 +242,7 @@
 		}
 		.item-social {
 			margin-left: auto;
-
+	
 			@media (max-width: 575.98px) {
 				img,
 				svg {
@@ -259,4 +259,5 @@
 			}
 		}
 	}
+	
 }

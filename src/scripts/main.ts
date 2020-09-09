@@ -303,6 +303,30 @@ const initWowJs = () => {
 	}).init();
 };
 
+const initSwiperRelateNews = () => {
+	let relateNews = new Swiper(".relate-news .swiper-container", {
+		speed: 2000,
+		loop: true,
+		// autoplay: {
+		// 	delay: 1000,
+		// },
+		navigation: {
+			prevEl: ".relate-news .relate-prev-slider",
+			nextEl: ".relate-news .relate-next-slider",
+		},
+		breakpoints: {
+			1025: {
+				slidesPerView: 3,
+				spaceBetween: 25
+			},
+			600: {
+				spaceBetween: 10,
+				slidesPerView: 2,
+			},
+		},
+	});	
+} 
+
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
@@ -328,4 +352,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initSliderClientsIndexPage();
 	// INIT PROJECTS NEWS SLIDER
 	initSliderProjectsIndexPage();
+	// INIT RELATE NEWS
+	initSwiperRelateNews();
 });

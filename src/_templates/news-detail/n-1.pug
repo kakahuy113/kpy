@@ -1,0 +1,44 @@
+section.news-detail
+	.container
+		.container-custom.size-1365px
+			.news-detail__wrapper
+				span 27.08.2020
+				h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				.news-detail--content
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					img(src="./assets/images/news-detail/detail-1.png", alt="Detail")
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+					.img
+						img(src="./assets/images/news-detail/detail-2.png", alt="detail")
+						img(src="./assets/images/news-detail/detail-3.png", alt="detail")
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					img(src="./assets/images/news-detail/detail-4.png", alt="detail")
+					p Lorem ipsum dolor sit amet.
+				.socials__wrapper.ov-h
+					.row.no-gutters
+						.list-social
+							a(href="#").item-social
+								img.svg(src="./assets/icons/facebook.svg", alt="FACEBOOK")
+							a(href="#").item-social
+								img.svg(src="./assets/icons/instagram.svg", alt="INSTAGRAM")
+							a(href="#").item-social
+								img.svg(src="./assets/icons/youtube.svg", alt="YOUTUBE")
+			.relate-news.offer__wrapper
+				.main-title--small
+					h2 Đề xuất cho bạn
+				.swiper-container
+					.swiper-wrapper
+						-for(var i = 1; i <=3; i++)
+							.swiper-slide
+								.bock-item-style-1
+									.item__img.ov-h
+										img.fullsize.object-cover(src=`./assets/images/news-detail/relate-${i}.png`, alt="relate New")
+									.item__desc
+										.item__title.lcl.lcl-1 Lorem ipsum dolor sit amet, sed do tempor
+										.item__subtitle.lcl.lcl-1 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa…	
+				.list-button-relate-news
+					.relate-prev-slider
+						.btn.btn-prev-text Sau
+					.relate-next-slider
+						.btn.btn-next-text Trước
