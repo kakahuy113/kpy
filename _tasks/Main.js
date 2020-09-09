@@ -50,11 +50,11 @@ export default (_) => {
 			.pipe(_.gulp.dest("dist/css"));
 	}
 
-	function tsBrowserify() {
+	function tsBrowserify(name) {
 		return _.browserify({
 			basedir: ".",
 			debug: true,
-			entries: ["src/scripts/main.ts"],
+			entries: [`src/scripts/${name}.ts`],
 			cache: {},
 			packageCache: {},
 		})
@@ -72,7 +72,7 @@ export default (_) => {
 				console.error(err.toString());
 				this.emit("end");
 			})
-			.pipe(_.source("main.min.js"))
+			.pipe(_.source(`${name}.min.js`))
 			.pipe(_.buffer())
 			.pipe(_.sourcemaps.init({ loadMaps: true }))
 			.pipe(_.uglify())

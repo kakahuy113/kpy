@@ -30,7 +30,11 @@ export default (_) => {
 	};
 
 	const watchTypescript = () => {
-		return MainBuild(_).tsBrowserify();
+		return MainBuild(_).tsBrowserify("main");
+	};
+
+	const watchTypescriptMap = () => {
+		return MainBuild(_).tsBrowserify("map");
 	};
 
 	const watchJavascript = () => {
@@ -100,11 +104,12 @@ export default (_) => {
 		_.gulp.watch(
 			[
 				"src/scripts/main.ts",
+				"src/scripts/map.ts",
 				"src/scripts/libraries/**.ts",
 				"src/scripts/utilities/**.ts",
 				"src/scripts/animations/**.ts",
 			],
-			_.gulp.series(watchTypescript),
+			_.gulp.series(watchTypescript, watchTypescriptMap),
 		);
 
 		_.gulp.watch(["src/styles/**/**.scss"], _.gulp.series(watchScss));
