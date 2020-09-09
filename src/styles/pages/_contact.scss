@@ -1,0 +1,99 @@
+.contact {
+    background-color: #212121;
+    margin-bottom: 155px;
+
+    .row {
+        margin-top: 90px;
+
+        #map {
+            margin-top: 40px;
+            width: 650px;
+            height: 285px;
+        }
+
+        h6 {
+            color: #e37313;
+            font-family: SVN--Bold;
+            font-size: 2.5rem;
+        }
+
+        .introMap__list {
+            height: 113px;
+            ul {
+                padding: unset;
+                list-style: none;
+    
+                .location {
+                    margin-top: 25px;
+                }
+                .info {
+                    margin-top: 15px;
+    
+                    a {
+                        color: unset;
+                    }
+                }
+            }
+        }
+
+        .form {
+            .description {
+                height: 113px;
+
+                p {
+                    margin-top: 25px;
+                    line-height: 30px;
+                    width: 580px;
+                }
+            }
+            
+            .container {
+                margin-top: 40px;
+                height: 285px;
+                border: 0.5px solid #B5B5B5;
+
+                form {
+                    margin: 40px 10px 40px 10px;
+    
+                    .form-group {
+                        margin-top: 20px;
+                        margin-right: 30px;
+                        display: flex;
+
+                        input {
+                            margin-left: 20px;
+                            width: 275px;
+                            height: 45px;
+                            padding: 9px 13.5px;
+                            background-color: #212121;
+                            border: 1px solid #FFFFFF;
+                        }
+
+                        .content-input {
+                            margin-left: 20px;
+                            height: 75px;
+
+                            textarea {
+                                width: 472px;
+                                height: 100%;
+                                padding: 9px 13.5px;
+                                background-color: #212121;
+                                border: 1px solid #FFFFFF;
+                            }
+                        }
+
+                        .btn {
+                            background-color: #E37313;
+                            color: #FFFFFF;
+                            width: 100%;
+
+                            img {
+                                margin-left: 9px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
