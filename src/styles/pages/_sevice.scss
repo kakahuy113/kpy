@@ -1,0 +1,84 @@
+section.service {
+    .container-full {
+        margin-top: 2.5rem;
+    }
+    ._with-service {
+        .swiper-slide {
+            .bock-item-style-1 {
+                transform: scale(0.7);
+            }
+            opacity: 50%;
+        }
+        .swiper-slide-next,
+        .swiper-slide-prev,
+        .swiper-slide-active {
+            .bock-item-style-1 {
+                transform: scale(1);
+            }
+            opacity: 1;
+        }
+    }
+}
+
+.relate-service {
+    .rS__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -1.375rem;
+        .rS__item {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+            position: relative;
+            padding: 0 1.375rem;
+            margin-bottom: 2.75rem;
+            &:hover {
+                .rS__item--content--inner {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    transition: width 500ms;
+                }
+            }
+            .rS__item--img {
+                width: 100%;
+                height: 186px;
+                box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 38%);
+                position: relative;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .rS__item--content {
+                position: absolute;
+                width: calc(100% - 2.5rem);
+                height: 100%;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .rS__item--content--inner {
+                    padding: 22px 69px;
+                    background: #2f2f2fb6;
+                    box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 38%);
+                }
+                .rS__item--content-sub-title {
+                    font-family: SVN--Light;
+                    color: white;
+                }
+                .rS__item--content-title {
+                    font-family: SVN--Bold;
+                    color: white;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}

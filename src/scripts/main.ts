@@ -325,6 +325,28 @@ const initSwiperRelateNews = () => {
 			},
 		},
 	});	
+	let service = new Swiper("._with-service .swiper-container", {
+		speed: 2000,
+		loop: true,
+		// autoplay: {
+		// 	delay: 1000,
+		// },
+		centeredSlides: true,
+		navigation: {
+			prevEl: ".relate-news .relate-prev-slider",
+			nextEl: ".relate-news .relate-next-slider",
+		},
+		breakpoints: {
+			1025: {
+				slidesPerView: 3.5,
+				spaceBetween: 25
+			},
+			600: {
+				spaceBetween: 10,
+				slidesPerView: 2,
+			},
+		},
+	});	
 } 
 
 document.addEventListener("DOMContentLoaded", async () => {
