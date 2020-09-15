@@ -1,0 +1,10 @@
+.galleries-video__wrapper {
+	.item-image {
+		&::before {
+			background: url("../assets/icons/video-camera.png") no-repeat;
+			background-size: 100% 100%;
+			width: 31px;
+			height: 18px;
+		}
+	}
+}

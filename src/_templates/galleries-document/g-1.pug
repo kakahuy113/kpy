@@ -1,0 +1,26 @@
+section.galleries-video
+	.container
+		.container-custom.size-1365px
+			.galleries-image__wrapper.galleries-document__wrapper
+				.main-title.ta-c
+					h2.cl-main-1.text-uppercase Thư Viện
+				ul.gallery--tab
+					li.item.btn
+						a(href="#") Hình ảnh
+					li.item.btn
+						a(href="#") Video
+					li.item.btn.active
+						a(href="#") Tài Liệu
+				.document-content
+					-for(var i = 1 ; i < 4 ;i++)
+						.item-document
+							.img
+								img.object-cover.fullsize(src="./assets/images/gallery/video/item.png", alt="document")
+							.desc
+								h2 Hồ sơ năng lực KPY
+								.see-and-dow
+									span 
+										a(href) Xem Tài Liệu
+									span 
+										a(href) Tải PDF
+				include ../_layout/_pagination
