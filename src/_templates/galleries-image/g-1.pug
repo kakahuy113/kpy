@@ -1,0 +1,53 @@
+section.galleries-image
+	.container
+		.container-custom.size-1365px
+			.galleries-image__wrapper
+				.main-title.ta-c
+					h2.cl-main-1.text-uppercase Thư Viện
+				ul.gallery--tab
+					li.item.btn.active
+						a(href="#") Hình ảnh
+					li.item.btn
+						a(href="#") Video
+					li.item.btn
+						a(href="#") Tài Liệu
+				.gallery--content
+					.list-gallery.row
+						-for(var j = 1; j < 10; j++)
+							.item-image.col-4
+								.img
+									img.object-cover(src=`./assets/images/gallery/image/item-${j}.png`, alt="something")
+								.button-next
+								.button-prev
+								.desc-image
+									h2 Kim Do Hotel
+									p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque libero magni consequatur recusandae in vel! Velit aspernatur sint voluptatibus quaerat rem quis beatae eveniet, doloremque ipsum nam quas deleniti nostrum?
+								//place to BE 
+								.d-none
+									.wrapper
+										-for(var i = 1; i < 10; i++)
+											.swiper-slide
+												.bock-item-style-1
+													.item__img.ov-h
+														img.fullsize.object-cover(src=`./assets/images/gallery/image/item-${i}.png`, alt="item")
+				.d-none
+					#pop-up--image
+						.slider-image-gallery
+							.slider-image-gallery__wrapper
+								.swiper-container
+									.swiper-wrapper.ai-c
+										//- -for(var i =1 ; i< 4; i++)
+										//- 	.swiper-slide
+										//- 		.bock-item-style-1
+										//- 			.item__img.ov-h
+										//- 				img.fullsize.object-cover(src="./assets/images/index-service/1.png", alt="")
+								.desc
+									.desc-content
+										//- h2 Kim Do Hotel
+										//- p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque libero magni consequatur recusandae in vel! Velit aspernatur sint voluptatibus quaerat rem quis beatae eveniet, doloremque ipsum nam quas deleniti nostrum?
+									.list-button-relate-news
+										.relate-prev-slider
+											.btn.btn-prev-text Sau
+										.relate-next-slider
+											.btn.btn-next-text Trước
+				include ../_layout/_pagination

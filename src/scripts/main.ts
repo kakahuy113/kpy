@@ -3,7 +3,7 @@ import Axios from "axios";
 import * as animation from "./animations/animation";
 declare var Swiper: any;
 declare var WOW: any;
-
+declare var $: any;
 // TOGGLE NAVBAR
 const toggleNavBar = () => {
 	const btn = document.querySelector(".navBarHamburger__mainWrapper");
@@ -325,6 +325,67 @@ const initSwiperRelateNews = () => {
 			},
 		},
 	});	
+}
+const initSwiperImage = () => {
+	let ServicetIndexPage = new Swiper(
+		".slider-image-gallery__wrapper .swiper-container",
+		{
+			centeredSlides: true,
+			slidesPerView: 3,
+			loop: true,
+			speed: 1500,
+			// autoplay: {
+			// 	delay: 2000,
+			// },
+			// loopedSlides: 3,
+			navigation: {
+				prevEl: ".relate-prev-slider",
+				nextEl: ".relate-next-slider",
+			},
+			breakpoints: {
+				// 320: {
+				// 	slidesPerView: 1.4,
+				// 	spaceBetween: 10,
+				// },
+				// 768: {
+				// 	spaceBetween: 0,
+				// },
+				// 1025.98: {
+				// 	spaceBetween: -100,
+				// },
+				// 1440: {
+				// 	spaceBetween: -135,
+				// },
+			},
+		},
+	);
+};
+const popupImage = () => {
+	if(document.querySelector(".galleries-image")) {
+		document.querySelectorAll(".item-image").forEach(item => {
+		
+			item.addEventListener("click" , (e:any) => {
+				$.fancybox.open({
+					src  : '#pop-up--image',
+					type : 'inline',
+					transitionEffect: "fade",
+					touch : false,
+					opts : {
+						afterShow : function() {
+							initSwiperImage();
+						},
+						beforeShow : function() {
+							const desc = item.querySelector(".desc-image").innerHTML;
+							const slide = item.querySelector(".d-none .wrapper").innerHTML;	
+							const popup = document.querySelector("#pop-up--image")
+							popup.querySelector(".desc .desc-content").innerHTML = `${desc}`;
+							popup.querySelector(".swiper-wrapper").innerHTML = `${slide}`;
+						}
+					}
+				});
+			})
+		})
+	}
 	let service = new Swiper("._with-service .swiper-container", {
 		speed: 2000,
 		loop: true,
@@ -347,7 +408,7 @@ const initSwiperRelateNews = () => {
 			},
 		},
 	});	
-} 
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
@@ -376,4 +437,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initSliderProjectsIndexPage();
 	// INIT RELATE NEWS
 	initSwiperRelateNews();
+	//pop-up image
+	popupImage();
 });
