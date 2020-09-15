@@ -1,0 +1,13 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'KPY | Project';
+	- let bodyClass = 'project-page';
+
+//- block loading
+//- 	include _templates/_layout/_loading
+block banner,breadcrumb
+	include _templates/_layout/_main-banner
+block main
+	include _templates/project/p-1
+block scripts
