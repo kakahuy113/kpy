@@ -343,13 +343,15 @@ const initSwiperImage = () => {
 				nextEl: ".relate-next-slider",
 			},
 			breakpoints: {
-				// 320: {
-				// 	slidesPerView: 1.4,
-				// 	spaceBetween: 10,
-				// },
-				// 768: {
-				// 	spaceBetween: 0,
-				// },
+				320: {
+					slidesPerView: 1,
+				},
+				500: {
+					slidesPerView: 1.8,
+				},
+				768: {
+					slidesPerView: 3,
+				},
 				// 1025.98: {
 				// 	spaceBetween: -100,
 				// },
@@ -409,7 +411,64 @@ const popupImage = () => {
 		},
 	});	
 }
-
+// const swiperDocumentPopup = () => {
+// 	let sưiper = new Swiper(
+// 		".swiper-document-gallery .swiper-container",
+// 		{
+// 			slidesPerView: 1,
+// 			loop: true,
+// 			speed: 1500,
+// 			// effect: "fade",
+// 			// autoplay: {
+// 			// 	delay: 2000,
+// 			// },
+// 			navigation: {
+// 				prevEl: ".relate-prev-slider",
+// 				nextEl: ".relate-next-slider",
+// 			},
+// 			breakpoints: {
+// 				// 320: {
+// 				// 	slidesPerView: 1.4,
+// 				// 	spaceBetween: 10,
+// 				// },
+// 				// 768: {
+// 				// 	spaceBetween: 0,
+// 				// },
+// 				// 1025.98: {
+// 				// 	spaceBetween: -100,
+// 				// },
+// 				// 1440: {
+// 				// 	spaceBetween: -135,
+// 				// },
+// 			},
+// 		},
+// 	);
+// }
+// const popupDocument = () => {
+// 	if(document.querySelector(".galleries-video")) {
+// 		document.querySelectorAll(".item-document").forEach(item => {
+// 			item.addEventListener("click" , (e:any) => {
+// 				$.fancybox.open({
+// 					src  : '#pop-up--document',
+// 					type : 'inline',
+// 					transitionEffect: "fade",
+// 					opts : {
+// 						afterShow : function() {
+// 							swiperDocumentPopup();
+// 						},
+// 						beforeShow : function() {
+// 							// const title = item.querySelector(".desc h2").innerHTML;
+// 							// const slides = item.querySelector(".wrapper").innerHTML;
+// 							// const popup = document.querySelector("#pop-up--document")
+// 							// popup.querySelector(".desc h2").innerHTML = `${title}`;
+// 							// popup.querySelector("")
+// 						}
+// 					}
+// 				});
+// 			})
+// 		})
+// 	}
+// }
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
@@ -439,4 +498,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initSwiperRelateNews();
 	//pop-up image
 	popupImage();
+	//document popup
+	// popupDocument();
 });

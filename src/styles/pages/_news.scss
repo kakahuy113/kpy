@@ -21,6 +21,7 @@
 		border: 1px solid rgba($color: #ffff, $alpha: .14);
 		margin-right: 25px;
 		transition: .3 all ease-in-out;
+		text-align: center;
 		@media (min-width: 1025px) {
 			&:hover {
 			border: 1px solid #707070;
@@ -35,6 +36,9 @@
 			background: #212121;
 			color: map-get($color, main-2);
 			font-family: SVN--Bold;
+		}
+		@media (max-width: 575.98px) {
+			font-size: 2rem;
 		}
 	}
 }

@@ -14,9 +14,9 @@ section.galleries-image
 				.gallery--content
 					.list-gallery.row
 						-for(var j = 1; j < 10; j++)
-							.item-image.col-4
+							.item-image.col-lg-4.col-sm-6
 								.img
-									img.object-cover(src=`./assets/images/gallery/image/item-${j}.png`, alt="something")
+									img.object-cover.fullsize(src=`./assets/images/gallery/image/item-${j}.png`, alt="something")
 								.button-next
 								.button-prev
 								.desc-image
