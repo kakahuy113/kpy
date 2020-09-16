@@ -32,14 +32,22 @@ section.service {
             position: relative;
             padding: 0 1.375rem;
             margin-bottom: 2.75rem;
-            &:hover {
-                .rS__item--content--inner {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 100%;
-                    height: 100%;
-                    transition: width 500ms;
+            @media (max-width: 767.98px) {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 1.75rem;
+            }
+            @media (min-width: 1200px) {
+                &:hover {
+                    .rS__item--content--inner {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        transition: width 500ms;
+                    }
                 }
             }
             .rS__item--img {
@@ -72,11 +80,20 @@ section.service {
                 .rS__item--content-sub-title {
                     font-family: SVN--Light;
                     color: white;
+                    @media (max-width: 575.98px) {
+                        font-size: 10px;
+                    }
                 }
                 .rS__item--content-title {
                     font-family: SVN--Bold;
                     color: white;
                     font-size: 25px;
+                    @media (max-width: 950.98px) {
+                        font-size: 18px;
+                    }
+                    @media (max-width: 575.98px) {
+                        font-size: 14px;
+                    }
                 }
             }
         }
