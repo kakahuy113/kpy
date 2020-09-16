@@ -4,6 +4,9 @@
 	}
 	.pagination {
 		margin-bottom: 9rem;
+		@media (max-width: 575.98px) {
+			margin-bottom: 0;
+		}
 	}
 }
 .gallery--tab {
@@ -18,6 +21,7 @@
 		height: 6.6rem;
 		width: 100%;
 		a {
+			text-align: center;
 			display: flex;
 			width: 100%;
 			height: 100%;
@@ -26,6 +30,9 @@
 			font-size: 2.5rem;
 			font-family: SVN--Light;
 			color: map-get($color, main-2);
+			@media (max-width: 575.98px) {
+				font-size: 2rem;
+			}
 		}
 		&.item+.item {
 			margin-left: 2rem;
@@ -34,9 +41,15 @@
 			background: #212121;
 		}
 	}
+	@media (max-width: 575.98px) {
+		margin-bottom: 3.6rem;
+	}
 }
 .gallery--content {
 	margin-bottom: 5rem;
+	@media (max-width: 575.98px) {
+		margin-bottom: 2rem;
+	}
 }
 .list-gallery {
 	.item-image {
@@ -72,6 +85,9 @@
 				text-overflow: ellipsis;
 				-webkit-line-clamp: 1;
 			}
+			@media (max-width: 1024px) {
+				top: 50%;
+			}
 		}
 		.button-next,
 		.button-prev {
@@ -83,9 +99,12 @@
 			width: 3.4rem;
 			height: 3.4rem;
 			background: rgba($color: #000000, $alpha: .6);
+			@media (max-width: 1024px) {
+				opacity: 1;
+			}
 		}
 		.button-next {
-			right: 20px;
+			right: 10px;
 			&::before {
 				content: "";
 				position: absolute;
@@ -96,9 +115,6 @@
 				transform: translate(-50%,  -50%);
 				background: url(../assets/images/gallery/image/next.png) no-repeat;
 				background-size: 100% 100%;
-			}
-			@media (max-width: 1599.98px) {
-				right: 10px;
 			}
 		}
 		.button-prev {
@@ -136,6 +152,12 @@
 					opacity: 1;
 					transition: .3s all ease-in-out;
 				}
+			}
+		}
+		@media (max-width: 767.98px) {
+			.desc-image {
+				width: 24rem;
+				height: 100px;
 			}
 		}
 	}
@@ -227,6 +249,25 @@
 					font-family: SVN--Light;
 				}
 			}
+			@media (max-width: 1440px) {
+				width: 50%;
+			}
+			@media (max-width: 843.98px) {
+				.desc-content {
+					h2 {
+						&::before,
+						&::after {
+							width: 4rem;
+						}
+					}
+				}
+			}
+			@media (max-width: 767.98px) {
+				width: 80%;
+			}
+			@media (max-width: 499.98px) {
+				width: 100%;
+			}
 		}
 	}
 }
@@ -236,4 +277,7 @@
 .fancybox-bg {
 	background: #0A0A0A !important;
 	opacity: 1 !important;
+}
+.fancybox-slide--html {
+	padding: 0 !important;
 }

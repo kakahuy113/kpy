@@ -15,12 +15,36 @@ section.galleries-video
 					-for(var i = 1 ; i < 4 ;i++)
 						.item-document
 							.img
-								img.object-cover.fullsize(src="./assets/images/gallery/video/item.png", alt="document")
+								img.object-cover(src="./assets/images/gallery/video/item.png", alt="document")
 							.desc
 								h2 Hồ sơ năng lực KPY
 								.see-and-dow
 									span 
-										a(href) Xem Tài Liệu
+										a(href="https://drive.google.com/file/d/1iiZAqKNcrKq3VGdNyCODHug3YAe48cYN/edit" target="_blank") Xem Tài Liệu
 									span 
-										a(href) Tải PDF
+										a(href="https://drive.google.com/u/0/uc?id=1iiZAqKNcrKq3VGdNyCODHug3YAe48cYN&export=download" download) Tải PDF
+							//Place for BE
+							.d-none
+								.wrapper
+									-for(var j = 1; j< 4; j++)
+										.swiper-slide
+											img.object-cover.fullsize(src="./assets/images/gallery/video/pop-up-document.png", alt="document")
+				.d-none
+					#pop-up--document
+						.swiper-document-gallery
+							.swiper-container
+								.swiper-wrapper
+									-for(var i = 1; i< 4; i++)
+										.swiper-slide
+											.img
+												img.object-cover(src="./assets/images/gallery/video/pop-up-document.png", alt="document")
+							.desc
+								h2 Hồ sơ năng lực KPY
+								span
+									a(href) Tải PDF
+								.list-button-relate-news
+									.relate-prev-slider
+										.btn.btn-prev-text Sau
+									.relate-next-slider
+										.btn.btn-next-text Trước
 				include ../_layout/_pagination
