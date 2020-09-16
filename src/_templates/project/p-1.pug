@@ -8,9 +8,9 @@ section.news.Project
 					a(href="").btn.activity-news Thiết kế & thi công nội thất
 					a(href="").btn.activity-news Thiết kế kiến trúc
 				.project__showroom
-					.main-title--small
+					.main-title--small.wow.bounceInLeft(data-wow-duration="1s")
 						h2 Văn phòng - Showroom
-					.slider-index-service
+					.slider-index-service.wow.bounceInLeft(data-wow-delay="1s" data-wow-duration=".8s")
 						.swiper-container
 							.swiper-wrapper.ai-c
 								.swiper-slide
@@ -39,9 +39,9 @@ section.news.Project
 						.index-service-next-slider
 							.btn.btn-next-text Trước
 				.project__hotel
-					.main-title--small
+					.main-title--small.wow.rollIn
 						h2 Khách sạn - Nghĩ dưỡng
-					.relate-news.offer__wrapper
+					.relate-news.offer__wrapper.wow.rollIn
 						.swiper-container
 							.swiper-wrapper
 								-for(var i = 1; i <=3; i++)
@@ -58,9 +58,9 @@ section.news.Project
 							.relate-next-slider
 								.btn.btn-next-text Trước
 				.project__restaurant
-					.main-title--small
+					.main-title--small.wow.bounceInUp
 						h2 Nhà hàng
-					.relate-news.offer__wrapper
+					.relate-news.offer__wrapper.wow.bounceInUp(data-wow-duration="1s")
 						.swiper-container
 							.swiper-wrapper
 								-for(var i = 1; i <=3; i++)
@@ -77,9 +77,9 @@ section.news.Project
 							.relate-next-slider
 								.btn.btn-next-text Trước
 				.project__lasvegas
-					.main-title--small
+					.main-title--small.wow.bounceInUp(data-wow-delay="1.5s" data-wow-duration="1s")
 						h2 Biệt thự - Căn hộ cao cấp
-					.relate-news.offer__wrapper
+					.relate-news.offer__wrapper.wow.bounceInUp(data-wow-delay="1s" data-wow-duration=".8s")
 						.swiper-container
 							.swiper-wrapper
 								-for(var i = 1; i <=3; i++)
