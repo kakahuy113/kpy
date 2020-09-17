@@ -5,18 +5,18 @@
 				.swiper-slide.item-banner
 					.banner__img.ov-h.h-100
 						img.object-cover.fullsize(src=`./assets/images/banners/main-slider-banner-${i}.png`, alt="BANNER")
-					.banner__text
-						.container.overflow-hidden.h-100
-							.background-multiply
-							.text
-								.text__wrapper
-									.title.cl-white The Customer’s
-									.title.cl-white.font-family-SVNBOLD first choice
-									.desc Welcome to KPY Building Trading Ltd.,
-									.btn.btn-view-more Khám phá
 		.pagination-wrapper
 			.container.h-100
 				.swiper-pagination
+	.banner__text
+		.container
+			.background-multiply.wow.bounceInLeft(data-wow-delay="500ms")
+			.text.wow.bounceInLeft(data-wow-delay="500ms")
+				.text__wrapper
+					.title.cl-white The Customer’s
+					.title.cl-white.font-family-SVNBOLD first choice
+					.desc Welcome to KPY Building Trading Ltd.,
+					.btn.btn-view-more Khám phá
 	.socials__wrapper
 		.container
 			.row.no-gutters.justify-end

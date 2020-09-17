@@ -1,68 +1,71 @@
 .main-title {
-	h2 {
-		position: relative;
-		font-family: SVN--Bold;
-		font-size: 5rem;
-		padding-top: 12rem;
-		&:before,
-		&:after {
-			color: rgba($color: map-get($color, x-white), $alpha: 0.03);
-			position: absolute;
-			font-size: 20rem;
-			text-transform: none;
-			@media (max-width: 1024.98px) {
-				font-size: 14rem;
-			}
-			@media (max-width: 575.98px) {
-				font-size: 6rem;
-				padding-top: 0;
-			}
-		}
-		&:before {
-			content: attr(text-inside-before);
-		}
-		&:after {
-			content: attr(text-inside-after);
-		}
-		@media (max-width: 575.98px) {
-			font-size: 4rem;
-			padding-top: 0;
-		}
-	}
+    h2 {
+        &.service {
+            padding-top: 6rem;
+        }
+        position: relative;
+        font-family: SVN--Bold;
+        font-size: 5rem;
+        padding-top: 12rem;
+        &:before,
+        &:after {
+            color: rgba($color: map-get($color, x-white), $alpha: 0.03);
+            position: absolute;
+            font-size: 20rem;
+            text-transform: none;
+            @media (max-width: 1024.98px) {
+                font-size: 14rem;
+            }
+            @media (max-width: 575.98px) {
+                font-size: 6rem;
+                padding-top: 0;
+            }
+        }
+        &:before {
+            content: attr(text-inside-before);
+        }
+        &:after {
+            content: attr(text-inside-after);
+        }
+        @media (max-width: 575.98px) {
+            font-size: 4rem;
+            padding-top: 0;
+        }
+    }
 }
 
 .main-title--small {
-	display: inline-block;
-	position: relative;
-	padding-left: 16px;
-	h2 {
-		color: #eae2d0;
-		font-size: 2.5rem;
-		font-weight: 400;
-	}
-	&:after {
-		content: "";
-		position: absolute;
-		height: 100%;
-		top: 50%;
-		left: 0;
-		width: 2px;
-		background: map-get($color, main-1);
-		transform: translateY(-50%);
-	}
+    display: inline-block;
+    position: relative;
+    padding-left: 16px;
+    h2 {
+        color: #eae2d0;
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        top: 50%;
+        left: 0;
+        width: 2px;
+        background: map-get($color, main-1);
+        transform: translateY(-50%);
+    }
 }
 
 .description-title {
-	width: 100%;
-	margin: 0 auto;
-	p {
-		font-size: 1.7rem;
-		margin-top: 40px;
-	}
-	@media (max-width: 575.98px) {
-		p {
-			font-size: 1.4rem;
-			margin-top: 20px;
-		}
-	}
+    width: 100%;
+    margin: 0 auto;
+    p {
+        font-size: 1.7rem;
+        margin-top: 40px;
+    }
+    @media (max-width: 575.98px) {
+        p {
+            font-size: 1.4rem;
+            margin-top: 20px;
+        }
+    }
 }

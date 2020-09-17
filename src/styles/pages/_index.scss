@@ -1066,40 +1066,56 @@
 }
 
 .client-wrapper {
-    padding: 52px 35px 43px;
+    padding: 22px;
     background: #212121;
     box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.6);
+    display: flex;
+    flex-wrap: wrap;
+    .client-info {
+        -ms-flex: 0 0 70%;
+        flex: 0 0 70%;
+        max-width: 70%;
+        display: flex;
+        align-items: center;
+    }
+    .client-img {
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+        max-width: 30%;
+        width: 162px;
+        img {
+            width: 162px;
+        }
+    }
+    // .client-img {
+    //     -ms-flex: 0 0 100%;
+    //     -webkit-box-flex: 0;
+    //     flex: 0 0 87px;
+    //     max-width: 87px;
+    //     height: 87px;
+    //     background: rgba($color: #707070, $alpha: 0.3);
+    //     border-radius: 50%;
+    // }
     .client-quote {
+        padding-left: 22px;
         position: relative;
-        padding-left: 20px;
         &:after {
             content: "";
             position: absolute;
+            height: 100%;
+            top: 50%;
             left: 0;
-            top: 0;
             width: 2px;
-            height: 90%;
             background: map-get($color, main-1);
+            transform: translateY(-50%);
         }
     }
-    .client-info {
-        display: flex;
-        align-items: center;
-        margin-top: 10px;
-    }
-    .client-img {
-        -ms-flex: 0 0 100%;
-        -webkit-box-flex: 0;
-        flex: 0 0 87px;
-        max-width: 87px;
-        height: 87px;
-        background: rgba($color: #707070, $alpha: 0.3);
-        border-radius: 50%;
-    }
     .client-name {
-        margin-left: 15px;
+        margin-top: 15px;
         h5 {
-            font-size: 2.5rem;
+            font-family: SVN--Bold;
+            font-size: 25px;
+            text-transform: uppercase;
             margin-bottom: 5px;
         }
     }
@@ -1107,8 +1123,8 @@
 
 .list-buttons-index-clients {
     display: flex;
-    justify-content: center;
-    margin-top: 65px;
+    justify-content: flex-end;
+    margin-top: 10px;
     .index-clients-prev-slider,
     .index-clients-next-slider {
         margin: 0 10px;
@@ -1302,6 +1318,29 @@
             @media (max-width: 575.98px) {
                 font-size: 12px;
             }
+        }
+    }
+}
+
+.index-partner {
+    padding-top: 9rem;
+    padding-bottom: 12.7rem;
+    .partner-wrapper {
+        height: 115px;
+    }
+    .partner-dl {
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .partner-img {
+        img {
+            -webkit-filter: grayscale(100%);
+            /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
         }
     }
 }
