@@ -510,7 +510,6 @@ const popupImage = () => {
 			},
 		},
 	});
-	service.slideToLoop(1, 1500, false);
 }
 // const swiperDocumentPopup = () => {
 // 	let sưiper = new Swiper(
@@ -679,6 +678,37 @@ const initSliderProject = ()=>{
 	});
 }
 
+const ajaxContactForm = ()=>{
+	$('button.btn.btn-view-more').on('click', function(e) {
+        e.preventDefault();
+        const _thisBtn = $(this);
+        const url = _thisBtn.attr('data-url');
+        const formData = new FormData();
+        $('.index-contact-form-wrapper form .form-group input').each(function() {
+            const name = $(this).attr('name');
+            const value = $(this).val();
+            formData.append(name, value);
+        });
+        if ($('.index-contact-form-wrapper form').valid() === true) {
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function() {
+                    _thisBtn.attr('disabled', 'disabled');
+                },
+                success: function(res) {
+                    alert(`${res.Message}`);
+                    window.location.reload();
+                    _thisBtn.removeAttr('disabled');
+                },
+            });
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
@@ -717,4 +747,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// popupDocument();
 	//SWIPER ABOUT PROJECT
 	swiperAboutProjects();
+	// ajaxContactForm
+	ajaxContactForm();
 });

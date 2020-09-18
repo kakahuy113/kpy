@@ -166,11 +166,11 @@
     .swiper-pagination-bullet {
         position: relative;
         display: flex;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 5px;
+        height: 5px;
         margin: 1.5rem 0;
         background-color: transparent;
-        border: 2px solid #fff;
+        border: 1px solid #fff;
         border-radius: 0;
         opacity: 1;
         transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, margin 0.3s ease-in-out;
