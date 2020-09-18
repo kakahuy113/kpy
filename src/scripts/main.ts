@@ -255,59 +255,61 @@ const initSliderClientsIndexPage = () => {
 
 // INIT PROJECTS NEWS SLIDER
 const initSliderProjectsIndexPage = () => {
-	let ProjectsIndexPageThumb = new Swiper(
-		".slider-index-projects-thumb .swiper-container",
-		{
-			slidesPerView: 3,
-			simulateTouch: false,
-			loop: true,
-			grabCursor: true,
-			freeMode: true,
-			watchSlidesVisibility: true,
-			watchSlidesProgress: true,
-			speed: 1500,
-			spaceBetween: 20,
-		},
-	);
-	let ProjectsIndexPage = new Swiper(
-		".slider-index-projects-review .swiper-container",
-		{
-			slidesPerView: 3,
-			simulateTouch: false,
-			centeredSlides: true,
-			loop: true,
-			speed: 2000,
-			// autoplay: {
-			// 	delay: 1000,
-			// },
-			spaceBetween: -66,
-			navigation: {
-				prevEl: ".index-projects-prev-slider",
-				nextEl: ".index-projects-next-slider",
+	if (document.querySelector(".index-page")) {
+		let ProjectsIndexPageThumb = new Swiper(
+			".slider-index-projects-thumb .swiper-container",
+			{
+				slidesPerView: 3,
+				simulateTouch: false,
+				loop: true,
+				grabCursor: true,
+				freeMode: true,
+				watchSlidesVisibility: true,
+				watchSlidesProgress: true,
+				speed: 1500,
+				spaceBetween: 20,
 			},
-			thumbs: {
-				swiper: ProjectsIndexPageThumb,
-			},
-			breakpoints: {
-				1366: {
-					slidesPerView: 3,
-				},
-				1025: {
-					slidesPerView: 1.8,
-				},
-			},
-			on: {
-				// init: function () {
-				// 	const width = document.querySelector(
-				// 		".slider-index-projects-review .swiper-slide-active",
-				// 	).clientWidth;
-				// 	const wrapper = document.querySelector(
-				// 		".slider-index-projects-thumb-wrapper",
-				// 	);
-				// 	wrapper.setAttribute("style", `max-width:${width}px`);
+		);
+		let ProjectsIndexPage = new Swiper(
+			".slider-index-projects-review .swiper-container",
+			{
+				slidesPerView: 3,
+				simulateTouch: false,
+				centeredSlides: true,
+				loop: true,
+				speed: 2000,
+				// autoplay: {
+				// 	delay: 1000,
 				// },
-			},
-	});
+				spaceBetween: -66,
+				navigation: {
+					prevEl: ".index-projects-prev-slider",
+					nextEl: ".index-projects-next-slider",
+				},
+				thumbs: {
+					swiper: ProjectsIndexPageThumb,
+				},
+				// breakpoints: {
+				// 	1600: {
+				// 		slidesPerView: 1.8,
+				// 	},
+				// 	1025: {
+				// 		slidesPerView: 1.3,
+				// 	},
+				// },
+				on: {
+					// init: function () {
+					// 	const width = document.querySelector(
+					// 		".slider-index-projects-review .swiper-slide-active",
+					// 	).clientWidth;
+					// 	const wrapper = document.querySelector(
+					// 		".slider-index-projects-thumb-wrapper",
+					// 	);
+					// 	wrapper.setAttribute("style", `max-width:${width}px`);
+					// },
+				},
+		});
+	}
 };
 
 // SET HEIGHT TEXT WRAPPER
@@ -577,9 +579,9 @@ const swiperAboutProjects = () => {
 			simulateTouch: false,
 			loop: true,
 			speed: 2000,
-			autoplay: {
-				delay: 1000,
-			},
+			// autoplay: {
+			// 	delay: 1000,
+			// },
 			spaceBetween: 0,
 			breakpoints: {
 				1600: {
@@ -659,7 +661,7 @@ const initSliderProject = ()=>{
 }
 //swiper in swiper
 const swiperInSwiper = () => {
-
+	if(document.querySelector(".service")) {
 		let swiper = new Swiper(".slider-service>.swiper-container .swiper-slide-active .swiper-container", {
 			loop: true,
 			slidesPerView: 1,
@@ -717,6 +719,7 @@ const swiperInSwiper = () => {
 			},
 		});
 	})
+	}
 }
 
 const ajaxContactForm = ()=>{

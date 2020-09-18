@@ -414,16 +414,6 @@
 	margin-top: 10rem;
 	.board {
 		position: relative;
-		&::before {
-			position: absolute;
-			content: "";
-			top: 0;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 1px;
-			height: 220px;
-			background:#B5B5B5;
-		}
 		ul {
 			padding: 0;
 			display: flex;
@@ -459,6 +449,28 @@
 			list-style: none;
 			display: flex;
 			justify-content:center;
+			li {
+				&::before {
+					position: absolute;
+					content: "";
+					top: 100%;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 1px;
+					height: 4rem;
+					background:#B5B5B5;
+				}
+				&::after {
+					position: absolute;
+					content: "";
+					bottom: 100%;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 1px;
+					height: 4rem;
+					background:#B5B5B5;
+				}
+			}
 		}
 		.columFour {
 			justify-content: space-between;
@@ -472,6 +484,14 @@
 				height: 1px;
 				left: 50%;
 				transform: translateX(-50%);
+				@media (max-width: 1599.98px) {
+					width: 78%;
+					
+				}
+				@media (max-width: 1439.98px) {
+					width: 77%;
+					
+				}
 			}
 			li {
 				-ms-flex: 0 0 23%;

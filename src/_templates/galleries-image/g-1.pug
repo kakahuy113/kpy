@@ -2,9 +2,9 @@ section.galleries-image
 	.container
 		.container-custom.size-1365px
 			.galleries-image__wrapper
-				.main-title.ta-c
+				.main-title.ta-c.wow.fadeInUp(data-wow-delay=".2s")
 					h2.cl-main-1.text-uppercase Thư Viện
-				ul.gallery--tab
+				ul.gallery--tab.wow.fadeInUp(data-wow-delay=".2s")
 					li.item.btn.active
 						a(href="galleries-image.html") Hình ảnh
 					li.item.btn
@@ -14,7 +14,7 @@ section.galleries-image
 				.gallery--content
 					.list-gallery.row
 						-for(var j = 1; j < 10; j++)
-							.item-image.col-lg-4.col-sm-6
+							.item-image.col-lg-4.col-sm-6.wow.bounceInLeft(data-wow-delay=".2s")
 								.img
 									img.object-cover.fullsize(src=`./assets/images/gallery/image/item-${j}.png`, alt="something")
 								.button-next
