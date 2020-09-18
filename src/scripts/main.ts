@@ -219,60 +219,62 @@ const initSliderClientsIndexPage = () => {
 
 // INIT PROJECTS NEWS SLIDER
 const initSliderProjectsIndexPage = () => {
-	let ProjectsIndexPageThumb = new Swiper(
-		".slider-index-projects-thumb .swiper-container",
-		{
-			slidesPerView: 3,
-			simulateTouch: false,
-			loop: true,
-			grabCursor: true,
-			freeMode: true,
-			watchSlidesVisibility: true,
-			watchSlidesProgress: true,
-			speed: 1500,
-			spaceBetween: 20,
-		},
-	);
-	let ProjectsIndexPage = new Swiper(
-		".slider-index-projects-review .swiper-container",
-		{
-			slidesPerView: 1,
-			simulateTouch: false,
-			loop: true,
-			speed: 2000,
-			// autoplay: {
-			// 	delay: 1000,
-			// },
-			spaceBetween: 0,
-			navigation: {
-				prevEl: ".index-projects-prev-slider",
-				nextEl: ".index-projects-next-slider",
+	if(document.querySelector(".index-page")) {
+		let ProjectsIndexPageThumb = new Swiper(
+			".slider-index-projects-thumb .swiper-container",
+			{
+				slidesPerView: 3,
+				simulateTouch: false,
+				loop: true,
+				grabCursor: true,
+				freeMode: true,
+				watchSlidesVisibility: true,
+				watchSlidesProgress: true,
+				speed: 1500,
+				spaceBetween: 20,
 			},
-			thumbs: {
-				swiper: ProjectsIndexPageThumb,
-			},
-			breakpoints: {
-				1600: {
-					slidesPerView: 1.8,
+		);
+		let ProjectsIndexPage = new Swiper(
+			".slider-index-projects-review .swiper-container",
+			{
+				slidesPerView: 1,
+				simulateTouch: false,
+				loop: true,
+				speed: 2000,
+				// autoplay: {
+				// 	delay: 1000,
+				// },
+				spaceBetween: 0,
+				navigation: {
+					prevEl: ".index-projects-prev-slider",
+					nextEl: ".index-projects-next-slider",
 				},
-				1025: {
-					slidesPerView: 1.3,
-					spaceBetween: -75,
+				thumbs: {
+					swiper: ProjectsIndexPageThumb,
+				},
+				breakpoints: {
+					1600: {
+						slidesPerView: 1.8,
+					},
+					1025: {
+						slidesPerView: 1.3,
+						spaceBetween: -75,
+					},
+				},
+				on: {
+					init: function () {
+						const width = document.querySelector(
+							".slider-index-projects-review .swiper-slide-active",
+						).clientWidth;
+						const wrapper = document.querySelector(
+							".slider-index-projects-thumb-wrapper",
+						);
+						wrapper.setAttribute("style", `max-width:${width}px`);
+					},
 				},
 			},
-			on: {
-				init: function () {
-					const width = document.querySelector(
-						".slider-index-projects-review .swiper-slide-active",
-					).clientWidth;
-					const wrapper = document.querySelector(
-						".slider-index-projects-thumb-wrapper",
-					);
-					wrapper.setAttribute("style", `max-width:${width}px`);
-				},
-			},
-		},
-	);
+		);
+	}
 };
 
 // SET HEIGHT TEXT WRAPPER
@@ -469,6 +471,32 @@ const popupImage = () => {
 // 		})
 // 	}
 // }
+const swiperAboutProjects = () => {
+	let ProjectsIndexPage = new Swiper(
+		".slider-about-project .swiper-container",
+		{
+			slidesPerView: 1,
+			simulateTouch: false,
+			loop: true,
+			speed: 2000,
+			autoplay: {
+				delay: 1000,
+			},
+			spaceBetween: 0,
+			breakpoints: {
+				1600: {
+					slidesPerView: 1.4,
+					spaceBetween: -55,
+				},
+				1025: {
+					slidesPerView: 1.3,
+					spaceBetween: -85,
+				},
+			},
+		},
+	);
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
@@ -500,4 +528,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	popupImage();
 	//document popup
 	// popupDocument();
+	//SWIPER ABOUT PROJECT
+	swiperAboutProjects();
 });
