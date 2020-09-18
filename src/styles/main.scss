@@ -1,14 +1,12 @@
 @import "abstracts/variables";
 @import "abstracts/functions";
 @import "abstracts/mixins";
-
 @import "base/animations";
 @import "base/keyframes";
 @import "base/reset";
 @import "base/fonts";
 @import "base/global";
 @import "base/utilities";
-
 @import "layout/grid";
 @import "layout/header";
 @import "layout/navigation";
@@ -16,7 +14,6 @@
 @import "layout/forms";
 @import "layout/main-banner";
 @import "layout/pagination";
-
 @import "components/buttons";
 @import "components/hamburger";
 @import "components/tab";
@@ -25,7 +22,6 @@
 @import "components/loading";
 @import "components/fullpage";
 @import "components/fullpage";
-
 @import "pages/index";
 @import "pages/news";
 @import "pages/news-detail.scss";
