@@ -307,8 +307,7 @@ const initSliderProjectsIndexPage = () => {
 				// 	wrapper.setAttribute("style", `max-width:${width}px`);
 				// },
 			},
-		},
-	);
+	});
 };
 
 // SET HEIGHT TEXT WRAPPER
@@ -571,7 +570,31 @@ const popupImage = () => {
 // 		})
 // 	}
 // }
-
+const swiperAboutProjects = () => {
+	let ProjectsIndexPage = new Swiper(
+		".slider-about-project .swiper-container",
+		{
+			slidesPerView: 1,
+			simulateTouch: false,
+			loop: true,
+			speed: 2000,
+			autoplay: {
+				delay: 1000,
+			},
+			spaceBetween: 0,
+			breakpoints: {
+				1600: {
+					slidesPerView: 1.4,
+					spaceBetween: -55,
+				},
+				1025: {
+					slidesPerView: 1.3,
+					spaceBetween: -85,
+				},
+			},
+		},
+	);
+}
 const initPartnerSlider=()=>{
 	const partnerIndexPage = new Swiper(
 		".slider-index-partner .swiper-container",
@@ -692,4 +715,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	popupImage();
 	//document popup
 	// popupDocument();
+	//SWIPER ABOUT PROJECT
+	swiperAboutProjects();
 });
