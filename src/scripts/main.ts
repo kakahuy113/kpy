@@ -38,33 +38,33 @@ const initMainSliderBanner = () => {
 			el: ".swiper-pagination",
 			type: "bullets",
 		},
-		on: {
-			slideChange: function () {
-				// RESET
-				Array.from(this.slides).forEach((item: any) => {
-					const titlesRemove = item.querySelectorAll(
-						".banner__text .title",
-					);
-					titlesRemove.forEach((title: any) => {
-						title.classList.remove("animated");
-					});
-				});
-				// GET ALL TITLE
-				const titles = this.slides[this.activeIndex].querySelectorAll(
-					".banner__text .title",
-				);
-				// ADD CLASS ANIMATED
-				titles.forEach((item: any) => {
-					item.classList.add("animated");
-				});
-				// RUN ANIMATE / TRUYỀN PARAM VÀO FUNCTION
-				setTimeout(() => {
-					animation.allAnimeMainSlider(
-						".banner__text .title.animated",
-					);
-				}, 1000);
-			},
-		},
+		// on: {
+		// 	slideChange: function () {
+		// 		// RESET
+		// 		Array.from(this.slides).forEach((item: any) => {
+		// 			const titlesRemove = item.querySelectorAll(
+		// 				".banner__text .title",
+		// 			);
+		// 			titlesRemove.forEach((title: any) => {
+		// 				title.classList.remove("animated");
+		// 			});
+		// 		});
+		// 		// GET ALL TITLE
+		// 		const titles = this.slides[this.activeIndex].querySelectorAll(
+		// 			".banner__text .title",
+		// 		);
+		// 		// ADD CLASS ANIMATED
+		// 		titles.forEach((item: any) => {
+		// 			item.classList.add("animated");
+		// 		});
+		// 		// RUN ANIMATE / TRUYỀN PARAM VÀO FUNCTION
+		// 		setTimeout(() => {
+		// 			animation.allAnimeMainSlider(
+		// 				".banner__text .title.animated",
+		// 			);
+		// 		}, 1000);
+		// 	},
+		// },
 	});
 };
 
@@ -97,16 +97,16 @@ const intitSliderAboutIndexPage = () => {
 // INIT INDEX SERVICE SLIDER
 const initSliderServiceIndexPage = () => {
 	let ServicetIndexPage = new Swiper(
-		".slider-index-service .swiper-container",
+		".slider-index-service .swiper-container.first",
 		{
 			centeredSlides: true,
 			slidesPerView: 1,
 			simulateTouch: false,
 			loop: true,
 			speed: 1500,
-			autoplay: {
-				delay: 2000,
-			},
+			// autoplay: {
+			// 	delay: 2000,
+			// },
 			loopedSlides: 3,
 			navigation: {
 				prevEl: ".index-service-prev-slider",
@@ -127,6 +127,43 @@ const initSliderServiceIndexPage = () => {
 					spaceBetween: -135,
 				},
 			},
+		},
+	);
+};
+// INIT INDEX Showroom
+const initSliderShowroom = () => {
+	let SliderShowroom = new Swiper(
+		".slider-project-showroom .swiper-container",
+		{
+			centeredSlides: true,
+			slidesPerView: 3,
+			// simulateTouch: false,
+			loop: true,
+			speed: 1500,
+			spaceBetween: 25,
+			// autoplay: {
+			// 	delay: 2000,
+			// },
+			// loopedSlides: 3,
+			navigation: {
+				prevEl: ".index-service-prev-slider",
+				nextEl: ".index-service-next-slider",
+			},
+			// breakpoints: {
+			// 	320: {
+			// 		slidesPerView: 1.4,
+			// 		spaceBetween: 10,
+			// 	},
+			// 	768: {
+			// 		spaceBetween: 0,
+			// 	},
+			// 	1025.98: {
+			// 		// spaceBetween: -100,
+			// 	},
+			// 	1440: {
+			// 		// spaceBetween: -135,
+			// 	},
+			// },
 		},
 	);
 };
@@ -202,15 +239,14 @@ const initSliderClientsIndexPage = () => {
 			nextEl: ".index-clients-next-slider",
 		},
 		breakpoints: {
+			768: {
+				slidesPerView: 1,
+			},
 			1025: {
 				spaceBetween: 20,
 			},
 			1440: {
 				spaceBetween: 40,
-				slidesPerView: 3,
-				centeredSlides: true,
-			},
-			768: {
 				slidesPerView: 2,
 			},
 		},
@@ -326,7 +362,70 @@ const initSwiperRelateNews = () => {
 				slidesPerView: 2,
 			},
 		},
-	});	
+	});
+	let hotel = new Swiper(".relate-hotel .swiper-container", {
+		speed: 2000,
+		loop: true,
+		// autoplay: {
+		// 	delay: 1000,
+		// },
+		navigation: {
+			prevEl: ".relate-hotel .hotel-prev-slider",
+			nextEl: ".relate-hotel .hotel-next-slider",
+		},
+		breakpoints: {
+			1025: {
+				slidesPerView: 3,
+				spaceBetween: 25
+			},
+			600: {
+				spaceBetween: 10,
+				slidesPerView: 2,
+			},
+		},
+	});
+	let restaurant = new Swiper(".relate-restaurant .swiper-container", {
+		speed: 2000,
+		loop: true,
+		// autoplay: {
+		// 	delay: 1000,
+		// },
+		navigation: {
+			prevEl: ".relate-restaurant .restaurant-prev-slider",
+			nextEl: ".relate-restaurant .restaurant-next-slider",
+		},
+		breakpoints: {
+			1025: {
+				slidesPerView: 3,
+				spaceBetween: 25
+			},
+			600: {
+				spaceBetween: 10,
+				slidesPerView: 2,
+			},
+		},
+	});
+	let lasvegas = new Swiper(".relate-lasvegas .swiper-container", {
+		speed: 2000,
+		loop: true,
+		// autoplay: {
+		// 	delay: 1000,
+		// },
+		navigation: {
+			prevEl: ".relate-lasvegas .lasvegas-prev-slider",
+			nextEl: ".relate-lasvegas .lasvegas-next-slider",
+		},
+		breakpoints: {
+			1025: {
+				slidesPerView: 3,
+				spaceBetween: 25
+			},
+			600: {
+				spaceBetween: 10,
+				slidesPerView: 2,
+			},
+		},
+	});
 }
 const initSwiperImage = () => {
 	let ServicetIndexPage = new Swiper(
@@ -391,27 +490,30 @@ const popupImage = () => {
 		})
 	}
 	let service = new Swiper("._with-service .swiper-container", {
-		speed: 2000,
+		speed: 1500,
 		loop: true,
+		loopedSlides:6,
+		slidesPerView:'auto',
 		// autoplay: {
 		// 	delay: 1000,
 		// },
 		centeredSlides: true,
 		navigation: {
-			prevEl: ".relate-news .relate-prev-slider",
-			nextEl: ".relate-news .relate-next-slider",
+			prevEl: "._with-service .relate-prev-slider",
+			nextEl: "._with-service .relate-next-slider",
 		},
 		breakpoints: {
 			1025: {
 				slidesPerView: 3.5,
-				spaceBetween: 25
+				spaceBetween: 20
 			},
 			600: {
 				spaceBetween: 10,
 				slidesPerView: 2,
 			},
 		},
-	});	
+	});
+	service.slideToLoop(1, 1500, false);
 }
 // const swiperDocumentPopup = () => {
 // 	let sưiper = new Swiper(
@@ -496,6 +598,89 @@ const swiperAboutProjects = () => {
 		},
 	);
 }
+const initPartnerSlider=()=>{
+	const partnerIndexPage = new Swiper(
+		".slider-index-partner .swiper-container",
+		{
+			slidesPerView: 5,
+			loop: true,
+			speed: 1500,
+			spaceBetween: 25,
+			autoplay: {
+				delay:1000,
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+				},
+				575: {
+					slidesPerView: 2,
+				},
+				768: {
+					slidesPerView: 3,
+				},
+				1024: {
+					slidesPerView: 4,
+				},
+				1440: {
+					slidesPerView: 5,
+				},
+			},
+		},
+	);
+}
+
+const initSliderProject = ()=>{
+	let ServicetIndexPage = new Swiper(
+		".slider-service .swiper-container",
+		{
+			centeredSlides: true,
+			slidesPerView: 3,
+			simulateTouch: false,
+			loop: true,
+			speed: 1500,
+			// autoplay: {
+			// 	delay: 2000,
+			// },
+			loopedSlides: 3,
+			navigation: {
+				prevEl: ".index-service-prev-slider",
+				nextEl: ".index-service-next-slider",
+			},
+			// breakpoints: {
+			// 	320: {
+			// 		slidesPerView: 1.4,
+			// 		spaceBetween: 10,
+			// 	},
+			// 	768: {
+			// 		spaceBetween: 0,
+			// 	},
+			// 	1025.98: {
+			// 		spaceBetween: -100,
+			// 	},
+			// 	1440: {
+			// 		spaceBetween: -135,
+			// 	},
+			// },
+		},
+	);
+
+	let project = new Swiper("._with-project .swiper-container", {
+		speed: 1500,
+		spaceBetween: 10,
+		loop: true,
+		slidesPerView: 1,
+		navigation: {
+			prevEl: "._with-project .relate-prev-slider",
+			nextEl: "._with-project .relate-next-slider",
+		},
+		// on:{
+		// 	init:function(){
+
+		// 	}
+		// },
+	});
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
@@ -524,6 +709,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initSliderProjectsIndexPage();
 	// INIT RELATE NEWS
 	initSwiperRelateNews();
+	initSliderProject();
+	///
+	initPartnerSlider();
+	//
+	initSliderShowroom();
 	//pop-up image
 	popupImage();
 	//document popup

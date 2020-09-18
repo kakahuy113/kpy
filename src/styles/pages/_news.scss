@@ -1,104 +1,107 @@
 .news {
-	margin-bottom: 9rem;
-	.main-title {
-		margin-bottom: 4rem;
-	}
-	.main-title--small {
-		margin-bottom: 4rem;
-	}
+    margin-bottom: 9rem;
+    .main-title {
+        margin-bottom: 4rem;
+    }
+    .main-title--small {
+        margin-bottom: 4rem;
+    }
 }
+
 .tab-news {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 5.8rem;
-	> a {
-		color: map-get($color, main-2);
-		width: 348px;
-		height: 66px;
-		font-size: 2.5rem;
-		font-family: SVN--Light;
-		border: 1px solid rgba($color: #ffff, $alpha: .14);
-		margin-right: 25px;
-		transition: .3 all ease-in-out;
-		text-align: center;
-		@media (min-width: 1025px) {
-			&:hover {
-			border: 1px solid #707070;
-			background: #212121;
-			color: map-get($color, main-2);
-			font-family: SVN--Bold;
-			transition: .3 all ease-in-out;
-			}
-		}
-		.active {
-			border: 1px solid #707070;
-			background: #212121;
-			color: map-get($color, main-2);
-			font-family: SVN--Bold;
-		}
-		@media (max-width: 575.98px) {
-			font-size: 2rem;
-		}
-	}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5.8rem;
+    >a {
+        color: map-get($color, main-2);
+        width: 348px;
+        height: 66px;
+        font-size: 2.5rem;
+        font-family: SVN--Light;
+        border: 1px solid rgba($color: #ffff, $alpha: .14);
+        margin-right: 25px;
+        transition: .3 all ease-in-out;
+        text-align: center;
+        @media (min-width: 1025px) {
+            &:hover {
+                border: 1px solid #707070;
+                background: #212121;
+                color: map-get($color, main-2);
+                font-family: SVN--Bold;
+                transition: .3 all ease-in-out;
+            }
+        }
+        &.active {
+            border: 1px solid #707070;
+            background: #212121;
+            color: map-get($color, main-2);
+            font-family: SVN--Bold;
+        }
+        @media (max-width: 575.98px) {
+            font-size: 2rem;
+        }
+    }
 }
+
 .hot-news__wrapper {
-	margin-bottom: 6rem;
-	.bock-item-style-1 {
-		margin-bottom: 2rem;
-		.item__img {
-			&::after {
-				content: none;
-			}
-		}
-		.item__desc {
-			width: calc(100% - 86px);
-			height: 14.4rem;
-			bottom: 3rem;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			padding-right: 4rem;
-			padding-left: 4rem;
-			color: #fff;
-			.item__title {
-				font-size: 2.5rem;
-				font-family: SVN--Bold;
-			}
-			.item__subtitle {
-				font-size: 1.7rem;
-				font-family: SVN--Light;
-			}
-		}
-	}
+    margin-bottom: 6rem;
+    .bock-item-style-1 {
+        margin-bottom: 2rem;
+        .item__img {
+            &::after {
+                content: none;
+            }
+        }
+        .item__desc {
+            width: calc(100% - 86px);
+            height: 14.4rem;
+            bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 4rem;
+            padding-left: 4rem;
+            color: #fff;
+            .item__title {
+                font-size: 2.5rem;
+                font-family: SVN--Bold;
+            }
+            .item__subtitle {
+                font-size: 1.7rem;
+                font-family: SVN--Light;
+            }
+        }
+    }
 }
+
 .offer__wrapper {
-	margin-bottom: 5.5rem;
-	.bock-item-style-1 {
-		margin-bottom: 2rem;
-		.item__img {
-			&::after {
-				content: none;
-			}
-		}
-		.item__desc {
-			width: calc(100% - 56px);
-			height: 11.2rem;
-			bottom: 3rem;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			padding-right: 4rem;
-			padding-left: 4rem;
-			color: #fff;
-			.item__title {
-				font-size: 2.5rem;
-				font-family: SVN--Bold;
-			}
-			.item__subtitle {
-				font-size: 1.7rem;
-				font-family: SVN--Light;
-			}
-		}
-	}
+    margin-bottom: 5.5rem;
+    .bock-item-style-1 {
+        margin-bottom: 2rem;
+        .item__img {
+            &::after {
+                content: none;
+            }
+        }
+        .item__desc {
+            width: calc(100% - 56px);
+            height: 11.2rem;
+            bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 4rem;
+            padding-left: 4rem;
+            color: #fff;
+            .item__title {
+                font-size: 2.5rem;
+                font-family: SVN--Bold;
+            }
+            .item__subtitle {
+                font-size: 1.7rem;
+                font-family: SVN--Light;
+            }
+        }
+    }
 }

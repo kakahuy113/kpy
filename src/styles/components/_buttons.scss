@@ -70,3 +70,59 @@
         background-image: url(../assets/icons/right-arrow.svg);
     }
 }
+
+.button-next,
+.button-prev {
+    transition: .3s all ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.4rem;
+    height: 3.4rem;
+    background: rgba($color: #000000, $alpha: .6);
+    &.custom {
+        opacity: 1;
+        z-index: 10;
+        cursor: pointer;
+    }
+    @media (max-width: 1024px) {
+        opacity: 1;
+    }
+}
+
+.button-next {
+    right: 10px;
+    &.custom {
+        right: 0;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: 1.2rem;
+        width: .6rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url(../assets/images/gallery/image/next.png) no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+.button-prev {
+    left: 10px;
+    &.custom {
+        left: 0;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: 1.2rem;
+        width: .6rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url(../assets/images/gallery/image/prev.png) no-repeat;
+        background-size: 100% 100%;
+    }
+}

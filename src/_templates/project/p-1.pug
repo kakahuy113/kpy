@@ -8,9 +8,9 @@ section.news.Project
 					a(href="").btn.activity-news Thiết kế & thi công nội thất
 					a(href="").btn.activity-news Thiết kế kiến trúc
 				.project__showroom
-					.main-title--small.wow.bounceInLeft(data-wow-duration="1s")
+					.main-title--small.wow.bounceInLeft(data-wow-delay="500ms")
 						h2 Văn phòng - Showroom
-					.slider-index-service.wow.bounceInLeft(data-wow-delay="1s" data-wow-duration=".8s")
+					.slider-project-showroom.wow.bounceInLeft(data-wow-delay="1s")
 						.swiper-container
 							.swiper-wrapper.ai-c
 								.swiper-slide
@@ -39,9 +39,9 @@ section.news.Project
 						.index-service-next-slider
 							.btn.btn-next-text Trước
 				.project__hotel
-					.main-title--small.wow.rollIn
+					.main-title--small.wow.bounceInRight(data-wow-delay="500ms")
 						h2 Khách sạn - Nghĩ dưỡng
-					.relate-news.offer__wrapper.wow.rollIn
+					.relate-hotel.offer__wrapper.wow.bounceInRight(data-wow-delay="1000ms")
 						.swiper-container
 							.swiper-wrapper
 								-for(var i = 1; i <=3; i++)
@@ -53,14 +53,14 @@ section.news.Project
 												.item__title.lcl.lcl-1 Kim Do Hotel
 												.item__subtitle.lcl.lcl-1 Thiết kế và thi công
 						.list-button-relate-news
-							.relate-prev-slider
+							.hotel-prev-slider
 								.btn.btn-prev-text Sau
-							.relate-next-slider
+							.hotel-next-slider
 								.btn.btn-next-text Trước
 				.project__restaurant
 					.main-title--small.wow.bounceInUp
 						h2 Nhà hàng
-					.relate-news.offer__wrapper.wow.bounceInUp(data-wow-duration="1s")
+					.relate-restaurant.offer__wrapper.wow.bounceInUp(data-wow-duration="1s")
 						.swiper-container
 							.swiper-wrapper
 								-for(var i = 1; i <=3; i++)
@@ -72,14 +72,14 @@ section.news.Project
 												.item__title.lcl.lcl-1 Maru Restaurant
 												.item__subtitle.lcl.lcl-1 Thiết kế và thi công
 						.list-button-relate-news
-							.relate-prev-slider
+							.restaurant-prev-slider
 								.btn.btn-prev-text Sau
-							.relate-next-slider
+							.restaurant-next-slider
 								.btn.btn-next-text Trước
 				.project__lasvegas
 					.main-title--small.wow.bounceInUp(data-wow-delay="1.5s" data-wow-duration="1s")
 						h2 Biệt thự - Căn hộ cao cấp
-					.relate-news.offer__wrapper.wow.bounceInUp(data-wow-delay="1s" data-wow-duration=".8s")
+					.relate-lasvegas.offer__wrapper.wow.bounceInUp(data-wow-delay="1s" data-wow-duration=".8s")
 						.swiper-container
 							.swiper-wrapper
 								-for(var i = 1; i <=3; i++)
@@ -91,7 +91,7 @@ section.news.Project
 												.item__title.lcl.lcl-1 Căn hộ Lasvegas
 												.item__subtitle.lcl.lcl-1 Thiết kế và thi công
 						.list-button-relate-news
-							.relate-prev-slider
+							.lasvegas-prev-slider
 								.btn.btn-prev-text Sau
-							.relate-next-slider
+							.lasvegas-next-slider
 								.btn.btn-next-text Trước

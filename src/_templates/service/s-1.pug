@@ -1,59 +1,57 @@
-section.index-service
+section.index-service.size-pd-mg
 	.container
 		.index-service-wrapper
 			.main-title.ta-c.wow.fadeInUp(data-wow-delay=".2s")
-				h2.cl-main-1.text-uppercase dịch vụ
-			.description-title.ta-c.wow.fadeInUp(data-wow-delay=".8s")
-				p.ta-c Thiết kế và thi công trọn gói cho mọi dự án bao gồm thiết kế, hoàn thiện nội thất, sản xuất và lắp đặt đồ gỗ nội thất, với các lĩnh vực chính sau:
+				h2.cl-main-1.service.text-uppercase dịch vụ
+			.description-title.ta-c.wow.fadeInUp(data-wow-delay=".s")
+				p.ta-c 
+					|
+					span.ff-1 Thiết kế 
+					| và 
+					span.ff-1 thi công 
+					| trọn gói cho mọi dự án bao gồm thiết kế, hoàn thiện nội thất, sản xuất và lắp đặt đồ gỗ nội thất, với các lĩnh vực chính sau:
 		.container-custom.size-1365px
-			.slider-index-service
+			.slider-service.wow.fadeInUp(data-wow-delay=".8s")
 				.swiper-container
 					.swiper-wrapper.ai-c
 						.swiper-slide
-							.bock-item-style-1
-								.item__img.ov-h
-									img.fullsize.object-cover(src="./assets/images/index-service/1.png", alt="")
-								.item__desc
-									.item__title Nội thất Văn phòng - Showroom
-									.item__subtitle Dự án KPY thiết kế nội thất
-						.swiper-slide
-							.bock-item-style-1
-								.item__img.ov-hs
-									img.fullsize.object-cover(src="./assets/images/index-service/2.png", alt="")
-								.item__desc
-									.item__title Nội thất Văn phòng - Showroom
-									.item__subtitle Dự án KPY thiết kế nội thất
-						.swiper-slide
-							.bock-item-style-1
-								.item__img.ov-h
-									img.fullsize.object-cover(src="./assets/images/index-service/3.png", alt="")
-								.item__desc
-									.item__title Nội thất Văn phòng - Showroom
-									.item__subtitle Dự án KPY thiết kế nội thất
+							._with-project
+								.swiper-container
+									.swiper-wrapper
+										.swiper-slide
+											.bock-item-style-1
+												.item__img.ov-h
+													img.fullsize.object-cover(src="./assets/images/index-service/1.png", alt="")
+												.item__desc
+													.item__subtitle Dự án KPY thiết kế nội thất
+													.item__title.cl-main-1 Nội thất Văn phòng - Showroom
+								.relate-prev-slider
+									.button-prev.custom
+								.relate-next-slider
+									.button-next.custom
 				.index-service-prev-slider
 					.btn.btn-prev-text Sau
 				.index-service-next-slider
 					.btn.btn-next-text Trước
 		.index-service-wrapper
 			.main-title.ta-c.wow.fadeInUp(data-wow-delay=".2s")
-				h2.cl-main-1.text-uppercase DỰ ÁN TIÊU BIỂU
-			.description-title.ta-c.wow.fadeInUp(data-wow-delay=".8s")
+				h2.cl-main-1.text-uppercase.service DỰ ÁN TIÊU BIỂU
+			.description-title.ta-c.wow.fadeInUp(data-wow-delay=".4s")
 				p.ta-c Thiết kế và thi công trọn gói cho mọi dự án bao gồm thiết kế, hoàn thiện nội thất, sản xuất và lắp đặt đồ gỗ nội thất, với các lĩnh vực chính sau:
 section.service
 	.container-full
-		.offer__wrapper._with-service
-				.swiper-container
-					.swiper-wrapper
-						-for(var i = 1; i <=3; i++)
-							.swiper-slide
-								.bock-item-style-1
-									.item__img.ov-h
-										img.fullsize.object-cover(src=`./assets/images/news-detail/relate-${i}.png`, alt="relate New")
-									.item__desc
-										.item__title.lcl.lcl-1 Maru Restaurant
-										.item__subtitle.lcl.lcl-1 Thiết kế và thi công
-				//- .list-button-relate-news
-				//- 	.relate-prev-slider
-				//- 		.btn.btn-prev-text Sau
-				//- 	.relate-next-slider
-				//- 		.btn.btn-next-text Trước
+		.offer__wrapper._with-service.custom.wow.fadeInUp(data-wow-delay=".6s")
+			.swiper-container
+				.swiper-wrapper
+					-for(var i = 1; i <=3; i++)
+						.swiper-slide
+							.bock-item-style-1
+								.item__img.ov-h
+									img.fullsize.object-cover(src=`./assets/images/news-detail/relate-${i}.png`, alt="relate New")
+								.item__desc
+									.item__title.lcl.lcl-1 Maru Restaurant
+									.item__subtitle.lcl.lcl-1 Thiết kế và thi công
+			.relate-prev-slider
+				.btn.btn-prev-text Sau
+			.relate-next-slider
+				.btn.btn-next-text Trước
