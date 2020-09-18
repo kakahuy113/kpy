@@ -288,14 +288,14 @@ const initSliderProjectsIndexPage = () => {
 			thumbs: {
 				swiper: ProjectsIndexPageThumb,
 			},
-			// breakpoints: {
-			// 	1600: {
-			// 		slidesPerView: 1.8,
-			// 	},
-			// 	1025: {
-			// 		slidesPerView: 1.3,
-			// 	},
-			// },
+			breakpoints: {
+				1366: {
+					slidesPerView: 3,
+				},
+				1025: {
+					slidesPerView: 1.8,
+				},
+			},
 			on: {
 				// init: function () {
 				// 	const width = document.querySelector(
