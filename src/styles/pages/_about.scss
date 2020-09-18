@@ -521,42 +521,42 @@
 		filter: blur(4px);
 		position: absolute;
 		top: 7%;
-		left: 35.5%;
+		left: 36.5%;
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;
 		background: rgba($color: #fff, $alpha: .45);
 		&.two {
 			top: 22%;
-			left: 10%;
+			left: 11%;
 		}
 		&.three {
 			top: 41%;
-			left: 17%;
+			left: 18%;
 		}
 		&.four {
 			top: 32%;
-			left: 52%;
+			left: 53%;
 		}
 		&.five {
 			top: 24%;
-			left: 75.5%;
+			left: 76.5%;
 		}
 		&.six {
 			top: 38%;
-			left: 85%;
+			left: 86%;
 		}
 		&.seven {
 			top: 65%;
-			left: 85%;
+			left: 86%;
 		}
 		&.eight{
 			top: 80%;
-			left: 79.5%;
+			left: 80.5%;
 		}
 		&.nine{
 			top: 55%;
-			left: 76.5%;
+			left: 77.5%;
 		}
 		&.active {
 			background: #E37313 !important;
@@ -582,6 +582,5 @@
 				border: 2px solid #E37313;
 			}
 		}
-		
 	}
 }
