@@ -14,25 +14,27 @@ section.index-service.size-pd-mg
 			.slider-service.wow.fadeInUp(data-wow-delay=".8s")
 				.swiper-container
 					.swiper-wrapper.ai-c
-						.swiper-slide
-							._with-project
-								.swiper-container
-									.swiper-wrapper
-										.swiper-slide
-											.bock-item-style-1
-												.item__img.ov-h
-													img.fullsize.object-cover(src="./assets/images/index-service/1.png", alt="")
-												.item__desc
-													.item__subtitle Dự án KPY thiết kế nội thất
-													.item__title.cl-main-1 Nội thất Văn phòng - Showroom
-								.relate-prev-slider
-									.button-prev.custom
-								.relate-next-slider
-									.button-next.custom
-				.index-service-prev-slider
-					.btn.btn-prev-text Sau
-				.index-service-next-slider
-					.btn.btn-next-text Trước
+						-for(var i = 0; i< 3; i++)
+							.swiper-slide
+								._with-project
+									.swiper-container
+										.swiper-wrapper
+											.swiper-slide
+												.bock-item-style-1
+													.item__img.ov-h
+														img.fullsize.object-cover(src="./assets/images/index-service/1.png", alt="")
+													.item__desc
+														.item__subtitle Dự án KPY thiết kế nội thất
+														.item__title.cl-main-1 Nội thất Văn phòng - Showroom
+									.relate-prev-slider
+										.button-prev.custom
+									.relate-next-slider
+										.button-next.custom
+				.list-button-relate-news
+					.relate-prev-slider
+						.btn.btn-prev-text Sau
+					.relate-next-slider
+						.btn.btn-next-text Trước
 		.index-service-wrapper
 			.main-title.ta-c.wow.fadeInUp(data-wow-delay=".2s")
 				h2.cl-main-1.text-uppercase.service DỰ ÁN TIÊU BIỂU

@@ -628,54 +628,86 @@ const initPartnerSlider=()=>{
 
 const initSliderProject = ()=>{
 	let ServicetIndexPage = new Swiper(
-		".slider-service .swiper-container",
+		".slider-service>.swiper-container",
 		{
+			loop: true,
 			centeredSlides: true,
 			slidesPerView: 3,
-			simulateTouch: false,
-			loop: true,
-			speed: 1500,
-			// autoplay: {
-			// 	delay: 2000,
-			// },
-			loopedSlides: 3,
+			speed: 2000,
 			navigation: {
-				prevEl: ".index-service-prev-slider",
-				nextEl: ".index-service-next-slider",
+				prevEl: ".list-button-relate-news .relate-prev-slider",
+				nextEl: ".list-button-relate-news .relate-next-slider",
 			},
-			// breakpoints: {
-			// 	320: {
-			// 		slidesPerView: 1.4,
-			// 		spaceBetween: 10,
-			// 	},
-			// 	768: {
-			// 		spaceBetween: 0,
-			// 	},
-			// 	1025.98: {
-			// 		spaceBetween: -100,
-			// 	},
-			// 	1440: {
-			// 		spaceBetween: -135,
-			// 	},
-			// },
-		},
-	);
+			breakpoints: {
+				768: {
+				},
+				1025: {
+				},
+				1440: {
+				},
+			},
+		});
+}
+//swiper in swiper
+const swiperInSwiper = () => {
 
-	let project = new Swiper("._with-project .swiper-container", {
-		speed: 1500,
-		spaceBetween: 10,
-		loop: true,
-		slidesPerView: 1,
-		navigation: {
-			prevEl: "._with-project .relate-prev-slider",
-			nextEl: "._with-project .relate-next-slider",
-		},
-		// on:{
-		// 	init:function(){
-
-		// 	}
-		// },
-	});
+		let swiper = new Swiper(".slider-service>.swiper-container .swiper-slide-active .swiper-container", {
+			loop: true,
+			slidesPerView: 1,
+			speed: 2000,
+			navigation: {
+				prevEl: "._with-project .relate-prev-slider",
+				nextEl: "._with-project .relate-next-slider",
+			},
+			breakpoints: {
+				768: {
+				},
+				1025: {
+				},
+				1440: {
+				},
+			},
+		})
+	document.querySelector(".list-button-relate-news .relate-prev-slider").addEventListener("click" , () => {
+		swiper.destroy(true, true)
+		swiper = new Swiper(".slider-service>.swiper-container .swiper-slide-active .swiper-container", {
+			loop: true,
+			slidesPerView: 1,
+			speed: 2000,
+			navigation: {
+				prevEl: "._with-project .relate-prev-slider",
+				nextEl: "._with-project .relate-next-slider",
+			},
+			breakpoints: {
+				768: {
+				},
+				1025: {
+				},
+				1440: {
+				},
+			},
+		});
+	})
+	document.querySelector(".list-button-relate-news .relate-next-slider").addEventListener('click', () => {
+		swiper.destroy(true, true)
+		swiper = new Swiper(".slider-service>.swiper-container .swiper-slide-active .swiper-container", {
+			loop: true,
+			slidesPerView: 1,
+			speed: 2000,
+			navigation: {
+				prevEl: "._with-project .relate-prev-slider",
+				nextEl: "._with-project .relate-next-slider",
+			},
+			breakpoints: {
+				768: {
+				},
+				1025: {
+				},
+				1440: {
+				},
+			},
+		});
+	})
 }
 
 const ajaxContactForm = ()=>{
@@ -749,4 +781,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	swiperAboutProjects();
 	// ajaxContactForm
 	ajaxContactForm();
+	swiperInSwiper();
 });
