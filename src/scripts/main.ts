@@ -97,7 +97,7 @@ const intitSliderAboutIndexPage = () => {
 // INIT INDEX SERVICE SLIDER
 const initSliderServiceIndexPage = () => {
 	let ServicetIndexPage = new Swiper(
-		".slider-index-service .swiper-container",
+		".slider-index-service .swiper-container.first",
 		{
 			centeredSlides: true,
 			slidesPerView: 1,
@@ -511,6 +511,7 @@ const popupImage = () => {
 			},
 		},
 	});
+	service.slideToLoop(1, 1500, false);
 }
 // const swiperDocumentPopup = () => {
 // 	let sưiper = new Swiper(
@@ -603,6 +604,58 @@ const initPartnerSlider=()=>{
 	);
 }
 
+const initSliderProject = ()=>{
+	let ServicetIndexPage = new Swiper(
+		".slider-service .swiper-container",
+		{
+			centeredSlides: true,
+			slidesPerView: 3,
+			simulateTouch: false,
+			loop: true,
+			speed: 1500,
+			// autoplay: {
+			// 	delay: 2000,
+			// },
+			loopedSlides: 3,
+			navigation: {
+				prevEl: ".index-service-prev-slider",
+				nextEl: ".index-service-next-slider",
+			},
+			// breakpoints: {
+			// 	320: {
+			// 		slidesPerView: 1.4,
+			// 		spaceBetween: 10,
+			// 	},
+			// 	768: {
+			// 		spaceBetween: 0,
+			// 	},
+			// 	1025.98: {
+			// 		spaceBetween: -100,
+			// 	},
+			// 	1440: {
+			// 		spaceBetween: -135,
+			// 	},
+			// },
+		},
+	);
+
+	let project = new Swiper("._with-project .swiper-container", {
+		speed: 1500,
+		spaceBetween: 10,
+		loop: true,
+		slidesPerView: 1,
+		navigation: {
+			prevEl: "._with-project .relate-prev-slider",
+			nextEl: "._with-project .relate-next-slider",
+		},
+		// on:{
+		// 	init:function(){
+
+		// 	}
+		// },
+	});
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
@@ -630,6 +683,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initSliderProjectsIndexPage();
 	// INIT RELATE NEWS
 	initSwiperRelateNews();
+	initSliderProject();
 	///
 	initPartnerSlider();
 	//
