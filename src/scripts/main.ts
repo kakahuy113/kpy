@@ -573,11 +573,20 @@ const initSliderProject = ()=>{
 				nextEl: ".list-button-relate-news .relate-next-slider",
 			},
 			breakpoints: {
-				768: {
+				320: {
+					slidesPerView: 1,
 				},
-				1025: {
+				500: {
+					slidesPerView: 1.8,
+				},
+				768: {
+					slidesPerView: 3,
+				},
+				1025.98: {
+					spaceBetween: -100,
 				},
 				1440: {
+					spaceBetween: -105,
 				},
 			},
 		});
