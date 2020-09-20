@@ -604,3 +604,79 @@
 		}
 	}
 }
+
+.about-hot-project {
+	.main-title {
+		h2 {
+			&::before {
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+	.about-procedure__wrapper {
+		margin-bottom: 10rem;
+
+	}
+	.index-projects-wrapper {
+		margin-top: 0;
+	}
+	.slider-index-projects-review {
+		padding: 0;
+		&::before {
+			content: none;
+		}
+		&::after {
+			content: none;
+		}
+	}
+	.swiper-container {
+		&::before {
+			z-index: 0;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 400px;
+			height: 100%;
+			transform: translateY(-50%);
+			background: #212121;
+			content: "";
+		}
+		&::after {
+			z-index: 0;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			width: 400px;
+			height: 100%;
+			transform: translateY(-50%);
+			background: #212121;
+			content: "";
+		}
+	}
+	.slider-index-projects-review .bock-item-style-1 {
+		transform-origin: unset;
+		margin-bottom: unset;
+		transform: scale(.6);
+		transition: 1s all ease-in-out;
+		.item__desc {
+			opacity: 1 !important;
+		}
+	}
+	.swiper-slide-active {
+		.bock-item-style-1 {
+			transform: scale(1);
+			transition: 1s all ease-in-out;
+		}
+	}
+	.about-hot-project__wrapper {
+		margin-bottom: 4rem;
+	}
+	.explorer {
+		margin-bottom: 10rem;
+	}
+	.list-buttons-index-projects {
+		
+	}
+}
