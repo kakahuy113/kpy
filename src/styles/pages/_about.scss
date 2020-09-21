@@ -1,9 +1,12 @@
 .about-us {
-	.main-title  {
+	.about-title {
 		h3 {
 			font-size: 2.5rem;
 			color: #EAE2D0;
 		}
+	}
+	.main-title  {
+		
 		h2 {
 			padding-top: 1rem;
 			font-size: 2.5rem;
@@ -76,7 +79,7 @@
 	}
 	
 	.slider-index-projects {
-		max-width: 65.6%;
+		max-width: 61.6%;
 		width: 100%;
 		margin-left: auto;
 		@media (max-width: 1024.98px) {
@@ -191,7 +194,7 @@
 .about-project__wrapper {
 	margin-top: 0;
 	.slider-index-projects {
-		max-width: 63.6%;
+		max-width: 61.6%;
 		padding-bottom: 0;
 		.slider-index-projects-review {
 			padding: 0;
@@ -487,6 +490,7 @@
 		color: map-get($color, x-white);
 	}
 	.board {
+		
 		position: relative;
 		ul {
 			padding: 0;
@@ -580,7 +584,20 @@
 					height: 4rem;
 					background: #B5B5B5;
 				}
+				&:last-child {
+					&::after {
+						content: "";
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						left: -6%;
+						width: 6%;
+						height: 1px;
+						background: #B5B5B5;
+					}
+				}
 			}
+			
 		}
 		.sub-column {
 			padding-top: 0;
@@ -591,6 +608,24 @@
 				&::before {
 					content: none;
 				}
+			}
+		}
+		.diagram-bottom {
+			overflow: hidden;
+			position: relative;
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 24.5%;
+				height: calc(80% - 30px);
+				width: 1px;
+				background: #B5B5B5;
+			}
+		}
+		.destroy-after {
+			&::after {
+				content: none !important;
 			}
 		}
 		@media (max-width: 767.98px) {
@@ -772,7 +807,7 @@
 			position: absolute;
 			top: 50%;
 			left: 0;
-			width: 400px;
+			width: 20%;
 			height: 100%;
 			transform: translateY(-50%);
 			background: #212121;
@@ -783,7 +818,7 @@
 			position: absolute;
 			top: 50%;
 			right: 0;
-			width: 400px;
+			width: 20%;
 			height: 100%;
 			transform: translateY(-50%);
 			background: #212121;
@@ -812,6 +847,12 @@
 		margin-bottom: 10rem;
 	}
 	.list-buttons-index-projects {
-		
+		bottom: 0;
+		width: 42%;
+		.index-projects-next-slider {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
 	}
 }
