@@ -1,11 +1,11 @@
-// {
-// 	"files": ["src/scripts/main.ts", "src/scripts/map.ts"],
-// 	"compilerOptions": {
-// 		"noImplicitAny": true,
-// 		"lib": ["es6", "dom", "es2018"],
-// 		"target": "ES5",
-// 		"types": [ "googlemaps"],
-// 		"outDir": "ts-built",
-//         "rootDir": "src"
-// 	}
-// }
+{
+	"files": ["src/scripts/main.ts"],
+	"compilerOptions": {
+		"noImplicitAny": true,
+		"lib": ["es6", "dom", "es2018"],
+		"target": "ES5",
+		"types": [ "googlemaps"],
+		"outDir": "ts-built",
+        "rootDir": "src"
+	}
+}
