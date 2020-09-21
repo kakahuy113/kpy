@@ -268,6 +268,14 @@ const initSliderProjectsIndexPage = () => {
 				watchSlidesProgress: true,
 				speed: 1500,
 				spaceBetween: 20,
+				breakpoints: {
+					1600: {
+						slidesPerView: 3,
+					},
+					1025: {
+						slidesPerView: 1,
+					},
+				},
 			},
 		);
 		let ProjectsIndexPage = new Swiper(
@@ -289,14 +297,15 @@ const initSliderProjectsIndexPage = () => {
 				thumbs: {
 					swiper: ProjectsIndexPageThumb,
 				},
-				// breakpoints: {
-				// 	1600: {
-				// 		slidesPerView: 1.8,
-				// 	},
-				// 	1025: {
-				// 		slidesPerView: 1.3,
-				// 	},
-				// },
+				breakpoints: {
+					1600: {
+						slidesPerView: 1.8,
+					},
+					575: {
+				spaceBetween: -20,
+						slidesPerView: 1.2,
+					},
+				},
 		});
 	}
 };
