@@ -24,6 +24,10 @@
         background: unset;
         right: 68px;
         bottom: 20px;
+        @media (max-width: 430.98px) {
+            right: 5px;
+            bottom: 0px;
+        }
     }
     &:after {
         content: "";

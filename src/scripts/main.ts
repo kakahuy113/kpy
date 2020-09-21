@@ -511,9 +511,9 @@ const swiperAboutProjects = () => {
 			simulateTouch: false,
 			loop: true,
 			speed: 2000,
-			// autoplay: {
-			// 	delay: 1000,
-			// },
+			autoplay: {
+				delay: 1000,
+			},
 			breakpoints: {
 				1024.98: {
 					slidesPerView: 1.4,
