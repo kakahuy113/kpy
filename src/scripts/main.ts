@@ -520,19 +520,25 @@ const swiperAboutProjects = () => {
 			simulateTouch: false,
 			loop: true,
 			speed: 2000,
-			// autoplay: {
-			// 	delay: 1000,
-			// },
-			spaceBetween: 0,
+			autoplay: {
+				delay: 1000,
+			},
 			breakpoints: {
-				1600: {
+				1024.98: {
 					slidesPerView: 1.4,
-					spaceBetween: -55,
+					spaceBetween: -65,
+					centeredSlides: false,
 				},
-				1025: {
+				767.98: {
+					slidesPerView: 1.8,
+					spaceBetween: -45,
+					centeredSlides: true,
+				},
+				300: {
 					slidesPerView: 1.3,
-					spaceBetween: -85,
-				},
+					spaceBetween: -30,
+					centeredSlides: true,
+				}
 			},
 		},
 	);
@@ -664,7 +670,7 @@ const swiperInSwiper = () => {
 }
 
 const ajaxContactForm = ()=>{
-	$('button.btn.btn-view-more').on('click', function(e) {
+	$('button.btn.btn-view-more').on('click', function(e:any) {
         e.preventDefault();
         const _thisBtn = $(this);
         const url = _thisBtn.attr('data-url');
@@ -684,7 +690,7 @@ const ajaxContactForm = ()=>{
                 beforeSend: function() {
                     _thisBtn.attr('disabled', 'disabled');
                 },
-                success: function(res) {
+                success: function(res:any) {
                     alert(`${res.Message}`);
                     window.location.reload();
                     _thisBtn.removeAttr('disabled');
@@ -719,7 +725,6 @@ const activeMenuTab = () => {
 }
 
 const swiperAboutProject = () => {
-	
 	let ProjectsIndexPage = new Swiper(
 		".about-hot-project__wrapper .swiper-container",
 		{

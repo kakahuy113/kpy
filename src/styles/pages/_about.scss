@@ -27,9 +27,14 @@
 			}
 		}
 	}
+	
 }
 .about-project {
 	margin-bottom: 20rem;
+	@media (max-width: 1024.98px) {
+		margin-top: 5rem;
+		margin-bottom: 5rem;
+	}
 	&.index-projects {
 		margin-top: 100px;
 		.main-title {
@@ -67,17 +72,6 @@
 		}
 		@media (max-width: 575.98px) {
 			margin-top: 50px;
-		}
-	}
-	
-	.index-projects-wrapper {
-		position: relative;
-		margin-top: 145px;
-		@media (max-width: 1024.98px) {
-			margin-top: 50px;
-		}
-		@media (max-width: 767.98px) {
-			margin-top: 75px;
 		}
 	}
 	
@@ -123,6 +117,7 @@
 			transform: scale(0.7);
 			transition: 0.5s 1.5s transform ease-in-out;
 			margin-bottom: 10px;
+			transform-origin: unset !important;
 			.item__desc {
 				width: 80%;
 				left: 0;
@@ -156,13 +151,6 @@
 				pointer-events: none;
 				transition: 0.35s opacity ease-in-out;
 			}
-			@media (max-width: 1024.98px) {
-				transform: scale(1);
-				.item__desc {
-					bottom: 0;
-					padding: 10px 20px;
-				}
-			}
 		}
 		&:after {
 			content: "";
@@ -186,12 +174,17 @@
 		width: 100%;
 		height: 100%;
 	  
-		@media (max-width: 767.98px) {
+		@media (max-width: 1024.98px) {
 			position: static;
 			left: unset;
 			top: unset;
 			transform: unset;
-			margin-bottom: 25px;
+			margin-bottom: 0px;
+		}
+	}
+	.slider-index-projects-review {
+		&::before {
+			content: none;
 		}
 	}
 }
@@ -205,13 +198,34 @@
 			&::after {
 				content: none;
 			}
+			.bock-item-style-1 {
+				margin-bottom: 0;
+			}
 		}
+		@media (max-width: 1024.98px) {
+			max-width: 100%;
+			.bock-item-style-1 {
+				transform: scale(.7);
+				transform-origin: unset;
+			}
+		}
+	
 	}
 	.categories-projects {
 		flex-wrap: nowrap;
-		max-width: 30%;
+		max-width: 32%;
 		> div {
 			margin-bottom: 3rem;
+			@media (max-width: 1399.98px) {
+				margin-bottom: 1rem;
+			}
+			@media (max-width: 1024.98px) {
+				justify-content: center;
+				align-self: center;
+			}
+			@media (max-width: 575.98px) {
+				margin-bottom: 0;
+			}
 		}
 		.value-item {
 			display: flex;
@@ -276,6 +290,25 @@
 			}
 			
 		}
+		@media (max-width: 1024.98px) {
+			max-width: 100%;
+		}
+		@media (max-width: 767.98px) {
+			flex-direction: column;
+			justify-content: unset;
+			max-width: 100%;
+		}
+		@media (max-width: 575.98px) {
+			.value-item {
+				.icon-value {
+					&::before {
+						top:50%;
+						left: 0;
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
 	}
 }
 .about-procedure__wrapper {
@@ -284,6 +317,14 @@
 			top: 0;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+		@media (max-width: 1024.98px) {
+			padding-top: 6rem;
+			&::before {
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
 		}
 	}
 }
@@ -322,8 +363,8 @@
 				&::before {
 					content: "";
 					position: absolute;
-					width: 47px;
-					height: 47px;
+					width: 40px;
+					height: 40px;
 					top: 50%;
 					left: 50%;
 					transform: translate(-50%,-50%);
@@ -351,8 +392,11 @@
 					top: 50%;
 					transform: translateY(-50%);
 					background: rgba($color: #B5B5B5, $alpha: .4);
-					width: 10rem;
+					width: 9rem;
 					height: 1px;
+				}
+				@media (max-width: 575.98px) {
+					padding-left: 11rem;
 				}
 			}
 			
@@ -366,15 +410,18 @@
 				-ms-flex: 0 0 50%;
 				flex: 0 0 50%;
 				max-width: 50%;
-				&:before {
+				&::before {
 					position: absolute;
 					content: "";
 					right: 0;
 					top: 50%;
 					transform: translateY(-50%);
 					background: rgba($color: #B5B5B5, $alpha: .4);
-					width: 10rem;
+					width: 9rem;
 					height: 1px;
+				}
+				@media (max-width: 575.98px) {
+					padding-right: 11rem;
 				}
 			}
 			
@@ -400,6 +447,27 @@
 			}
 		}
 	}
+	@media (max-width: 575.98px) {
+		.item {
+			padding: 2rem 0;
+			.item__wrapper {
+				&::before {
+					width: 5rem !important;
+				}
+				.step {
+					font-size: 1.5rem;
+					span {
+						font-size: 2.5rem;
+						&::before {
+							width: 30px;
+							height: 30px;
+						}
+					}
+				}
+			}
+		}
+		
+	}
 }
 
 .about-oganization {
@@ -411,7 +479,13 @@
 }
 
 .org-chart {
+	font-family: SVN--Bold;
 	margin-top: 10rem;
+	span {
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		color: map-get($color, x-white);
+	}
 	.board {
 		position: relative;
 		ul {
@@ -519,6 +593,14 @@
 				}
 			}
 		}
+		@media (max-width: 767.98px) {
+			li {
+				height: 40px !important;
+			}
+			span {
+				font-size: 1rem;
+			}
+		}
 	}
 }
 
@@ -540,43 +622,91 @@
 	.blur-item {
 		filter: blur(4px);
 		position: absolute;
-		top: 7%;
-		left: 36.5%;
+	
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;
 		background: rgba($color: #fff, $alpha: .45);
+		&.one {
+			top: 8%;
+			left: 36.1%;
+			@media (max-width: 1599.98px) {
+				left: 36.5%;
+			}
+			@media (max-width: 575.98px) {
+				top: 6%;
+			}
+		}
 		&.two {
 			top: 22%;
-			left: 11%;
+			left: 10%;
 		}
 		&.three {
 			top: 41%;
-			left: 18%;
+			left: 17%;
 		}
 		&.four {
-			top: 32%;
-			left: 53%;
+			top: 32.5%;
+			left: 52%;
+			@media (max-width: 1599.98px) {
+				left: 53%;
+			}
+			@media (max-width: 575.98px) {
+				left: 52%;
+				top: 31.5%;
+			}
 		}
 		&.five {
 			top: 24%;
-			left: 76.5%;
+			left: 75.5%;
+			@media (max-width: 1599.98px) {
+				left: 76.5%;
+			}
+			@media (max-width: 575.98px) {
+				top: 22%;
+				left: 75.5%;
+			}
 		}
 		&.six {
 			top: 38%;
-			left: 86%;
+			left: 85%;
+			@media (max-width: 1599.98px) {
+				left: 86%;
+			}
+			@media (max-width: 575.98px) {
+				left: 85%;
+			}
 		}
 		&.seven {
-			top: 65%;
-			left: 86%;
+			top: 66%;
+			left: 85%;
+			@media (max-width: 1599.98px) {
+				left: 86%;
+			}
+			@media (max-width: 575.98px) {
+				left: 85%;
+			}
 		}
 		&.eight{
 			top: 80%;
-			left: 80.5%;
+			left: 79.5%;
+			@media (max-width: 1599.98px) {
+				left: 80.5%;
+			}
+			@media (max-width: 575.98px) {
+				left: 79.5%;
+			}
 		}
 		&.nine{
 			top: 55%;
-			left: 77.5%;
+			left: 76.5%;
+			@media (max-width: 1599.98px) {
+				left: 77.5%;
+			}
+			@media (max-width: 575.98px) {
+				top: 53%;
+				left: 76.5%;
+			}
 		}
 		&.active {
 			background: #E37313 !important;
@@ -602,10 +732,15 @@
 				border: 2px solid #E37313;
 			}
 		}
+		@media (max-width: 1024px) {
+			width: 20px;
+			height: 20px;
+		}
 	}
 }
 
 .about-hot-project {
+	margin-top: 0;
 	.main-title {
 		h2 {
 			&::before {

@@ -7,6 +7,7 @@
         font-family: SVN--Bold;
         font-size: 5rem;
         padding-top: 12rem;
+        color: map-get($color, main-1);
         &:before,
         &:after {
             color: rgba($color: map-get($color, x-white), $alpha: 0.03);
