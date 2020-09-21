@@ -255,12 +255,12 @@ const initSliderClientsIndexPage = () => {
 
 // INIT PROJECTS NEWS SLIDER
 const initSliderProjectsIndexPage = () => {
-	if (document.querySelector(".index-page")) {
+	// if (document.querySelector(".index-page")) {
 		let ProjectsIndexPageThumb = new Swiper(
 			".slider-index-projects-thumb .swiper-container",
 			{
 				slidesPerView: 3,
-				simulateTouch: false,
+				// simulateTouch: false,
 				loop: true,
 				grabCursor: true,
 				freeMode: true,
@@ -269,11 +269,18 @@ const initSliderProjectsIndexPage = () => {
 				speed: 1500,
 				spaceBetween: 20,
 				breakpoints: {
-					1600: {
+					1440: {
+						slidesPerView: 3,
+					},
+					1200:{
 						slidesPerView: 3,
 					},
 					1025: {
-						slidesPerView: 1,
+						slidesPerView: 3,
+					},
+					768:{
+						slidesPerView: 3,
+
 					},
 				},
 			},
@@ -281,7 +288,7 @@ const initSliderProjectsIndexPage = () => {
 		let ProjectsIndexPage = new Swiper(
 			".slider-index-projects-review .swiper-container",
 			{
-				slidesPerView: 3,
+				// slidesPerView: 3,
 				simulateTouch: false,
 				centeredSlides: true,
 				loop: true,
@@ -298,16 +305,24 @@ const initSliderProjectsIndexPage = () => {
 					swiper: ProjectsIndexPageThumb,
 				},
 				breakpoints: {
-					1600: {
-						slidesPerView: 1.8,
+					1440.98:{
+						slidesPerView: 3,
 					},
-					575: {
-				spaceBetween: -20,
-						slidesPerView: 1.2,
+					1025:{
+						slidesPerView: 1.5,
+						spaceBetween: 20,
 					},
+					768:{
+						slidesPerView: 1.5,
+						spaceBetween: 20,
+					},
+					320:{
+						slidesPerView: 1,
+						spaceBetween: 0,
+					}
 				},
 		});
-	}
+	// }
 };
 
 // SET HEIGHT TEXT WRAPPER
