@@ -1113,18 +1113,18 @@
                 width: 162px;
             }
         }
-        // .client-img {
-        //     -ms-flex: 0 0 100%;
-        //     -webkit-box-flex: 0;
-        //     flex: 0 0 87px;
-        //     max-width: 87px;
-        //     height: 87px;
-        //     background: rgba($color: #707070, $alpha: 0.3);
-        //     border-radius: 50%;
-        // }
         .client-quote {
             padding-left: 22px;
             position: relative;
+            @media (max-width: 575.98px) {
+                max-height: 156px;
+                height: 100%;
+                overflow-y: auto;
+                padding-left: 10px;
+                &::-webkit-scrollbar {
+                    width: 2px !important;
+                }
+            }
             &:after {
                 content: "";
                 position: absolute;
@@ -1134,6 +1134,9 @@
                 width: 2px;
                 background: map-get($color, main-1);
                 transform: translateY(-50%);
+                @media (max-width: 575.98px) {
+                    content: none;
+                }
             }
         }
         .client-name {
@@ -1143,6 +1146,17 @@
                 font-size: 25px;
                 text-transform: uppercase;
                 margin-bottom: 5px;
+                color: map-get($color, main-1);
+                @media (max-width: 575.98px) {
+                    padding-left: 10px;
+                    font-size: 15px;
+                }
+            }
+            span {
+                @media (max-width: 575.98px) {
+                    padding-left: 10px;
+                    font-size: 10px;
+                }
             }
         }
     }
@@ -1262,6 +1276,9 @@
         min-height: 282px;
         height: calc(100% - 148px);
         border: 1px solid #B5B5B5;
+        @media (max-width: 575.98px) {
+            border: none;
+        }
         .form-group {
             margin-bottom: 20px;
             &:last-child {
@@ -1313,6 +1330,12 @@
                 padding: unset;
                 margin-top: 40px;
             }
+            @media (max-width: 575.98px) {
+                -ms-flex: 0 0 90%;
+                flex: 0 0 90%;
+                max-width: 90%;
+                margin-top: 20px;
+            }
             &:hover {
                 .item__desc {
                     background: #212121;
@@ -1323,7 +1346,11 @@
                 position: relative;
                 padding: 46px 68px 52px 86px;
                 border: 1px solid #707070;
-                @media (max-width: 430.98px) {
+                @media (max-width: 1024.98px) {
+                    padding: 30px;
+                    padding-left: 46px;
+                }
+                @media (max-width: 575.98px) {
                     padding: 20px;
                 }
             }
@@ -1343,12 +1370,19 @@
                     width: 2px;
                     background: map-get($color, main-1);
                     transform: translateY(-50%);
+                    @media (max-width: 575.98px) {
+                        left: 0px;
+                    }
+                }
+                @media (max-width: 1359.98px) {
+                    font-size: 20px;
                 }
                 @media (max-width: 1024px) {
                     font-size: 18px;
                 }
                 @media (max-width: 575.98px) {
                     font-size: 12px;
+                    padding-left: 10px;
                 }
             }
             .item__subtitle {
@@ -1360,6 +1394,9 @@
                 text-overflow: ellipsis;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 3;
+                @media (max-width: 1359.98px) {
+                    font-size: 15px;
+                }
                 @media (max-width: 575.98px) {
                     padding-bottom: 10px;
                     font-size: 12px;
@@ -1371,6 +1408,10 @@
     .index-partner {
         padding-top: 9rem;
         padding-bottom: 12.7rem;
+        @media (max-width: 575.98px) {
+            padding-top: 5rem;
+            padding-bottom: unset;
+        }
         .partner-wrapper {
             height: 115px;
         }

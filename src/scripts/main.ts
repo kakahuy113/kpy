@@ -149,21 +149,21 @@ const initSliderShowroom = () => {
 				prevEl: ".index-service-prev-slider",
 				nextEl: ".index-service-next-slider",
 			},
-			// breakpoints: {
-			// 	320: {
-			// 		slidesPerView: 1.4,
-			// 		spaceBetween: 10,
-			// 	},
-			// 	768: {
-			// 		spaceBetween: 0,
-			// 	},
-			// 	1025.98: {
-			// 		// spaceBetween: -100,
-			// 	},
-			// 	1440: {
-			// 		// spaceBetween: -135,
-			// 	},
-			// },
+			breakpoints: {
+				320: {
+					slidesPerView: 1.4,
+					spaceBetween: 10,
+				},
+				768: {
+					slidesPerView: 1.8,
+				},
+				1025.98: {
+					slidesPerView: 3,
+				},
+				1440: {
+					// spaceBetween: -135,
+				},
+			},
 		},
 	);
 };
@@ -230,9 +230,9 @@ const initSliderClientsIndexPage = () => {
 		simulateTouch: false,
 		loop: true,
 		speed: 2000,
-		autoplay: {
-			delay: 1000,
-		},
+		// autoplay: {
+		// 	delay: 1000,
+		// },
 		spaceBetween: 10,
 		navigation: {
 			prevEl: ".index-clients-prev-slider",
