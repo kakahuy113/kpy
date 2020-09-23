@@ -1,0 +1,18 @@
+section.galleries-image
+	.container
+		.container-custom.size-1365px
+			.galleries-image__wrapper
+				.main-title.ta-c.wow.fadeInUp(data-wow-delay=".2s")
+					h2.cl-main-1.text-uppercase Dự án
+				.gallery--content
+					.list-gallery.row.bounceInLeft
+						-for(var j = 1; j < 10; j++)
+							.item-image.custom.col-lg-4.col-sm-6.wow.bounceInLeft(data-wow-delay=".2s")
+								.img
+									img.object-cover.fullsize(src=`./assets/images/gallery/image/item-${j}.png`, alt="something")
+								.button-next
+								.button-prev
+								.desc-image
+									h2 Kim Do Hotel
+									p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque libero magni consequatur recusandae in vel! Velit aspernatur sint voluptatibus quaerat rem quis beatae eveniet, doloremque ipsum nam quas deleniti nostrum?
+				include ../_layout/_pagination
