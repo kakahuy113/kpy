@@ -255,7 +255,7 @@ const initSliderClientsIndexPage = () => {
 
 // INIT PROJECTS NEWS SLIDER
 const initSliderProjectsIndexPage = () => {
-	// if (document.querySelector(".index-page")) {
+	if (document.querySelector(".index-page")) {
 		let ProjectsIndexPageThumb = new Swiper(
 			".slider-index-projects-thumb .swiper-container",
 			{
@@ -322,7 +322,7 @@ const initSliderProjectsIndexPage = () => {
 					}
 				},
 		});
-	// }
+	}
 };
 
 // SET HEIGHT TEXT WRAPPER
@@ -763,8 +763,32 @@ const swiperAboutProject = () => {
 				1025: {
 					// slidesPerView: 1.3,
 				},
+				600: {
+					slidesPerView: 1.8,
+				},
+				300: {
+					slidesPerView: 1,
+				}
+				
 			},
 	});
+}
+//share post facebook
+const sharePostFaceBook = () => {
+	if(document.querySelector(".shareface")) {
+		var url = window.location.href;
+		const endcodeurl = encodeURI(url);
+		$(".shareface").attr("href" , 
+		`javascript:window.open('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${endcodeurl}&display=popup&ref=plugin&src=share_button','popup','width=600,height=300')`)
+	}
+}
+//share tweet
+const shareTweet = () => {
+	if(document.querySelector(".sharetweet")) {
+		var url = window.location.href
+		const endcodeurl = encodeURI(url);
+		$(".sharetweet").attr("href" , `https://twitter.com/intent/tweet?url=${endcodeurl}`)
+	}
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -815,4 +839,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	activeMenuTab();
 	//about project hot sưiper
 	swiperAboutProject();
+	//share face
+	sharePostFaceBook();
+	//share tweet
+	shareTweet();
 });
