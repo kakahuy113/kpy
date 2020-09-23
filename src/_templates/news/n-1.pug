@@ -2,28 +2,28 @@ section.news
 	.container
 		.container-custom.size-1365px
 			.news__wrapper
-				.main-title.ta-c
+				.main-title.ta-c.wow.fadeInUp(data-wow-delay=".2s")
 					h2.cl-main-1.text-uppercase Tin Tức
-				.tab-news.active-tab
+				.tab-news.active-tab.wow.fadeInUp(data-wow-delay=".2s")
 					a(href="news.html").btn.activity-news Tin Tức Hoạt Động
 					a(href="#").btn.activity-news Cẩm nang nội thất
 				.hot-news__wrapper
-					.main-title--small
+					.main-title--small.wow.fadeInUp(data-wow-delay=".2s")
 						h2 Tin tức hoạt động nổi bật
 					.hot-news--content.row
 						-for(var i = 1 ; i <= 4; i++)
-							a(href="news-detail.html").bock-item-style-1.col-md-6.col-sm-12.d-block
+							a(href="news-detail.html" data-wow-delay=".2s").bock-item-style-1.col-md-6.col-sm-12.d-block.wow.fadeInUp
 								.item__img.ov-h
 									img.fullsize.object-cover(src=`./assets/images/news/hot-news-${i}.png`, alt="hotnews")
 								.item__desc
 									.item__title.lcl.lcl-1 Lorem ipsum dolor sit amet, sed do tempor
 									.item__subtitle.lcl.lcl-1 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa…
 				.offer__wrapper
-					.main-title--small
+					.main-title--small.wow.fadeInDown(data-wow-delay=".2s")
 						h2 Đề xuất cho bạn
 					.offer--content.row
 						-for(var i = 1 ; i <= 6; i++)
-							a(href="news-detail.html").bock-item-style-1.col-md-4.col-sm-6.d-block
+							a(href="news-detail.html" data-wow-delay=".2s").wow.fadeInDown.bock-item-style-1.col-md-4.col-sm-6.d-block
 								.item__img.ov-h
 									img.fullsize.object-cover(src=`./assets/images/news/offer-${i}.png`, alt="offer")
 								.item__desc

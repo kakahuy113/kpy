@@ -2,9 +2,9 @@ section.news-detail
 	.container
 		.container-custom.size-1365px
 			.news-detail__wrapper
-				span 27.08.2020
-				h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				.news-detail--content
+				span.wow.fadeInUp(data-wow-delay=".2s") 27.08.2020
+				h2.wow.fadeInUp(data-wow-delay=".2s") Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				.news-detail--content.wow.bounceInRight(data-wow-delay=".2s")
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					img(src="./assets/images/news-detail/detail-1.png", alt="Detail")
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -15,23 +15,23 @@ section.news-detail
 					p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					img(src="./assets/images/news-detail/detail-4.png", alt="detail")
 					p Lorem ipsum dolor sit amet.
-				.socials__wrapper.ov-h
+				.socials__wrapper.ov-h.wow.fadeInUp(data-wow-delay=".2s")
 					.row.no-gutters
 						.list-social
-							a(href="#").item-social
+							a(href="#").item-social.shareface
 								img.svg(src="./assets/icons/facebook.svg", alt="FACEBOOK")
-							a(href="#").item-social
-								img.svg(src="./assets/icons/instagram.svg", alt="INSTAGRAM")
+							a(href="#").item-social.sharetweet
+								img.svg(src="./assets/icons/twitter.svg", alt="INSTAGRAM")
 							a(href="#").item-social
 								img.svg(src="./assets/icons/youtube.svg", alt="YOUTUBE")
 			.relate-news.offer__wrapper
-				.main-title--small
+				.main-title--small.wow.fadeInUp(data-wow-delay=".2s")
 					h2 Đề xuất cho bạn
 				.swiper-container
 					.swiper-wrapper
 						-for(var i = 1; i <=3; i++)
 							.swiper-slide
-								.bock-item-style-1
+								.bock-item-style-1.wow.bounceInUp(data-wow-delay=".2s")
 									.item__img.ov-h
 										img.fullsize.object-cover(src=`./assets/images/news-detail/relate-${i}.png`, alt="relate New")
 									.item__desc
