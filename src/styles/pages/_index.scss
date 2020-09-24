@@ -562,7 +562,7 @@
     
     .slider-index-projects-review {
         position: relative;
-        padding: 80px 0;
+        padding-bottom: 80px;
         &:after {
             content: "";
             position: absolute;
@@ -1337,6 +1337,9 @@
                 margin-top: 20px;
             }
             &:hover {
+                .item__title {
+                    color: map-get($color, main-1);
+                }
                 .item__desc {
                     background: #212121;
                     box-shadow: 3px 3px 6px #000000;
@@ -1356,7 +1359,7 @@
             }
             .item__title {
                 position: relative;
-                color: map-get($color, main-1);
+                color: map-get($color, x-white);
                 font-size: 25px;
                 margin-bottom: 5px;
                 text-transform: uppercase;
@@ -1374,7 +1377,10 @@
                         left: 0px;
                     }
                 }
-                @media (max-width: 1359.98px) {
+                @media (max-width: 1440.98px) {
+                    font-size: 21px;
+                }
+                @media (max-width: 1366.98px) {
                     font-size: 20px;
                 }
                 @media (max-width: 1024px) {
@@ -1387,7 +1393,7 @@
             }
             .item__subtitle {
                 font-family: SVN--Light;
-                color: map-get($color, x-white);
+                color: map-get($color, main-3);
                 font-size: 17px;
                 overflow: hidden;
                 display: -webkit-box;
@@ -1398,8 +1404,9 @@
                     font-size: 15px;
                 }
                 @media (max-width: 575.98px) {
-                    padding-bottom: 10px;
+                    margin-bottom: 10px;
                     font-size: 12px;
+                    -webkit-line-clamp: 2;
                 }
             }
         }

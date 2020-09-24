@@ -103,6 +103,12 @@
             background-size: 100% 100%;
         }
         &.custom {
+            .desc-image {
+                top: 50%;
+            }
+            &::before {
+                content: none;
+            }
             @media (min-width: 1025px) {
                 &:hover {
                     .desc-image {
@@ -112,7 +118,6 @@
                     .button-next,
                     .button-prev {
                         opacity: 0;
-                        transition: .3s all ease-in-out;
                     }
                 }
             }

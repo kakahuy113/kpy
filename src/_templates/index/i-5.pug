@@ -13,8 +13,16 @@ section.index-gallery.ov-h
 							.item__desc
 								.item__title Lorem ipsum
 								.item__subtitle Lorem ipsum dolor sit amet
+							//place to BE 
+							.d-none
+								.wrapper
+									-for(var i = 1; i < 10; i++)
+										.swiper-slide
+											.bock-item-style-1
+												.item__img.ov-h
+													img.fullsize.object-cover(src=`./assets/images/gallery/image/item-${i}.png`, alt="item")
 					.swiper-slide
-						.bock-item-style-1.isVideo
+						.bock-item-style-1(data-fancybox href="https://www.youtube.com/watch?v=dLWB0twXAl8&ab_channel=b%E1%BA%A5t%C4%91%E1%BB%99ngs%E1%BA%A3ntp")
 							.item__img.ov-h
 								img.fullsize.object-cover(src="./assets/images/index-garelly/2.png", alt="")
 							.item__desc
@@ -27,6 +35,14 @@ section.index-gallery.ov-h
 							.item__desc
 								.item__title Lorem ipsum
 								.item__subtitle Lorem ipsum dolor sit amet
+							//place to BE 
+							.d-none
+								.wrapper
+									-for(var i = 1; i < 10; i++)
+										.swiper-slide
+											.bock-item-style-1
+												.item__img.ov-h
+													img.fullsize.object-cover(src=`./assets/images/gallery/image/item-${i}.png`, alt="item")
 					.swiper-slide
 						.bock-item-style-1
 							.item__img.ov-h
@@ -34,13 +50,42 @@ section.index-gallery.ov-h
 							.item__desc
 								.item__title Lorem ipsum
 								.item__subtitle Lorem ipsum dolor sit amet
+							//place to BE 
+							.d-none
+								.wrapper
+									-for(var i = 1; i < 10; i++)
+										.swiper-slide
+											.bock-item-style-1
+												.item__img.ov-h
+													img.fullsize.object-cover(src=`./assets/images/gallery/image/item-${i}.png`, alt="item")
 					.swiper-slide
 						.bock-item-style-1
 							.item__img.ov-h
 								img.fullsize.object-cover(src="./assets/images/index-garelly/5.png", alt="")
 							.item__desc
-								.item__title Lorem ipsum
+								.item__title Lorem ipsum 123
 								.item__subtitle Lorem ipsum dolor sit amet
+							//place to BE 
+							.d-none
+								.wrapper
+									-for(var i = 1; i < 10; i++)
+										.swiper-slide
+											.bock-item-style-1
+												.item__img.ov-h
+													img.fullsize.object-cover(src=`./assets/images/gallery/image/item-${i}.png`, alt="item")
+		.d-none
+			#pop-up--image
+				.slider-image-gallery
+					.slider-image-gallery__wrapper
+						.swiper-container
+							.swiper-wrapper.ai-c
+						.desc
+							.desc-content
+							.list-button-relate-news
+								.relate-prev-slider
+									.btn.btn-prev-text Sau
+								.relate-next-slider
+									.btn.btn-next-text Trước
 	.container
 		.container-custom.size-1365px
 			.list-buttons-index-gallery

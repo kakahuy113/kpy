@@ -59,8 +59,8 @@
                     height: 100%;
                 }
                 .item__desc {
-                    transform: scaleY(1.4);
-                    @media (max-width: 768.98px) {
+                    transform: scaleY(1.1);
+                    @media (max-width: 1024.98px) {
                         opacity: 0;
                     }
                 }
@@ -78,7 +78,7 @@
                 @media (max-width: 1024.98px) {
                     padding: 20px;
                 }
-                @media (max-width: 768.98px) {
+                @media (max-width: 1024.98px) {
                     opacity: 1 !important;
                 }
             }
