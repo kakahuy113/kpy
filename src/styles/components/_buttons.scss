@@ -24,7 +24,11 @@
         background: unset;
         right: 68px;
         bottom: 20px;
-        @media (max-width: 430.98px) {
+        @media (max-width: 1024.98px) {
+            right: 50px;
+            bottom: 10px;
+        }
+        @media (max-width: 575.98px) {
             right: 5px;
             bottom: 0px;
         }

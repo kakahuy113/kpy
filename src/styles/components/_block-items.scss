@@ -37,7 +37,35 @@
     }
 }
 
+.isImage {
+    cursor: pointer;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 1.8rem;
+        height: 1.8rem;
+        top: 1.4rem;
+        left: 2.4rem;
+        background: url(../assets/images/gallery/image/image.png) no-repeat;
+        background-size: 100% 100%;
+        z-index: 1;
+    }
+}
+
 .isVideo {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 2.8rem;
+        height: 1.8rem;
+        top: 1.4rem;
+        left: 2.4rem;
+        background: url(../assets/images/gallery/image/video.png) no-repeat;
+        background-size: 100% 100%;
+        z-index: 1;
+    }
     &:after {
         content: "";
         cursor: pointer;

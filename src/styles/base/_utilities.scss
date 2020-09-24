@@ -1,130 +1,164 @@
 [hidden],
 .hidden,
 .d-none {
-	display: none !important;
+    display: none !important;
 }
 
 .desktop {
-	@media (max-width: 1024px) {
-		display: none !important;
-	}
+    @media (max-width: 1024px) {
+        display: none !important;
+    }
 }
 
 .mobile {
-	@media (min-width: 1025px) {
-		display: none !important;
-	}
+    @media (min-width: 1025px) {
+        display: none !important;
+    }
 }
 
 .d-block {
-	display: block;
+    display: block;
 }
 
 .d-inline-block {
-	display: inline-block;
+    display: inline-block;
 }
 
 .d-flex {
-	display: flex;
+    display: flex;
 }
 
 .d-inline-flex {
-	display: inline-flex;
+    display: inline-flex;
 }
 
 .flex-wrap {
-	flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .ai-c {
-	align-items: center;
+    align-items: center;
 }
 
 .ci-e {
-	align-items: flex-end;
+    align-items: flex-end;
 }
 
 .justify-center {
-	justify-content: center;
+    justify-content: center;
 }
 
 .justify-end {
-	justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .justify-space-between {
-	justify-content: space-between;
+    justify-content: space-between;
 }
 
 .flex-center {
-	justify-content: center;
-	align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .list-style-none {
-	list-style-type: none;
+    list-style-type: none;
 }
 
 .ml-auto {
-	margin-left: auto;
+    margin-left: auto;
 }
 
 .mr-auto {
-	margin-right: auto;
+    margin-right: auto;
 }
 
 .mx-auto {
-	margin-right: auto;
-	margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .ov-h {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .ov-v {
-	overflow: visible;
+    overflow: visible;
 }
 
 .fs-i {
-	font-style: italic;
+    font-style: italic;
 }
 
 .fw-400 {
-	font-weight: 400;
+    font-weight: 400;
 }
 
 .fw-700 {
-	font-weight: 700;
+    font-weight: 700;
 }
 
 .font-family-SVNBOLD {
-	font-family: SVN--Bold;
+    font-family: SVN--Bold;
 }
 
 .text-uppercase {
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .text-capitalize {
-	text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .ta-c {
-	text-align: center;
+    text-align: center;
 }
 
 .ta-r {
-	text-align: right;
+    text-align: right;
 }
 
 .h-100 {
-	height: 100%;
+    height: 100%;
 }
 
 .h-100vh {
-	height: 100vh;
+    height: 100vh;
 }
+
 .opacity-0 {
-	opacity: 0;
+    opacity: 0;
+}
+
+.block-scroll {
+    overflow-y: hidden;
+}
+
+.pr {
+    &-40 {
+        padding-right: 40px;
+        @media (max-width: 1024.98px) {
+            padding-right: 0;
+        }
+    }
+}
+
+body {
+    position: relative;
+}
+
+#overlay {
+    &.active {
+        display: block;
+    }
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: map-get($color, main-1);
+    opacity: 40%;
+    z-index: 1;
+    cursor: pointer;
 }

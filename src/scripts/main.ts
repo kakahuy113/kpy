@@ -10,11 +10,29 @@ const toggleNavBar = () => {
 	const body = document.querySelector(".App-Animation");
 	const navBar = document.querySelector(".NavBar");
 	const navBar__items = navBar.querySelectorAll(".nav-item");
+	const bodyHtml = document.querySelector("body");
+	$(bodyHtml).after("<div id='overlay'></div>");
+	const overlay = document.querySelector("#overlay");
 	btn.addEventListener("click", (e) => {
 		btn.classList.toggle("active");
 		body.classList.toggle("animated");
 		navBar.classList.toggle("animated");
+		bodyHtml.classList.toggle("block-scroll");
+		if($(bodyHtml).hasClass("block-scroll")){
+			overlay.classList.add("active");
+		}else{
+			overlay.classList.remove("active");
+		}
 	});
+	if(overlay){
+		overlay.addEventListener("click",(e)=>{
+			overlay.classList.remove("active");
+			btn.classList.remove("active");
+			body.classList.remove("animated");
+			navBar.classList.remove("animated");
+			bodyHtml.classList.remove("block-scroll");
+		});
+	}
 	// INIT TIMEDELAY
 	navBar__items.forEach((item: any, index: any) => {
 		item.setAttribute("style", `--delay-out: ${(index + 5) * 0.1}s`);
@@ -149,21 +167,25 @@ const initSliderShowroom = () => {
 				prevEl: ".index-service-prev-slider",
 				nextEl: ".index-service-next-slider",
 			},
-			// breakpoints: {
-			// 	320: {
-			// 		slidesPerView: 1.4,
-			// 		spaceBetween: 10,
-			// 	},
-			// 	768: {
-			// 		spaceBetween: 0,
-			// 	},
-			// 	1025.98: {
-			// 		// spaceBetween: -100,
-			// 	},
-			// 	1440: {
-			// 		// spaceBetween: -135,
-			// 	},
-			// },
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 10,
+				},
+				575:{
+					slidesPerView: 1.2,
+					spaceBetween: 10,
+				},
+				768: {
+					slidesPerView: 1.8,
+				},
+				1025.98: {
+					slidesPerView: 3,
+				},
+				1440: {
+					// spaceBetween: -135,
+				},
+			},
 		},
 	);
 };
@@ -176,9 +198,9 @@ const initSliderGarellyIndexPage = () => {
 			simulateTouch: false,
 			loop: true,
 			speed: 2000,
-			autoplay: {
-				delay: 1000,
-			},
+			// autoplay: {
+			// 	delay: 1000,
+			// },
 			spaceBetween: 28,
 			navigation: {
 				prevEl: ".index-gallery-prev-slider",
@@ -230,9 +252,9 @@ const initSliderClientsIndexPage = () => {
 		simulateTouch: false,
 		loop: true,
 		speed: 2000,
-		autoplay: {
-			delay: 1000,
-		},
+		// autoplay: {
+		// 	delay: 1000,
+		// },
 		spaceBetween: 10,
 		navigation: {
 			prevEl: ".index-clients-prev-slider",
@@ -326,18 +348,18 @@ const initSliderProjectsIndexPage = () => {
 };
 
 // SET HEIGHT TEXT WRAPPER
-const setHeightTextWrapper = () => {
-	const height__items = document.querySelectorAll(".banner__text .text");
-	const backgrounds = document.querySelectorAll(
-		".banner__text .background-multiply",
-	);
-	height__items.forEach((item, index) => {
-		backgrounds[index].setAttribute(
-			"style",
-			`height:${item.clientHeight}px`,
-		);
-	});
-};
+// const setHeightTextWrapper = () => {
+// 	const height__items = document.querySelectorAll(".banner__text .text");
+// 	const backgrounds = document.querySelectorAll(
+// 		".banner__text .background-multiply",
+// 	);
+// 	height__items.forEach((item, index) => {
+// 		backgrounds[index].setAttribute(
+// 			"style",
+// 			`height:${item.clientHeight}px`,
+// 		);
+// 	});
+// };
 
 // INIT WOW JS
 const initWowJs = () => {
@@ -478,7 +500,6 @@ const initSwiperImage = () => {
 const popupImage = () => {
 	if(document.querySelector(".galleries-image")) {
 		document.querySelectorAll(".item-image").forEach(item => {
-		
 			item.addEventListener("click" , (e:any) => {
 				$.fancybox.open({
 					src  : '#pop-up--image',
@@ -525,6 +546,42 @@ const popupImage = () => {
 			},
 		},
 	});
+}
+
+const typeGallery = () =>{
+	const listItem = document.querySelectorAll(".slider-index-gallery .bock-item-style-1");
+	listItem.forEach(element => {
+		if (typeof $(element).attr("data-fancybox") !== typeof undefined && $(element).attr("data-fancybox") !== false) {
+			$(element).addClass("isVideo");
+		}else{
+			$(element).addClass("isImage");
+		}
+	});
+	if(document.querySelector(".index-page")) {
+		document.querySelectorAll(".isImage").forEach(item => {
+			item.addEventListener("click" , (e:any) => {
+				$.fancybox.open({
+					src  : '#pop-up--image',
+					type : 'inline',
+					transitionEffect: "fade",
+					touch : false,
+					opts : {
+						afterShow : function() {
+							initSwiperImage();
+						},
+						beforeShow : function() {
+							const desc = item.querySelector(".item__desc").innerHTML;
+							const slide = item.querySelector(".d-none .wrapper").innerHTML;	
+							const popup = document.querySelector("#pop-up--image")
+							popup.querySelector(".desc .desc-content").innerHTML = `${desc}`;
+							popup.querySelector(".swiper-wrapper").innerHTML = `${slide}`;
+						}
+					}
+				});
+				
+			})
+		})
+	}
 }
 
 const swiperAboutProjects = () => {
@@ -606,13 +663,14 @@ const initSliderProject = ()=>{
 				320: {
 					slidesPerView: 1,
 				},
-				500: {
-					slidesPerView: 1.8,
+				575: {
+					slidesPerView: 1.2,
 				},
 				768: {
-					slidesPerView: 3,
+					slidesPerView: 1.8,
 				},
 				1025.98: {
+					slidesPerView: 3,
 					spaceBetween: -100,
 				},
 				1440: {
@@ -803,7 +861,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// INIT MAIN SLIDER
 	initMainSliderBanner();
 	// SET HEIGHT TEXT WRAPPER
-	setHeightTextWrapper();
+	// setHeightTextWrapper();
 	// INIT INDEX ABOUT SLIDER
 	intitSliderAboutIndexPage();
 	// INIT INDEX SERVICE SLIDER
@@ -843,4 +901,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	sharePostFaceBook();
 	//share tweet
 	shareTweet();
+	typeGallery();
 });
