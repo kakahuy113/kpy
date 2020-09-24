@@ -1,7 +1,9 @@
 [hidden],
 .hidden,
 .d-none {
-    display: none !important;
+    opacity: 0;
+    height: 0;
+    transition: 1s all ease-in-out;
 }
 
 .desktop {

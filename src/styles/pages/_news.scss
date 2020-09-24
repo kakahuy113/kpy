@@ -5,6 +5,9 @@
     }
     .main-title--small {
         margin-bottom: 4rem;
+        @media (max-width: 575.98px) {
+            margin-bottom: 2rem;
+        }
     }
 }
 
@@ -41,6 +44,13 @@
         @media (max-width: 575.98px) {
             font-size: 2rem;
         }
+    }
+    @media (max-width: 575.98px) {
+        margin-bottom: 2rem;
+    a {
+        height: 40px;
+        font-size: 1.5rem;
+    }        
     }
 }
 
@@ -103,5 +113,8 @@
                 font-family: SVN--Light;
             }
         }
+    }
+    @media (max-width: 575.98px) {
+        margin-bottom: 0;
     }
 }
