@@ -508,9 +508,11 @@ const popupImage = () => {
 					touch : false,
 					opts : {
 						afterShow : function() {
-							initSwiperImage();
+								document.querySelector("#pop-up--image").setAttribute("style" , "opacity: 1")
+								initSwiperImage();
 						},
 						beforeShow : function() {
+							document.querySelector("#pop-up--image").setAttribute("style" , "opacity: 0")
 							const desc = item.querySelector(".desc-image").innerHTML;
 							const slide = item.querySelector(".d-none .wrapper").innerHTML;	
 							const popup = document.querySelector("#pop-up--image")
