@@ -55,8 +55,8 @@ section.service {
             left: 30%;
         }
         @media (max-width: 575.98px) {
-            top: 105%;
-            left: 40%;
+            top: 96%;
+            left: 10%;
         }
     }
     .relate-next-slider {
@@ -70,13 +70,20 @@ section.service {
             right: 30%;
         }
         @media (max-width: 575.98px) {
-            top: 105%;
-            right: 40%;
+            top: 96%;
+            right: 10%;
         }
     }
 }
 
 .slider-service {
+    .swiper-slide-prev {
+        pointer-events: none;
+    }
+    .swiper-slide-next {
+        pointer-events: none;
+        z-index: -1;
+    }
     .list-button-relate-news {
         .relate-prev-slider {
             position: absolute;
@@ -88,6 +95,9 @@ section.service {
                 top: 97%;
                 left: 30%;
             }
+            @media (max-width:575.98px) {
+                left: 10%;
+            }
         }
         .relate-next-slider {
             position: absolute;
@@ -98,6 +108,9 @@ section.service {
             @media (max-width: 1024px) {
                 top: 97%;
                 right: 30%;
+            }
+            @media (max-width:575.98px) {
+                right: 10%;
             }
         }
     }

@@ -59,7 +59,7 @@
                     height: 100%;
                 }
                 .item__desc {
-                    transform: scaleY(1.1);
+                    transform: scaleY(1.4);
                     @media (max-width: 1024.98px) {
                         opacity: 0;
                     }
@@ -72,6 +72,7 @@
                 transition: all .5s ease-in-out;
             }
             .item__desc {
+                transform: scaleY(1.1) !important;
                 padding: 30px 15px;
                 bottom: 10%;
                 transition: all .5s ease-in-out;
@@ -97,7 +98,7 @@
     }
     .index-service-prev-slider {
         right: 5%;
-        @media (max-width: 1359.98px) {
+        @media (max-width: 1439.98px) {
             left: 40%;
         }
         @media (max-width: 575.98px) {

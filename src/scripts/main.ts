@@ -687,6 +687,7 @@ const swiperInSwiper = () => {
 		let swiper = new Swiper(".slider-service>.swiper-container .swiper-slide-active .swiper-container", {
 			loop: true,
 			slidesPerView: 1,
+			simulateTouch: false,
 			speed: 2000,
 			navigation: {
 				prevEl: "._with-project .relate-prev-slider",
@@ -851,6 +852,16 @@ const shareTweet = () => {
 	}
 }
 
+const getLinkService = () =>{
+	const url = document.querySelector(".swiper-slide-active .url");
+	if(url){
+		const link = url.getAttribute("data-url");
+		const location = document.querySelector(".getLinkService a");
+		if(location){
+			location.setAttribute("href",link);
+		}
+	}
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
@@ -904,4 +915,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//share tweet
 	shareTweet();
 	typeGallery();
+	getLinkService();
 });
