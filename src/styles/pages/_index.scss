@@ -562,14 +562,14 @@
     
     .slider-index-projects-review {
         position: relative;
-        padding-bottom: 80px;
+        padding: 80px 0;
         &:after {
             content: "";
             position: absolute;
             top: 50%;
             right: 0;
             width: 10%;
-            height: 60%;
+            height: 70%;
             background: rgba($color: #212121, $alpha: 1);
             z-index: -1;
             transform: translateY(-50%);
@@ -583,7 +583,7 @@
             top: 50%;
             left: 0;
             width: 10%;
-            height: 60%;
+            height: 70%;
             transform: translateY(-50%);
             background: rgba($color: #212121, $alpha: 1);
             z-index: -1;
@@ -610,14 +610,18 @@
             }
             &-slide-prev {
                 .bock-item-style-1 {
-                    transform-origin: left;
-                    transition: 1.5s transform-origin cubic-bezier(0.4, 0, 1, 1);
+                    @media (min-width: 1441px) {
+                        transform-origin: left;
+                        transition: 1.5s transform-origin cubic-bezier(0.4, 0, 1, 1);
+                    }
                 }
             }
             &-slide-next {
                 .bock-item-style-1 {
-                    transform-origin: right;
-                    transition: 1.5s transform-origin cubic-bezier(0.4, 0, 1, 1);
+                    @media (min-width: 1441px) {
+                        transform-origin: right;
+                        transition: 1.5s transform-origin cubic-bezier(0.4, 0, 1, 1);
+                    }
                 }
             }
         }
@@ -707,7 +711,7 @@
         display: inline-flex;
         position: absolute;
         left: 50%;
-        bottom: -30px;
+        bottom: -50px;
         transform: translate(-50%, -50%);
         z-index: 100;
         // .index-projects-prev-slider {

@@ -69,3 +69,11 @@
 .ff-1 {
     font-family: SVN--Bold;
 }
+
+.cl-main-1 {
+    color: map-get($color, main-1);
+}
+
+.cl-white {
+    color: white;
+}
