@@ -31,99 +31,99 @@ import Serve from "./_tasks/Serve";
 //
 // Define packages
 const _ = {
-	gulp,
-	del,
-	pug,
-	sass,
-	postcss,
-	cssSort,
-	autoprefixer,
-	concat,
-	clean,
-	sourcemaps,
-	readFileSync,
-	stripComment,
-	uglify,
-	rename,
-	plumber,
-	babel,
-	babelify,
-	babelMinify,
-	browserify,
-	buffer,
-	source,
-	bSync,
-	tsify,
+    gulp,
+    del,
+    pug,
+    sass,
+    postcss,
+    cssSort,
+    autoprefixer,
+    concat,
+    clean,
+    sourcemaps,
+    readFileSync,
+    stripComment,
+    uglify,
+    rename,
+    plumber,
+    babel,
+    babelify,
+    babelMinify,
+    browserify,
+    buffer,
+    source,
+    bSync,
+    tsify,
 };
 
 const vendors = JSON.parse(readFileSync("_vendors.json"));
 // Clean dist
 const cleanDist = () => {
-	return FileManage(_).Delete("dist");
+    return FileManage(_).Delete("dist");
 };
 // Copy fonts
 const copyFonts = () => {
-	let fonts = vendors.fonts;
-	return FileManage(_).Copy(fonts, "dist/fonts");
+    let fonts = vendors.fonts;
+    return FileManage(_).Copy(fonts, "dist/fonts");
 };
 // Copy favicon
 const copyFavicon = () => {
-	return FileManage(_).Copy("./src/favicon/**/**", "dist/favicon");
+    return FileManage(_).Copy("./src/favicon/**/**", "dist");
 };
 // Copy assets
 const copyAssets = () => {
-	return FileManage(_).Copy(
-		"src/assets/**/**.{svg,png,jpg,jpeg,gif,mp4}",
-		"dist/assets",
-	);
+    return FileManage(_).Copy(
+        "src/assets/**/**.{svg,png,jpg,jpeg,gif,mp4}",
+        "dist/assets",
+    );
 };
 // Copy fake api
 const copyFakeApi = () => {
-	return FileManage(_).Copy("src/api/**/**", "dist/api");
+    return FileManage(_).Copy("src/api/**/**", "dist/api");
 };
 
 const coreJs = () => {
-	return CoreBuild(_).js(vendors);
+    return CoreBuild(_).js(vendors);
 };
 
 const coreCss = (cb) => {
-	return CoreBuild(_).css(vendors);
+    return CoreBuild(_).css(vendors);
 };
 
 const mainTs_Browserify = () => {
-	return MainBuild(_).tsBrowserify("main");
+    return MainBuild(_).tsBrowserify("main");
 };
 
 
 
 const mainJs_NormalBabel = () => {
-	return MainBuild(_).jsNormalBabel();
+    return MainBuild(_).jsNormalBabel();
 };
 
 const mainCss = () => {
-	return MainBuild(_).css();
+    return MainBuild(_).css();
 };
 
 const mainHtml = () => {
-	const glob = ["src/*.pug"];
-	return MainBuild(_).html(glob);
+    const glob = ["src/*.pug"];
+    return MainBuild(_).html(glob);
 };
 
 const serve = () => {
-	return Serve(_).server();
+    return Serve(_).server();
 };
 
 exports.dev = gulp.series(
-	cleanDist,
-	copyAssets,
-	copyFonts,
-	copyFavicon,
-	copyFakeApi,
-	coreJs,
-	coreCss,
-	mainTs_Browserify,
-	mainJs_NormalBabel,
-	mainCss,
-	mainHtml,
-	serve,
+    cleanDist,
+    copyAssets,
+    copyFonts,
+    copyFavicon,
+    copyFakeApi,
+    coreJs,
+    coreCss,
+    mainTs_Browserify,
+    mainJs_NormalBabel,
+    mainCss,
+    mainHtml,
+    serve,
 );

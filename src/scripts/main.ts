@@ -4,6 +4,7 @@ import * as animation from "./animations/animation";
 declare var Swiper: any;
 declare var WOW: any;
 declare var $: any;
+declare var grecaptcha:any;
 // TOGGLE NAVBAR
 const toggleNavBar = () => {
 	const btn = document.querySelector(".navBarHamburger__mainWrapper");
@@ -318,7 +319,7 @@ const initSliderProjectsIndexPage = () => {
 				// autoplay: {
 				// 	delay: 1000,
 				// },
-				spaceBetween: -66,
+				spaceBetween: -80,
 				navigation: {
 					prevEl: ".index-projects-prev-slider",
 					nextEl: ".index-projects-next-slider",
@@ -332,7 +333,7 @@ const initSliderProjectsIndexPage = () => {
 					},
 					1025:{
 						slidesPerView: 1.5,
-						spaceBetween: 20,
+						spaceBetween: 10,
 					},
 					768:{
 						slidesPerView: 1.5,
@@ -569,9 +570,11 @@ const typeGallery = () =>{
 					touch : false,
 					opts : {
 						afterShow : function() {
+							document.querySelector("#pop-up--image").setAttribute("style" , "opacity: 1")
 							initSwiperImage();
 						},
 						beforeShow : function() {
+							document.querySelector("#pop-up--image").setAttribute("style" , "opacity: 0")
 							const desc = item.querySelector(".item__desc").innerHTML;
 							const slide = item.querySelector(".d-none .wrapper").innerHTML;	
 							const popup = document.querySelector("#pop-up--image")
@@ -655,28 +658,30 @@ const initSliderProject = ()=>{
 		{
 			loop: true,
 			centeredSlides: true,
-			slidesPerView: 3,
+			slidesPerView: 1.8,
+			simulateTouch: false,
+
 			speed: 2000,
 			navigation: {
 				prevEl: ".list-button-relate-news .relate-prev-slider",
 				nextEl: ".list-button-relate-news .relate-next-slider",
 			},
 			breakpoints: {
-				320: {
-					slidesPerView: 1,
-				},
-				575: {
-					slidesPerView: 1.2,
-				},
-				768: {
-					slidesPerView: 1.8,
-				},
+				// 320: {
+				// 	slidesPerView: 1,
+				// },
+				// 575: {
+				// 	slidesPerView: 1.2,
+				// },
+				// 768: {
+				// 	slidesPerView: 1.8,
+				// },
 				1025.98: {
-					slidesPerView: 3,
-					spaceBetween: -100,
+					slidesPerView: 2.3,
+					spaceBetween: -85,
 				},
 				1440: {
-					spaceBetween: -105,
+					// spaceBetween: -105,
 				},
 			},
 		});
@@ -749,13 +754,16 @@ const ajaxContactForm = ()=>{
 	$('button.btn.btn-view-more').on('click', function(e:any) {
         e.preventDefault();
         const _thisBtn = $(this);
-        const url = _thisBtn.attr('data-url');
-        const formData = new FormData();
+		const url = _thisBtn.attr('data-url');
+		const formData = new FormData();
+		const responserRecaptcha = grecaptcha.getResponse();
+		const nameRecaptcha = document.querySelector(".g-recaptcha").getAttribute("name");
         $('.index-contact-form-wrapper form .form-group input').each(function() {
             const name = $(this).attr('name');
             const value = $(this).val();
             formData.append(name, value);
-        });
+		});
+		formData.append(nameRecaptcha,responserRecaptcha);
         if ($('.index-contact-form-wrapper form').valid() === true) {
             $.ajax({
                 url: url,
@@ -854,6 +862,27 @@ const shareTweet = () => {
 
 const getLinkService = () =>{
 	const url = document.querySelector(".swiper-slide-active .url");
+	const desc = document.querySelector(".slider-service .swiper-slide-active .item__desc");
+	const next = document.querySelector("#service-next");
+	const prev = document.querySelector("#service-pre");
+	next.addEventListener("click",(e)=>{
+		if(url){
+			const link = url.getAttribute("data-url");
+			const location = document.querySelector(".getLinkService a");
+			if(location){
+				location.setAttribute("href",link);
+			}
+		}
+	})
+	prev.addEventListener("click",(e)=>{
+		if(url){
+			const link = url.getAttribute("data-url");
+			const location = document.querySelector(".getLinkService a");
+			if(location){
+				location.setAttribute("href",link);
+			}
+		}
+	})
 	if(url){
 		const link = url.getAttribute("data-url");
 		const location = document.querySelector(".getLinkService a");
@@ -861,7 +890,23 @@ const getLinkService = () =>{
 			location.setAttribute("href",link);
 		}
 	}
+
 }
+const recaptcha = () => {
+	var script = document.createElement('script');
+	script.onload = function() {
+		console.log("Script loaded and ready");
+	};
+	const gReCp = document.querySelector(".g-recaptcha");
+	const siteKey= gReCp.getAttribute("data-sitekey");
+	console.log(gReCp);
+	
+	script.src = "https://www.google.com/recaptcha/api.js?render="+siteKey;
+	script.setAttribute("async", "");
+	script.setAttribute("defer", "");
+	document.getElementsByTagName('head')[0].appendChild(script);
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
@@ -916,4 +961,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	shareTweet();
 	typeGallery();
 	getLinkService();
+	recaptcha();
 });

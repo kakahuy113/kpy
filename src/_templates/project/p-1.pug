@@ -8,9 +8,9 @@ section.news.Project
 					a(href="").btn.activity-news Thiết kế & thi công nội thất
 					a(href="").btn.activity-news Thiết kế kiến trúc
 				.project__showroom
-					.main-title--small.wow.bounceInLeft(data-wow-delay="500ms")
+					.main-title--small.mb-0.wow.bounceInLeft(data-wow-delay="1000ms")
 						h2 Văn phòng - Showroom
-					.slider-project-showroom.wow.bounceInLeft(data-wow-delay="1s")
+					.slider-project-showroom.wow.bounceInLeft(data-wow-delay="1.5s")
 						.swiper-container
 							.swiper-wrapper.ai-c
 								.swiper-slide
@@ -18,30 +18,30 @@ section.news.Project
 										.item__img.ov-h
 											img.fullsize.object-cover(src="./assets/images/index-service/1.png", alt="")
 										.item__desc
-											.item__title 1Pac Office
-											.item__subtitle Thiết kế và thi công
+											.item__title.cl-white 1Pac Office
+											.item__subtitle.cl-white Thiết kế và thi công
 								.swiper-slide
 									.bock-item-style-1
 										.item__img.ov-hs
 											img.fullsize.object-cover(src="./assets/images/index-service/2.png", alt="")
 										.item__desc
-											.item__title IBL Office
-											.item__subtitle Thiết kế và thi công
+											.item__title.cl-white IBL Office
+											.item__subtitle.cl-white Thiết kế và thi công
 								.swiper-slide
 									.bock-item-style-1
 										.item__img.ov-h
 											img.fullsize.object-cover(src="./assets/images/index-service/3.png", alt="")
 										.item__desc
-											.item__title Hometec Office 
-											.item__subtitle Thiết kế và thi công
+											.item__title.cl-white Hometec Office 
+											.item__subtitle.cl-white Thiết kế và thi công
 						.index-service-prev-slider
 							.btn.btn-prev-text Sau
 						.index-service-next-slider
 							.btn.btn-next-text Trước
 				.project__hotel
-					.main-title--small.wow.bounceInRight(data-wow-delay="500ms")
+					.main-title--small.wow.bounceInRight(data-wow-delay="1000ms")
 						h2 Khách sạn - Nghĩ dưỡng
-					.relate-hotel.offer__wrapper.wow.bounceInRight(data-wow-delay="1000ms")
+					.relate-hotel.hover-slider-project.offer__wrapper.wow.bounceInRight(data-wow-delay="1500ms")
 						.swiper-container
 							.swiper-wrapper
 								-for(var i = 1; i <=3; i++)
@@ -58,9 +58,9 @@ section.news.Project
 							.hotel-next-slider
 								.btn.btn-next-text Trước
 				.project__restaurant
-					.main-title--small.wow.bounceInUp
+					.main-title--small.wow.bounceInUp(data-wow-duration="1s")
 						h2 Nhà hàng
-					.relate-restaurant.offer__wrapper.wow.bounceInUp(data-wow-duration="1s")
+					.relate-restaurant.hover-slider-project.offer__wrapper.wow.bounceInUp(data-wow-duration="1.5s")
 						.swiper-container
 							.swiper-wrapper
 								-for(var i = 1; i <=3; i++)
@@ -79,7 +79,7 @@ section.news.Project
 				.project__lasvegas
 					.main-title--small.wow.bounceInUp(data-wow-delay="1.5s" data-wow-duration="1s")
 						h2 Biệt thự - Căn hộ cao cấp
-					.relate-lasvegas.offer__wrapper.wow.bounceInUp(data-wow-delay="1s" data-wow-duration=".8s")
+					.relate-lasvegas.hover-slider-project.offer__wrapper.wow.bounceInUp(data-wow-delay="1s" data-wow-duration="1500ms")
 						.swiper-container
 							.swiper-wrapper
 								-for(var i = 1; i <=3; i++)
