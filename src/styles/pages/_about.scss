@@ -115,7 +115,7 @@
 		.bock-item-style-1 {
 			position: relative;
 			transform: scale(0.7);
-			transition: 0.5s 1.5s transform ease-in-out;
+			transition: 1s all ease-in-out;
 			margin-bottom: 10px;
 			transform-origin: unset !important;
 			.item__desc {
@@ -360,6 +360,7 @@
 				top: 50%;
 				transform: translateY(-50%);
 				&::before {
+					z-index: -1;
 					content: "";
 					position: absolute;
 					width: 40px;
@@ -391,7 +392,7 @@
 					top: 50%;
 					transform: translateY(-50%);
 					background: rgba($color: #B5B5B5, $alpha: .4);
-					width: 9rem;
+					width: 9.5rem;
 					height: 1px;
 				}
 				@media (max-width: 575.98px) {
@@ -415,7 +416,7 @@
 					top: 50%;
 					transform: translateY(-50%);
 					background: rgba($color: #B5B5B5, $alpha: .4);
-					width: 9rem;
+					width: 9.5rem;
 					height: 1px;
 				}
 				@media (max-width: 575.98px) {
