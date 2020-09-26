@@ -540,7 +540,7 @@ const popupImage = () => {
 		},
 		breakpoints: {
 			1025: {
-				slidesPerView: 3.5,
+				slidesPerView: 3.7,
 				spaceBetween: 20
 			},
 			600: {
@@ -667,15 +667,15 @@ const initSliderProject = ()=>{
 				nextEl: ".list-button-relate-news .relate-next-slider",
 			},
 			breakpoints: {
-				// 320: {
-				// 	slidesPerView: 1,
-				// },
-				// 575: {
-				// 	slidesPerView: 1.2,
-				// },
-				// 768: {
-				// 	slidesPerView: 1.8,
-				// },
+				320: {
+					slidesPerView: 1,
+				},
+				575: {
+					slidesPerView: 1.2,
+				},
+				768: {
+					slidesPerView: 1.8,
+				},
 				1025.98: {
 					slidesPerView: 2.3,
 					spaceBetween: -85,
