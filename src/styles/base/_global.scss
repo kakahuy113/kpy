@@ -77,3 +77,54 @@
 .cl-white {
     color: white;
 }
+
+.line-left {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: '';
+        background: #707070;
+        opacity: 70%;
+        width: 1px;
+        height: 330px;
+        left: 0;
+        top: -50%;
+        @media (max-width: 1440.98px) {
+            content: none;
+        }
+    }
+}
+
+.line-left-2 {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: '';
+        background: #707070;
+        opacity: 70%;
+        width: 1px;
+        height: 470px;
+        left: 10%;
+        top: 50%;
+        @media (max-width: 1440.98px) {
+            content: none;
+        }
+    }
+}
+
+.line-right {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: '';
+        background: #707070;
+        opacity: 70%;
+        width: 1px;
+        height: 470px;
+        right: 0;
+        top: 0;
+        @media (max-width: 1439.98px) {
+            content: none;
+        }
+    }
+}
