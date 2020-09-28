@@ -658,7 +658,7 @@ const initSliderProject = ()=>{
 		{
 			loop: true,
 			centeredSlides: true,
-			slidesPerView: 1.8,
+			slidesPerView: 2.4,
 			simulateTouch: false,
 
 			speed: 2000,
@@ -865,24 +865,27 @@ const getLinkService = () =>{
 	const desc = document.querySelector(".slider-service .swiper-slide-active .item__desc");
 	const next = document.querySelector("#service-next");
 	const prev = document.querySelector("#service-pre");
-	next.addEventListener("click",(e)=>{
-		if(url){
-			const link = url.getAttribute("data-url");
-			const location = document.querySelector(".getLinkService a");
-			if(location){
-				location.setAttribute("href",link);
+	if(next){
+
+		next.addEventListener("click",(e)=>{
+			if(url){
+				const link = url.getAttribute("data-url");
+				const location = document.querySelector(".getLinkService a");
+				if(location){
+					location.setAttribute("href",link);
+				}
 			}
-		}
-	})
-	prev.addEventListener("click",(e)=>{
-		if(url){
-			const link = url.getAttribute("data-url");
-			const location = document.querySelector(".getLinkService a");
-			if(location){
-				location.setAttribute("href",link);
+		})
+		prev.addEventListener("click",(e)=>{
+			if(url){
+				const link = url.getAttribute("data-url");
+				const location = document.querySelector(".getLinkService a");
+				if(location){
+					location.setAttribute("href",link);
+				}
 			}
-		}
-	})
+		})
+	}
 	if(url){
 		const link = url.getAttribute("data-url");
 		const location = document.querySelector(".getLinkService a");
