@@ -27,7 +27,6 @@
 					.index-contact-form-wrapper
 						form.form-container(action="#")
 							.form-row
-								input#contact__recaptcha(name="recaptcha" hidden).g-recaptcha
 								.form-group.col-md-6
 									input.form-control(type="text" placeholder="Tên*")
 								.form-group.col-md-6
@@ -38,4 +37,4 @@
 									input.form-control(type="text" placeholder="Công ty")
 								.form-group.col-md-12
 									textarea.form-control(name="" placeholder="Lời nhắn")
-									button.btn.btn-view-more.g-recaptcha(data-url="/contact",data-sitekey="6LdgT9AZAAAAAOhLZpm8LtesfriCAguB7gYvCJgS") Liên hệ
+									button.btn.btn-view-more.g-recaptcha(data-url="/contact", name = "recaptcha" data-size="invisible" data-sitekey="6LeTx6cZAAAAAHCj3fyZaYh8GHoB3p8NFv5EFocZ") Liên hệ

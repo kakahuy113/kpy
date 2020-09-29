@@ -754,8 +754,8 @@ const swiperInSwiper = () => {
 
 const ajaxContactForm = ()=>{
 	$('button.btn.btn-view-more').on('click', function(e:any) {
-        e.preventDefault();
-        const _thisBtn = $(this);
+		e.preventDefault();
+		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');
 		const formData = new FormData();
 		const responserRecaptcha = grecaptcha.getResponse();
@@ -903,11 +903,12 @@ const recaptcha = () => {
 	script.onload = function() {
 		console.log("Script loaded and ready");
 	};
-	const gReCp = document.querySelector(".g-recaptcha");
-	script.src = "https://www.google.com/recaptcha/api.js;
-	script.setAttribute("async", "");
-	script.setAttribute("defer", "");
-	document.getElementsByTagName('head')[0].appendChild(script);
+	if(document.querySelector(".g-recaptcha")) {
+		script.src = "https://www.google.com/recaptcha/api.js";
+		script.setAttribute("async", "");
+		script.setAttribute("defer", "");
+		document.getElementsByTagName('head')[0].appendChild(script);
+	}
 }
 
 const changeENVN = () =>{
@@ -927,6 +928,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	// LOADING
 	Loading();
+	// add recaptcha
+	recaptcha();
 	// INIT WOW JS
 	initWowJs();
 	// TOGGLE NAVBAR
@@ -976,6 +979,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	shareTweet();
 	typeGallery();
 	getLinkService();
-	recaptcha();
 	changeENVN();
 });
