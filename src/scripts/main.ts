@@ -929,11 +929,7 @@ const bulidSubMenu = () =>{
 		const isHaveSub = item.querySelectorAll(".nav-list");
 		if(isHaveSub.length > 0){
 			item.classList.add("isSubMenu");
-			$(".isSubMenu").mouseover(function(){
-				$(".navBar--lv1").removeClass("d-n");
-			}).mouseout(function(){
-				$(".navBar--lv1").addClass("d-n");
-			});
+		
 		}
 		isHaveSub.forEach((item) => {
 			item.classList.add('navBar--lv1');
@@ -953,7 +949,7 @@ function scrollToSection() {
 	if(!index){
 		$('[data-scroll-to]').on('click', function(e:any) {
 			const scrollToNumber = $(this).attr("data-scroll-to");
-			console.log(scrollToNumber);
+			var top:any;
 			$('html,body').animate({
 					scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
 						$('header').height(),
@@ -1017,6 +1013,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//pop-up image
 	popupImage();
 	//document popup
+	hiddenLink();
 	// popupDocument();
 	//SWIPER ABOUT PROJECT
 	swiperAboutProjects();
@@ -1039,5 +1036,4 @@ document.addEventListener("DOMContentLoaded", async () => {
 	changeENVN();
 	bulidSubMenu();
 	scrollToSection();
-	hiddenLink();
 });
