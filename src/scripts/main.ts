@@ -752,21 +752,23 @@ const swiperInSwiper = () => {
 	}
 }
 
+
 const ajaxContactForm = ()=>{
 	$('button.btn.btn-view-more').on('click', function(e:any) {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');
 		const formData = new FormData();
-		const responserRecaptcha = grecaptcha.getResponse();
+		const responserRecaptcha: HTMLInputElement = document.querySelector(".g-recaptcha")
+		const valueToken = responserRecaptcha.value;
 		const nameRecaptcha = document.querySelector(".g-recaptcha").getAttribute("name");
         $('.index-contact-form-wrapper form .form-group input').each(function() {
             const name = $(this).attr('name');
             const value = $(this).val();
             formData.append(name, value);
 		});
-		formData.append(nameRecaptcha,responserRecaptcha);
-        if ($('.index-contact-form-wrapper form').valid() === true) {
+		formData.append(nameRecaptcha,valueToken);
+        // if ($('.index-contact-form-wrapper form').valid() === true) {
             $.ajax({
                 url: url,
                 type: 'post',
@@ -782,7 +784,7 @@ const ajaxContactForm = ()=>{
                     _thisBtn.removeAttr('disabled');
                 },
             });
-        }
+        // }
     });
 }
 
@@ -904,11 +906,25 @@ const recaptcha = () => {
 		console.log("Script loaded and ready");
 	};
 	if(document.querySelector(".g-recaptcha")) {
-		script.src = "https://www.google.com/recaptcha/api.js";
+		const sitekey = document.querySelector(".g-recaptcha").getAttribute("data-sitekey");
+		script.src = `https://www.google.com/recaptcha/api.js?render=${sitekey}`;
 		script.setAttribute("async", "");
 		script.setAttribute("defer", "");
 		document.getElementsByTagName('head')[0].appendChild(script);
 	}
+	var button = document.createElement("button")
+	button.classList.add("fake-button-recaptcha")
+	button.onclick = (e:any) => {
+		e.preventDefault();
+		grecaptcha.ready(function () {
+			const recaptcha: HTMLInputElement =document.querySelector('.g-recaptcha');
+			const sitekey = recaptcha.getAttribute("data-sitekey")
+			grecaptcha.execute(`${sitekey}`, { action: 'submit' }).then(function (token: any) {
+				recaptcha.value = token
+			});
+		});
+	}
+	document.querySelector('.index-contact-form-wrapper .form-row').appendChild(button);
 }
 
 const changeENVN = () =>{
@@ -921,6 +937,10 @@ const changeENVN = () =>{
 		const language = $(this).val();
 		ChangeCulture(language);
 	});
+}
+window.onload = () => {
+	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
+	button.click();
 }
 
 document.addEventListener("DOMContentLoaded", async () => {

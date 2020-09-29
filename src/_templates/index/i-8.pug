@@ -27,14 +27,15 @@
 					.index-contact-form-wrapper
 						form.form-container(action="#")
 							.form-row
+								input.g-recaptcha(type="hidden" name="recaptcha" data-sitekey="6Le-tdEZAAAAAHiNLcnunnaYNGYWPK7gwZjC1g9y")
 								.form-group.col-md-6
-									input.form-control(type="text" placeholder="Tên*")
+									input.form-control(type="text" name="huy" placeholder="Tên*")
 								.form-group.col-md-6
-									input.form-control(type="text" placeholder="Số điện thoại")
+									input.form-control(type="text" name="huy" placeholder="Số điện thoại")
 								.form-group.col-md-6
-									input.form-control(type="text" placeholder="Email*")
+									input.form-control(type="text" name="huy" placeholder="Email*")
 								.form-group.col-md-6
-									input.form-control(type="text" placeholder="Công ty")
+									input.form-control(type="text" name="huy" placeholder="Công ty")
 								.form-group.col-md-12
 									textarea.form-control(name="" placeholder="Lời nhắn")
-									button.btn.btn-view-more.g-recaptcha(data-url="/contact", name = "recaptcha" data-size="invisible" data-sitekey="6LeTx6cZAAAAAHCj3fyZaYh8GHoB3p8NFv5EFocZ") Liên hệ
+									button.btn.btn-view-more(data-url="/contact") Liên hệ
