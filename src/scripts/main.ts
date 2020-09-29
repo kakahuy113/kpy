@@ -829,9 +829,10 @@ const swiperAboutProject = () => {
 			breakpoints: {
 				1600: {
 					// slidesPerView: 1.8,
-					spaceBetween: -70
+					spaceBetween: -150
 				},
 				1025: {
+					spaceBetween: -70
 					// slidesPerView: 1.3,
 				},
 				600: {
