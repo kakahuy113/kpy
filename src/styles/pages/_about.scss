@@ -869,6 +869,7 @@
 			bottom: 30px;
 		}
 	}
+	
 	.slider-index-projects-review .bock-item-style-1 {
 		transform-origin: unset;
 		margin-bottom: unset;
@@ -886,6 +887,11 @@
 	}
 	.about-hot-project__wrapper {
 		margin-bottom: 4rem;
+		.swiper-slide-active .bock-item-style-1 .item__img {
+			@media (min-width: 1360px) {
+				height: unset;
+			}
+		}
 	}
 	.explorer {
 		margin-bottom: 10rem;
