@@ -1,16 +1,38 @@
 header {
-	position: fixed;
-	height: 80px;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 500;
+    position: fixed;
+    height: 80px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    .languages {
+        margin-left: 20px;
+        padding-right: 10px;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 4px;
+            background: url(../assets/images/avatar/b.png) no-repeat;
+            top: 50%;
+            right: -10px;
+            transform: translate(-50%, -50%);
+        }
+        select {
+            border: none;
+            background: transparent;
+            font-family: SVN--Bold;
+            font-size: 20px;
+            color: white;
+        }
+    }
 }
 
 .logo__header {
-	display: block;
-	position: absolute;
-	left: 10px;
-	top: 50%;
-	transform: translateY(-50%);
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }

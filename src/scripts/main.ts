@@ -5,6 +5,7 @@ declare var Swiper: any;
 declare var WOW: any;
 declare var $: any;
 declare var grecaptcha:any;
+declare var window:any;
 // TOGGLE NAVBAR
 const toggleNavBar = () => {
 	const btn = document.querySelector(".navBarHamburger__mainWrapper");
@@ -903,13 +904,22 @@ const recaptcha = () => {
 		console.log("Script loaded and ready");
 	};
 	const gReCp = document.querySelector(".g-recaptcha");
-	const siteKey= gReCp.getAttribute("data-sitekey");
-	console.log(gReCp);
-	
-	script.src = "https://www.google.com/recaptcha/api.js?render="+siteKey;
+	script.src = "https://www.google.com/recaptcha/api.js;
 	script.setAttribute("async", "");
 	script.setAttribute("defer", "");
 	document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+const changeENVN = () =>{
+	function ChangeCulture(language:any) {
+		var originalUrl = window.location;
+		var redirectUrl = '/_common-settings/ChangeCulture?culture=' + language + '&url=' + originalUrl;
+		window.location = redirectUrl;
+	}
+	$('.languages select').on('change', function () {
+		const language = $(this).val();
+		ChangeCulture(language);
+	});
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -967,4 +977,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	typeGallery();
 	getLinkService();
 	recaptcha();
+	changeENVN();
 });
