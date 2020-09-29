@@ -92,15 +92,15 @@
             }
         }
         .main-title {
-            margin-bottom: 26px;
+            margin-bottom: 10px;
             h2 {
                 &:before {
-                    top: -5.2vw;
+                    top: -12.2vw;
                     left: -2px;
                 }
                 &:after {
                     right: 0;
-                    top: 2vw;
+                    top: -6vw;
                 }
                 @media (max-width: 1599.98px) {
                     &:before,
@@ -161,7 +161,7 @@
             }
         }
         .item-description+.item-description {
-            margin-top: 28px;
+            margin-top: 18px;
             @media (max-width: 1024px) {
                 margin-top: 0;
             }
@@ -177,6 +177,7 @@
                 max-width: 50%;
                 padding-right: 15px;
                 padding-left: 15px;
+                margin-bottom: 20px;
             }
             @media (max-width: 575.98px) {
                 -ms-flex: 0 0 100%;
@@ -188,7 +189,7 @@
         .description {
             max-width: 400px;
             width: 100%;
-            margin-top: 30px;
+            margin-top: 18px;
             padding-left: 16px;
             p {
                 font-size: 1.7rem;
@@ -199,13 +200,14 @@
             }
             li {
                 position: relative;
-                padding-left: 20px;
+                padding-left: 0px;
+                font-size: 17px;
                 &:before {
                     content: "";
                     width: 5px;
                     height: 5px;
                     position: absolute;
-                    left: 0;
+                    left: -10px;
                     top: 8px;
                     background: map-get($color, x-white);
                     border-radius: 50%;
@@ -601,7 +603,13 @@
                     }
                     .item__img {
                         @media (min-width: 1360px) {
+                            height: 560px;
+                        }
+                        @media (max-width: 1024.98px) {
                             height: 430px;
+                        }
+                        @media (max-width: 768.98px) {
+                            height: 340px;
                         }
                     }
                     .item__desc {
@@ -670,9 +678,8 @@
                 transition: 0.35s opacity ease-in-out;
             }
             @media (max-width: 1024.98px) {
-                transform: scale(1);
+                transform: scale(.8);
                 .item__desc {
-                    bottom: 0;
                     padding: 10px 20px;
                 }
             }
@@ -1431,6 +1438,9 @@
         @media (max-width: 1024.98px) {
             padding-top: 5rem;
             padding-bottom: unset;
+        }
+        @media (max-width: 768.98px) {
+            padding-bottom: 2rem;
         }
         .partner-wrapper {
             height: 115px;

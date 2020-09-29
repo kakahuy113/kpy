@@ -677,11 +677,12 @@ const initSliderProject = ()=>{
 					slidesPerView: 1.8,
 				},
 				1025.98: {
-					slidesPerView: 2.3,
-					spaceBetween: -85,
+					slidesPerView: 2,
+					spaceBetween: -150,
 				},
 				1440: {
-					// spaceBetween: -105,
+					slidesPerView: 2.2,
+					spaceBetween: -190,
 				},
 			},
 		});
