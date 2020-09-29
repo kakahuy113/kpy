@@ -873,7 +873,7 @@
 	.slider-index-projects-review .bock-item-style-1 {
 		transform-origin: unset;
 		margin-bottom: unset;
-		transform: scale(.6);
+		transform: scale(.5);
 		transition: 1s all ease-in-out;
 		.item__desc {
 			opacity: 1 !important;
@@ -888,9 +888,10 @@
 	.about-hot-project__wrapper {
 		margin-bottom: 4rem;
 		.swiper-slide-active .bock-item-style-1 .item__img {
-			@media (min-width: 1360px) {
-				height: unset;
+			@media (max-width: 1920px) {
+				height: unset !important;
 			}
+			
 		}
 	}
 	.explorer {
