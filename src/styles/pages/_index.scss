@@ -1237,6 +1237,17 @@
             padding-top: 50px;
             padding-bottom: 50px;
         }
+        .wrapper {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            .index-contact-map {
+                flex-grow: 1;
+            }
+            .index-contact-form-wrapper {
+                flex-grow: 1;
+            }
+        }
     }
     
     .index-contact-text-wrapper {
