@@ -768,7 +768,7 @@ const ajaxContactForm = ()=>{
             formData.append(name, value);
 		});
 		formData.append(nameRecaptcha,valueToken);
-        if ($('.index-contact-form-wrapper form').valid() === true) {
+        if ($('.index-contact-form-wrapper form').valid() == true) {
             $.ajax({
                 url: url,
                 type: 'post',
@@ -779,15 +779,20 @@ const ajaxContactForm = ()=>{
                     _thisBtn.attr('disabled', 'disabled');
                 },
                 success: function(res:any) {
+					console.log(res);
                     alert(`${res.Message}`);
-                    window.location.reload();
-                    _thisBtn.removeAttr('disabled');
+					if(res.Code == 200) {
+						window.location.reload();
+						_thisBtn.removeAttr('disabled');
+					}
+				},
+				error: function(res:any) {
+					console.log(res);
+                    alert(`${res.Message}`);
+                    _thisBtn.removeAttr("disabled");
                 },
             });
-        }else{
-			$(".form-group input").addClass("input-validation-error");
-			$(".form-group textarea").addClass(".input-validation-error ");
-		}
+        }
     });
 }
 
