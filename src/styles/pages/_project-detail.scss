@@ -23,14 +23,14 @@
             }
         }
     }
-    &.service {
-        h2 {
+    h2 {
+        &.service {
             padding-bottom: 1rem;
             border-bottom: none;
             margin-bottom: 0;
         }
     }
-    h6 {
+    h6.service {
         border-bottom: 1px solid #707070;
         padding-bottom: 1rem;
         margin-bottom: 3rem;
