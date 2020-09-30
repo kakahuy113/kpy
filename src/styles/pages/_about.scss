@@ -119,6 +119,11 @@
 					&:after {
 						opacity: 0;
 					}
+					.item__img {
+						@media (max-width: 1920px) {
+							height: unset !important;
+						}
+					}
 					.item__desc {
 						.item__title,
 						.item__subtitle {

@@ -23,7 +23,7 @@
         font-size: 3.5rem;
         color: map-get($color, main-1);
         font-family: SVN--Bold;
-        padding-bottom: 5rem;
+        padding-bottom: 1rem;
         border-bottom: 1px solid rgba($color: #707070, $alpha: .7);
         margin-bottom: 3rem;
         @media (max-width: 1024px) {
@@ -51,9 +51,7 @@
         @media (max-width: 575.98px) {
             font-size: 11px;
         }
-        &:last-child {
-            text-align: right;
-        }
+       
     }
     img {
         width: 100%;

@@ -965,27 +965,27 @@ const bulidSubMenu = () =>{
 }
 
 function scrollToSection() {
-	const index = document.querySelector(".index-page");
-	if(!index){
-		$('[data-scroll-to]').on('click', function(e:any) {
-			const scrollToNumber = $(this).attr("data-scroll-to");
-			var top:any;
-			$('html,body').animate({
-					scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
-						$('header').height(),
-				},
-				1200
-			);
-		});
-	}
-	const url = window.location.hash;
-	const scrollToNumber = Number(url.replace("#",""));
-	$('html,body').animate({
-			scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
-				$('header').height(),
-		},
-		1200
-	);
+	// const index = document.querySelector(".index-page");
+	// if(!index){
+	// 	$('[data-scroll-to]').on('click', function(e:any) {
+	// 		const scrollToNumber = $(this).attr("data-scroll-to");
+	// 		var top:any;
+	// 		$('html,body').animate({
+	// 				scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
+	// 					$('header').height(),
+	// 			},
+	// 			1200
+	// 		);
+	// 	});
+	// }
+	// const url = window.location.hash;
+	// const scrollToNumber = Number(url.replace("#",""));
+	// $('html,body').animate({
+	// 		scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
+	// 			$('header').height(),
+	// 	},
+	// 	1200
+	// );
 };
 
 const hiddenLink = () =>{
@@ -993,6 +993,30 @@ const hiddenLink = () =>{
 	if(!index){
 		const bannerLink = document.querySelector(".banner__text .btn");
 		bannerLink.classList.add("d-n")
+	}
+}
+const navigationGalleries = () => {
+	if(document.querySelector(".pagination")) {
+		const oldFirst = document.querySelector(".pagination li")
+		const newFirst = document.createElement("li")
+		newFirst.classList.add("pagination-prev" , "disable")
+		newFirst.innerHTML = `<a href="javascipt:;"></a>`
+		const newFirstLast = document.createElement("li")
+		newFirstLast.classList.add("pagination-next" , "disable")
+		newFirstLast.innerHTML = `<a href="javascipt:;"></a>` 
+		const allPagination = document.querySelectorAll(".pagination li");
+		var indexActive: Number;
+		allPagination.forEach((item , index) => {
+			if(item.classList.contains("active")) {
+				indexActive = index;
+			}
+		})
+		if(indexActive == 0) {
+			oldFirst.parentNode.insertBefore(newFirst , oldFirst);
+		}
+		if(indexActive == allPagination.length - 1) {
+			oldFirst.parentNode.appendChild(newFirstLast);
+		}
 	}
 }
 
@@ -1056,4 +1080,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	changeENVN();
 	bulidSubMenu();
 	scrollToSection();
+	navigationGalleries();
 });
