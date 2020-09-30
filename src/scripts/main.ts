@@ -161,7 +161,6 @@ const initSliderShowroom = () => {
 			// simulateTouch: false,
 			loop: true,
 			speed: 1500,
-			spaceBetween: 25,
 			// autoplay: {
 			// 	delay: 2000,
 			// },
@@ -173,11 +172,11 @@ const initSliderShowroom = () => {
 			breakpoints: {
 				320: {
 					slidesPerView: 1,
-					spaceBetween: 10,
+					// spaceBetween: 10,
 				},
 				575:{
 					slidesPerView: 1.2,
-					spaceBetween: 10,
+					// spaceBetween: 10,
 				},
 				768: {
 					slidesPerView: 1.8,
