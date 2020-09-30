@@ -6,6 +6,7 @@ declare var WOW: any;
 declare var $: any;
 declare var grecaptcha:any;
 declare var window:any;
+declare var offset : () => { top: number; left: number; };
 // TOGGLE NAVBAR
 const toggleNavBar = () => {
 	const btn = document.querySelector(".navBarHamburger__mainWrapper");
@@ -974,7 +975,7 @@ const bulidSubMenu = () =>{
 
 function scrollToSection() {
 	const index = document.querySelector(".index-page");
-	var offset:() => { top: number; left: number; };
+	// var offset:() => { top: number; left: number; };
 	if(!index){
 		$('[data-scroll-to]').on('click', function(e:any) {
 			const scrollToNumber = $(this).attr("data-scroll-to");
