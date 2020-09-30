@@ -927,7 +927,7 @@ const recaptcha = () => {
 		grecaptcha.ready(function () {
 			const recaptcha: HTMLInputElement =document.querySelector('.g-recaptcha');
 			const sitekey = recaptcha.getAttribute("data-sitekey")
-			grecaptcha.execute(`${sitekey}`, { action: 'submit' }).then(function (token: any) {
+			grecaptcha.execute(`${sitekey}`, { action: 'KPY' }).then(function (token: any) {
 				recaptcha.value = token
 			});
 		});
