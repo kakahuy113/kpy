@@ -565,6 +565,9 @@
     .slider-index-projects-review {
         position: relative;
         padding: 80px 0;
+        @media (max-width: 575.98px) {
+            padding: 0 0;
+        }
         &:after {
             content: "";
             position: absolute;
@@ -855,6 +858,12 @@
     }
     
     .slider-index-gallery {
+        .bock-item-style-1 {
+            height: 280px;
+        }
+        .item__img {
+            height: 100%;
+        }
         margin-top: 200px;
         .item__desc {
             bottom: 0;
@@ -1472,6 +1481,7 @@
             }
         }
     }
-.fake-button-recaptcha {
-    display: none;
-}
+    
+    .fake-button-recaptcha {
+        display: none;
+    }

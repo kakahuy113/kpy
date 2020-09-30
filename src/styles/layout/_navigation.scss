@@ -63,23 +63,27 @@
 }
 
 .isSubMenu {
-    &:hover {
-        >.nav-list {
-            height: 100%;
-            transform: scaleY(1);
-            transform-origin: top;
-            transition: all .5s ease-in-out;
-            .nav-item {
-                margin-top: 30px;
+    @media (min-width: 1025px) {
+        &:hover {
+            >.nav-list {
+                height: 100%;
+                transform: scaleY(1);
+                transform-origin: top;
                 transition: all .5s ease-in-out;
+                .nav-item {
+                    margin-top: 30px;
+                    transition: all .5s ease-in-out;
+                }
             }
         }
     }
     >.nav-list {
-        height: 0;
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: all .5s ease-in-out;
+        @media (min-width: 1025px) {
+            height: 0;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: all .5s ease-in-out;
+        }
     }
     >.nav-link {
         transition: all .5s ease-in-out;
@@ -92,6 +96,9 @@
         padding-left: 170px;
         .nav-item {
             transition: all .5s ease-in-out;
+            @media (max-width: 1024.98px) {
+                margin-top: 30px;
+            }
         }
         .nav-link {
             transition: all 1s ease-in-out;
