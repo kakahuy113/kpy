@@ -333,7 +333,7 @@ const initSliderProjectsIndexPage = () => {
 						slidesPerView: 3,
 					},
 					1025:{
-						slidesPerView: 1.5,
+						slidesPerView: 1.8,
 						spaceBetween: 10,
 					},
 					768:{
@@ -966,12 +966,13 @@ const bulidSubMenu = () =>{
 
 function scrollToSection() {
 	const index = document.querySelector(".index-page");
+	var offset:() => { top: number; left: number; };
 	if(!index){
 		$('[data-scroll-to]').on('click', function(e:any) {
 			const scrollToNumber = $(this).attr("data-scroll-to");
-			var top:any;
+			const itemScroll = $(`[data-scroll-id="${scrollToNumber}"]`);
 			$('html,body').animate({
-					scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
+					scrollTop: (<any> itemScroll.offset()).top -
 						$('header').height(),
 				},
 				1200
@@ -980,8 +981,9 @@ function scrollToSection() {
 	}
 	const url = window.location.hash;
 	const scrollToNumber = Number(url.replace("#",""));
+	const itemScroll = $(`[data-scroll-id="${scrollToNumber}"]`);
 	$('html,body').animate({
-			scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
+			scrollTop: (<any> itemScroll.offset()).top -
 				$('header').height(),
 		},
 		1200
