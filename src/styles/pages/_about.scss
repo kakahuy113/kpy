@@ -120,6 +120,7 @@
 						opacity: 0;
 					}
 					.item__img {
+						transition: 1s all ease-in-out;
 						@media (max-width: 1920px) {
 							height: unset !important;
 						}
@@ -134,11 +135,15 @@
 			}
 		}
 		.bock-item-style-1 {
+			max-height: 700px;
 			position: relative;
 			transform: scale(0.7);
 			transition: 1s all ease-in-out;
 			margin-bottom: 10px;
 			transform-origin: unset !important;
+			@media (max-width: 1920px) {
+				height: unset !important;
+			}
 			.item__desc {
 				width: 80%;
 				left: 0;
@@ -171,6 +176,10 @@
 				mix-blend-mode: multiply;
 				pointer-events: none;
 				transition: 0.35s opacity ease-in-out;
+			}
+			@media (max-width: 1920) {
+				height: 100%;
+				
 			}
 		}
 		&:after {
@@ -880,6 +889,9 @@
 		margin-bottom: unset;
 		transform: scale(.5);
 		transition: 1s all ease-in-out;
+			@media (max-width: 1920px) {
+				height: unset !important;
+			}
 		.item__desc {
 			opacity: 1 !important;
 		}
