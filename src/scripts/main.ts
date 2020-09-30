@@ -6,6 +6,7 @@ declare var WOW: any;
 declare var $: any;
 declare var grecaptcha:any;
 declare var window:any;
+declare var top:any;
 // TOGGLE NAVBAR
 const toggleNavBar = () => {
 	const btn = document.querySelector(".navBarHamburger__mainWrapper");
@@ -898,8 +899,22 @@ const getLinkService = () =>{
 			location.setAttribute("href",link);
 		}
 	}
-
+	//get desc content
 }
+const copyDataByAttr = () => {
+	const items__paste = document.querySelectorAll('[data-paste]');
+	const items__copy = document.querySelectorAll('[data-copy]');
+	
+	items__paste.forEach((itemPaste) => {
+		items__copy.forEach((itemCopy) => {
+			var data = itemCopy.getAttribute('data-copy');
+			if (data != null && data == itemPaste.getAttribute('data-paste')) {
+				itemPaste.textContent = itemCopy.textContent;
+			}
+		});
+	});
+};
+
 const recaptcha = () => {
 	var script = document.createElement('script');
 	script.onload = function() {
@@ -966,12 +981,13 @@ const bulidSubMenu = () =>{
 
 function scrollToSection() {
 	const index = document.querySelector(".index-page");
+	var top:any;
 	if(!index){
 		$('[data-scroll-to]').on('click', function(e:any) {
 			const scrollToNumber = $(this).attr("data-scroll-to");
-			var top:any;
+			const itemScroll = $(`[data-scroll-id="${scrollToNumber}"]`);
 			$('html,body').animate({
-					scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
+					scrollTop: itemScroll.offset().top -
 						$('header').height(),
 				},
 				1200
@@ -1050,6 +1066,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//share face
 	sharePostFaceBook();
 	//share tweet
+	copyDataByAttr();
 	shareTweet();
 	typeGallery();
 	getLinkService();

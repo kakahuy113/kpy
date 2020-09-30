@@ -24,9 +24,12 @@ section.index-service.size-pd-mg.Service
 													.url(data-url="index.html" hidden)
 													.item__img.ov-h
 														img.fullsize.object-cover(src="./assets/images/index-service/1.png", alt="")
-									.item__desc
-										.item__subtitle Dự án KPY thiết kế nội thất
-										.item__title Nội thất Văn phòng - Showroom
+													.item__desc(hidden)
+														.item__subtitle(data-copy="subtitle") Dự án KPY thiết kế nội thất
+														.item__title(data-copy="title") Nội thất Văn phòng - Showroom
+									.item__desc.getDescItem
+										.item__subtitle(data-paste="subtitle")
+										.item__title(data-paste="title")
 									.relate-prev-slider
 										.button-prev.custom
 									.relate-next-slider
