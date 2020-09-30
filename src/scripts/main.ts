@@ -784,7 +784,10 @@ const ajaxContactForm = ()=>{
                     _thisBtn.removeAttr('disabled');
                 },
             });
-        }
+        }else{
+			$(".form-group input").addClass("input-validation-error");
+			$(".form-group textarea").addClass(".input-validation-error ");
+		}
     });
 }
 
