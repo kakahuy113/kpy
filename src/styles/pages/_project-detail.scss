@@ -23,6 +23,28 @@
             }
         }
     }
+    &.service {
+        h2 {
+            padding-bottom: 1rem;
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    }
+    h6 {
+        border-bottom: 1px solid #707070;
+        padding-bottom: 1rem;
+        margin-bottom: 3rem;
+        font-size: 16px;
+        font-family: SVN--Light;
+        color: white;
+        font-weight: normal;
+        @media (max-width: 1024px) {
+            font-size: 13px;
+        }
+        @media (max-width: 575.98px) {
+            font-size: 11px;
+        }
+    }
     h3 {
         display: block;
         font-family: SVN--Light;
