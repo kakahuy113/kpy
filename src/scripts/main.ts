@@ -768,7 +768,7 @@ const ajaxContactForm = ()=>{
             formData.append(name, value);
 		});
 		formData.append(nameRecaptcha,valueToken);
-        // if ($('.index-contact-form-wrapper form').valid() === true) {
+        if ($('.index-contact-form-wrapper form').valid() === true) {
             $.ajax({
                 url: url,
                 type: 'post',
@@ -784,7 +784,7 @@ const ajaxContactForm = ()=>{
                     _thisBtn.removeAttr('disabled');
                 },
             });
-        // }
+        }
     });
 }
 
