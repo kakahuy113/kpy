@@ -942,10 +942,21 @@ const changeENVN = () =>{
 		var redirectUrl = '/_common-settings/ChangeCulture?culture=' + language + '&url=' + originalUrl;
 		window.location = redirectUrl;
 	}
+	const lang =document.querySelector("html").getAttribute("lang");
+	if(lang=="en"){
+		$(".languages select").val("en");
+	}else{
+		$(".languages select").val("vn");
+	}
 	$('.languages select').on('change', function () {
+		const lang = document.querySelector("html");
 		const language = $(this).val();
+		if(lang==language){
+			$(this).attr("selected","selected");
+		}
 		ChangeCulture(language);
 	});
+	
 }
 window.onload = () => {
 	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
