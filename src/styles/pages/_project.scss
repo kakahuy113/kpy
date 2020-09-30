@@ -44,7 +44,12 @@
         }
     }
     .swiper {
+        &-container {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
         &-slide {
+            padding: 0 10px;
             @media (min-width: 1025px) {
                 height: 515px;
                 display: flex;
@@ -70,32 +75,31 @@
                         width: 70%;
                     }
                 }
-            }
-            @media (min-width: 1025px) {
-                &:hover {
-                    transition: all .5s ease-in-out;
-                    .bock-item-style-1 {
-                        height: 100%;
+                @media (min-width: 1025px) {
+                    &:hover {
                         transition: all .5s ease-in-out;
-                    }
-                    .item__desc {
-                        padding: 30px 15px;
-                        bottom: 15%;
-                        transition: all .5s ease-in-out;
-                        @media (max-width: 1024.98px) {
-                            padding: 20px;
+                            height: 100%;
+                            transition: all .5s ease-in-out;
+                        .item__desc {
+                            padding: 30px 15px;
+                            bottom: 15%;
+                            transition: all .5s ease-in-out;
+                            @media (max-width: 1024.98px) {
+                                padding: 20px;
+                            }
+                            @media (max-width: 1024.98px) {
+                                opacity: 1 !important;
+                            }
                         }
-                        @media (max-width: 1024.98px) {
-                            opacity: 1 !important;
+                        .item__img {
+                            position: relative;
+                            transition: all .5s ease-in-out;
                         }
-                    }
-                    .item__img {
-                        position: relative;
                         transition: all .5s ease-in-out;
                     }
-                    transition: all .5s ease-in-out;
                 }
             }
+           
         }
     }
     .index-service-prev-slider,
