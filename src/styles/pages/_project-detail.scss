@@ -1,5 +1,5 @@
-section.news-detail.project {
-    .news-detail--content {
+.news-detail--content {
+    &.project {
         p {
             &:last-child {
                 text-align: left;

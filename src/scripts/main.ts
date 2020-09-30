@@ -981,13 +981,12 @@ const bulidSubMenu = () =>{
 
 function scrollToSection() {
 	const index = document.querySelector(".index-page");
-	var top:any;
 	if(!index){
 		$('[data-scroll-to]').on('click', function(e:any) {
 			const scrollToNumber = $(this).attr("data-scroll-to");
 			const itemScroll = $(`[data-scroll-id="${scrollToNumber}"]`);
 			$('html,body').animate({
-					scrollTop: itemScroll.offset().top -
+					scrollTop: (<any> itemScroll.offset()).top -
 						$('header').height(),
 				},
 				1200
@@ -996,8 +995,9 @@ function scrollToSection() {
 	}
 	const url = window.location.hash;
 	const scrollToNumber = Number(url.replace("#",""));
+	const itemScroll = $(`[data-scroll-id="${scrollToNumber}"]`);
 	$('html,body').animate({
-			scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
+			scrollTop: (<any> itemScroll.offset()).top -
 				$('header').height(),
 		},
 		1200
