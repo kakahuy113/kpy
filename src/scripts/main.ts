@@ -965,27 +965,27 @@ const bulidSubMenu = () =>{
 }
 
 function scrollToSection() {
-	// const index = document.querySelector(".index-page");
-	// if(!index){
-	// 	$('[data-scroll-to]').on('click', function(e:any) {
-	// 		const scrollToNumber = $(this).attr("data-scroll-to");
-	// 		var top:any;
-	// 		$('html,body').animate({
-	// 				scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
-	// 					$('header').height(),
-	// 			},
-	// 			1200
-	// 		);
-	// 	});
-	// }
-	// const url = window.location.hash;
-	// const scrollToNumber = Number(url.replace("#",""));
-	// $('html,body').animate({
-	// 		scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
-	// 			$('header').height(),
-	// 	},
-	// 	1200
-	// );
+	const index = document.querySelector(".index-page");
+	if(!index){
+		$('[data-scroll-to]').on('click', function(e:any) {
+			const scrollToNumber = $(this).attr("data-scroll-to");
+			var top:any;
+			$('html,body').animate({
+					scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
+						$('header').height(),
+				},
+				1200
+			);
+		});
+	}
+	const url = window.location.hash;
+	const scrollToNumber = Number(url.replace("#",""));
+	$('html,body').animate({
+			scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
+				$('header').height(),
+		},
+		1200
+	);
 };
 
 const hiddenLink = () =>{
