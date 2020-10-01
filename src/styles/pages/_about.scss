@@ -109,6 +109,7 @@
 		}
 	}
 	.slider-index-projects-review {
+		max-height: 800px;
 		position: relative;
 		padding-bottom: 80px;
 		.swiper {
@@ -237,6 +238,7 @@
 		max-width: 61.6%;
 		padding-bottom: 0;
 		.slider-index-projects-review {
+			max-height: 800px ;
 			padding: 0;
 			&::after {
 				content: none;
@@ -882,6 +884,18 @@
 		.item__desc {
 			bottom: 30px;
 		}
+		.item__img {
+			max-height: 428px;
+			@media (max-width: 1440px) {
+				max-height: 400px;
+			}
+			@media (max-width: 1024.98px) {
+				max-height: 350px;
+			}
+			@media (max-width: 767.98px) {
+				max-height: 280px;
+			}
+		}
 	}
 	
 	.slider-index-projects-review .bock-item-style-1 {
@@ -904,19 +918,22 @@
 	}
 	.about-hot-project__wrapper {
 		margin-bottom: 4rem;
+		max-height: 700px;
 		.swiper-slide-active .bock-item-style-1 .item__img {
 			@media (max-width: 1920px) {
 				height: unset !important;
 			}
 			
 		}
+	
+		
 	}
 	.explorer {
 		margin-bottom: 10rem;
 	}
 	.list-buttons-index-projects {
 		bottom: 0;
-		width: 42%;
+		width: 46%;
 		.index-projects-next-slider {
 			position: absolute;
 			bottom: 0;

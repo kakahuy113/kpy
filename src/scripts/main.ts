@@ -1030,10 +1030,10 @@ const navigationGalleries = () => {
 		const oldFirst = document.querySelector(".pagination li")
 		const newFirst = document.createElement("li")
 		newFirst.classList.add("pagination-prev" , "disable")
-		newFirst.innerHTML = `<a href="javascipt:;"></a>`
+		newFirst.innerHTML = `<a href="javascript:;"></a>`
 		const newFirstLast = document.createElement("li")
 		newFirstLast.classList.add("pagination-next" , "disable")
-		newFirstLast.innerHTML = `<a href="javascipt:;"></a>` 
+		newFirstLast.innerHTML = `<a href="javascript:;"></a>` 
 		const allPagination = document.querySelectorAll(".pagination li");
 		var indexActive: Number;
 		allPagination.forEach((item , index) => {
