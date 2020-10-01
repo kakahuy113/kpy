@@ -69,10 +69,10 @@
                 height: 100%;
                 transform: scaleY(1);
                 transform-origin: top;
-                transition: all .5s ease-in-out;
+                transition: all 1s ease-in-out;
                 .nav-item {
                     margin-top: 30px;
-                    transition: all .5s ease-in-out;
+                    transition: all 1s ease-in-out;
                 }
             }
         }
@@ -82,20 +82,20 @@
             height: 0;
             transform: scaleY(0);
             transform-origin: top;
-            transition: all .5s ease-in-out;
+            transition: all 1s ease-in-out;
         }
     }
     >.nav-link {
-        transition: all .5s ease-in-out;
+        transition: all 1s ease-in-out;
         &::after {
             content: "";
         }
     }
     .nav-list {
-        transition: all .5s ease-in-out;
+        transition: all 1s ease-in-out;
         padding-left: 170px;
         .nav-item {
-            transition: all .5s ease-in-out;
+            transition: all 1s ease-in-out;
             @media (max-width: 1024.98px) {
                 margin-top: 30px;
             }

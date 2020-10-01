@@ -681,10 +681,17 @@ const initSliderProject = ()=>{
 					slidesPerView: 2,
 					spaceBetween: -150,
 				},
+				1280:{
+					spaceBetween: -165,
+				},
 				1440: {
 					slidesPerView: 2.2,
-					spaceBetween: -190,
+					spaceBetween: -165,
 				},
+				1500:{
+					spaceBetween: -190,
+
+				}
 			},
 		});
 }
@@ -941,10 +948,21 @@ const changeENVN = () =>{
 		var redirectUrl = '/_common-settings/ChangeCulture?culture=' + language + '&url=' + originalUrl;
 		window.location = redirectUrl;
 	}
+	const lang =document.querySelector("html").getAttribute("lang");
+	if(lang=="en"){
+		$(".languages select").val("en");
+	}else{
+		$(".languages select").val("vi");
+	}
 	$('.languages select').on('change', function () {
+		const lang = document.querySelector("html");
 		const language = $(this).val();
+		if(lang==language){
+			$(this).attr("selected","selected");
+		}
 		ChangeCulture(language);
 	});
+	
 }
 window.onload = () => {
 	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
@@ -1030,6 +1048,19 @@ const navigationGalleries = () => {
 	}
 }
 
+const copyDataByAttr = () => {
+	const items__paste = document.querySelectorAll('[data-paste]');
+	const items__copy = document.querySelectorAll('[data-copy]');
+
+	items__paste.forEach((itemPaste) => {
+		items__copy.forEach((itemCopy) => {
+			var data = itemCopy.getAttribute('data-copy');
+			if (data != null && data == itemPaste.getAttribute('data-paste')) {
+				itemPaste.textContent = itemCopy.textContent;
+			}
+		});
+	});
+};
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
@@ -1090,5 +1121,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	changeENVN();
 	bulidSubMenu();
 	navigationGalleries();
+	copyDataByAttr();
 	// scrollToSection();
 });
