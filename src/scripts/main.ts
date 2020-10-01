@@ -1070,14 +1070,10 @@ const copyDataByAttr = () => {
 		});
 	});
 };
-<<<<<<< HEAD
 window.onload = () => {
 	// INIT WOW JS
 	initWowJs();
 }
-=======
-
->>>>>>> d462407d1ce059e94c51858c7932be30a79504c4
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
