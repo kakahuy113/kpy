@@ -8,6 +8,7 @@
 
 .lcl {
     overflow: hidden;
+    -o-text-overflow: ellipsis;
     display: -webkit-box;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;

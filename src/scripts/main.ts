@@ -1061,6 +1061,10 @@ const copyDataByAttr = () => {
 		});
 	});
 };
+window.onload = () => {
+	// INIT WOW JS
+	initWowJs();
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
@@ -1068,8 +1072,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	Loading();
 	// add recaptcha
 	recaptcha();
-	// INIT WOW JS
-	initWowJs();
+
 	// TOGGLE NAVBAR
 	toggleNavBar();
 	// INIT MAIN SLIDER
