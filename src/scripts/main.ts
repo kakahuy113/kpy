@@ -661,7 +661,6 @@ const initSliderProject = ()=>{
 			centeredSlides: true,
 			slidesPerView: 2.4,
 			simulateTouch: false,
-
 			speed: 2000,
 			navigation: {
 				prevEl: ".list-button-relate-news .relate-prev-slider",
@@ -681,12 +680,12 @@ const initSliderProject = ()=>{
 					slidesPerView: 2,
 					spaceBetween: -150,
 				},
-				1280:{
+				1435:{
 					spaceBetween: -165,
 				},
 				1440: {
 					slidesPerView: 2.2,
-					spaceBetween: -165,
+					spaceBetween: -190,
 				},
 				1500:{
 					spaceBetween: -190,
@@ -699,7 +698,7 @@ const initSliderProject = ()=>{
 const swiperInSwiper = () => {
 	if(document.querySelector(".service")) {
 		let swiper = new Swiper(".slider-service>.swiper-container .swiper-slide-active .swiper-container", {
-			loop: true,
+			// loop: true,
 			slidesPerView: 1,
 			simulateTouch: false,
 			speed: 2000,
@@ -719,8 +718,9 @@ const swiperInSwiper = () => {
 	document.querySelector(".list-button-relate-news .relate-prev-slider").addEventListener("click" , () => {
 		swiper.destroy(true, true)
 		swiper = new Swiper(".slider-service>.swiper-container .swiper-slide-active .swiper-container", {
-			loop: true,
+			// loop: true,
 			slidesPerView: 1,
+			simulateTouch: false,
 			speed: 2000,
 			navigation: {
 				prevEl: "._with-project .relate-prev-slider",
@@ -739,8 +739,9 @@ const swiperInSwiper = () => {
 	document.querySelector(".list-button-relate-news .relate-next-slider").addEventListener('click', () => {
 		swiper.destroy(true, true)
 		swiper = new Swiper(".slider-service>.swiper-container .swiper-slide-active .swiper-container", {
-			loop: true,
+			// loop: true,
 			slidesPerView: 1,
+			simulateTouch: false,
 			speed: 2000,
 			navigation: {
 				prevEl: "._with-project .relate-prev-slider",
@@ -881,13 +882,11 @@ const shareTweet = () => {
 }
 
 const getLinkService = () =>{
-	const url = document.querySelector(".swiper-slide-active .url");
-	const desc = document.querySelector(".slider-service .swiper-slide-active .item__desc");
-	const next = document.querySelector("#service-next");
-	const prev = document.querySelector("#service-pre");
+	const next = document.querySelector("#service---next");
+	const prev = document.querySelector("#service---pre");
 	if(next){
-
 		next.addEventListener("click",(e)=>{
+		const url = document.querySelector(".swiper-slide-active .url");
 			if(url){
 				const link = url.getAttribute("data-url");
 				const location = document.querySelector(".getLinkService a");
@@ -897,6 +896,7 @@ const getLinkService = () =>{
 			}
 		})
 		prev.addEventListener("click",(e)=>{
+		const url = document.querySelector(".swiper-slide-active .url");
 			if(url){
 				const link = url.getAttribute("data-url");
 				const location = document.querySelector(".getLinkService a");
@@ -906,6 +906,7 @@ const getLinkService = () =>{
 			}
 		})
 	}
+	const url = document.querySelector(".swiper-slide-active .url");
 	if(url){
 		const link = url.getAttribute("data-url");
 		const location = document.querySelector(".getLinkService a");
@@ -992,28 +993,29 @@ const bulidSubMenu = () =>{
 
 function scrollToSection() {
 	const index = document.querySelector(".index-page");
-	// var offset:() => { top: number; left: number; };
 	if(!index){
 		$('[data-scroll-to]').on('click', function(e:any) {
 			const scrollToNumber = $(this).attr("data-scroll-to");
 			const itemScroll = $(`[data-scroll-id="${scrollToNumber}"]`);
 			$('html,body').animate({
-					scrollTop: (<any> itemScroll.offset()).top -
-						$('header').height(),
+					scrollTop: itemScroll.offset().top - $('header').height(),
 				},
 				1200
 			);
 		});
 	}
 	const url = window.location.hash;
-	const scrollToNumber = Number(url.replace("#",""));
+	if(url)
+	{
+	const scrollToNumber = url.replace("#","");
 	const itemScroll = $(`[data-scroll-id="${scrollToNumber}"]`);
 	$('html,body').animate({
-			scrollTop: (<any> itemScroll.offset()).top -
-				$('header').height(),
+			scrollTop: (<any> itemScroll.offset()).top - $('header').height(),
 		},
 		1200
 	);
+	}
+	
 };
 
 const hiddenLink = () =>{
@@ -1051,7 +1053,14 @@ const navigationGalleries = () => {
 const copyDataByAttr = () => {
 	const items__paste = document.querySelectorAll('[data-paste]');
 	const items__copy = document.querySelectorAll('[data-copy]');
-
+	
+	items__copy.forEach((itemCopy,index) => {
+		itemCopy.setAttribute("data-copy","content-"+ index);
+	});
+	items__paste.forEach((itemPaste,index) => {
+		itemPaste.setAttribute("data-paste","content-"+ index);
+		
+	});
 	items__paste.forEach((itemPaste) => {
 		items__copy.forEach((itemCopy) => {
 			var data = itemCopy.getAttribute('data-copy');
@@ -1061,6 +1070,7 @@ const copyDataByAttr = () => {
 		});
 	});
 };
+
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
@@ -1122,5 +1132,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	bulidSubMenu();
 	navigationGalleries();
 	copyDataByAttr();
-	// scrollToSection();
+	scrollToSection();
 });

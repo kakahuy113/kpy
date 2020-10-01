@@ -75,7 +75,10 @@
     .title {
         // overflow: hidden;
         font-size: 50px;
-        line-height: 1;
+        line-height: 60px;
+        &.line {
+            line-height: 90px;
+        }
         .letter {
             display: inline-block;
             transform-origin: 0 100%;
