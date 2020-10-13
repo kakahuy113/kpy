@@ -1066,6 +1066,7 @@ const navigationGalleries = () => {
 // 	});
 // };
 
+
 window.onload = () => {
 	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
 	button.click();
