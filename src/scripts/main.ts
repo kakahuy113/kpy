@@ -884,37 +884,35 @@ const shareTweet = () => {
 const getLinkService = () =>{
 	const next = document.querySelector("#service---next");
 	const prev = document.querySelector("#service---pre");
-	if(next){
+	if(document.querySelector(".Service")){
+		let link = document.querySelector(".slider-service .swiper-slide-active .bock-item-style-1")
+		const url = link.getAttribute("href");
+		const location = document.querySelector(".getLinkService a");
+		if(location){
+			location.setAttribute("href",url);
+		}
 		next.addEventListener("click",(e)=>{
-		const url = document.querySelector(".swiper-slide-active .url");
+			link = document.querySelector(".slider-service .swiper-slide-active .bock-item-style-1")
 			if(url){
-				const link = url.getAttribute("data-url");
+				const url = link.getAttribute("href");
 				const location = document.querySelector(".getLinkService a");
 				if(location){
-					location.setAttribute("href",link);
+					location.setAttribute("href",url);
 				}
 			}
 		})
 		prev.addEventListener("click",(e)=>{
-		const url = document.querySelector(".swiper-slide-active .url");
+			link = document.querySelector(".slider-service .swiper-slide-active .bock-item-style-1");
 			if(url){
-				const link = url.getAttribute("data-url");
+				const url = link.getAttribute("href");
 				const location = document.querySelector(".getLinkService a");
 				if(location){
-					location.setAttribute("href",link);
+					location.setAttribute("href",url);
 				}
 			}
 		})
+		
 	}
-	const url = document.querySelector(".swiper-slide-active .url");
-	if(url){
-		const link = url.getAttribute("data-url");
-		const location = document.querySelector(".getLinkService a");
-		if(location){
-			location.setAttribute("href",link);
-		}
-	}
-
 }
 const recaptcha = () => {
 	var script = document.createElement('script');
@@ -965,10 +963,7 @@ const changeENVN = () =>{
 	});
 	
 }
-window.onload = () => {
-	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
-	button.click();
-}
+
 
 const bulidSubMenu = () =>{
 	const itemMenu = document.querySelectorAll(".nav-wrapper>.nav-list>.nav-item");
@@ -1050,26 +1045,32 @@ const navigationGalleries = () => {
 	}
 }
 
-const copyDataByAttr = () => {
-	const items__paste = document.querySelectorAll('[data-paste]');
-	const items__copy = document.querySelectorAll('[data-copy]');
+// const copyDataByAttr = () => {
+// 	const items__paste = document.querySelectorAll('[data-paste]');
+// 	const items__copy = document.querySelectorAll('[data-copy]');
 	
-	items__copy.forEach((itemCopy,index) => {
-		itemCopy.setAttribute("data-copy","content-"+ index);
-	});
-	items__paste.forEach((itemPaste,index) => {
-		itemPaste.setAttribute("data-paste","content-"+ index);
+// 	items__copy.forEach((itemCopy,index) => {
+// 		itemCopy.setAttribute("data-copy","content-"+ index);
+// 	});
+// 	items__paste.forEach((itemPaste,index) => {
+// 		itemPaste.setAttribute("data-paste","content-"+ index);
 		
-	});
-	items__paste.forEach((itemPaste) => {
-		items__copy.forEach((itemCopy) => {
-			var data = itemCopy.getAttribute('data-copy');
-			if (data != null && data == itemPaste.getAttribute('data-paste')) {
-				itemPaste.textContent = itemCopy.textContent;
-			}
-		});
-	});
-};
+// 	});
+// 	items__paste.forEach((itemPaste) => {
+// 		items__copy.forEach((itemCopy) => {
+// 			var data = itemCopy.getAttribute('data-copy');
+// 			if (data != null && data == itemPaste.getAttribute('data-paste')) {
+// 				itemPaste.textContent = itemCopy.textContent;
+// 			}
+// 		});
+// 	});
+// };
+
+window.onload = () => {
+	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
+	button.click();
+}
+
 window.onload = () => {
 	// INIT WOW JS
 	initWowJs();
@@ -1133,6 +1134,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	changeENVN();
 	bulidSubMenu();
 	navigationGalleries();
-	copyDataByAttr();
 	scrollToSection();
 });
