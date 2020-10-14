@@ -1,4 +1,7 @@
-section.service {
+section.Service {
+    .description-title {
+        margin-bottom: 3rem;
+    }
     .container-full {
         margin-top: 2.5rem;
     }
@@ -95,6 +98,9 @@ section.service {
 }
 
 .slider-service {
+    .swiper-container {
+        margin-bottom: 2rem;
+    }
     .swiper-slide-prev {
         pointer-events: none;
     }
@@ -235,7 +241,6 @@ section.service {
             }
         }
         position: relative;
-        margin: 70px 0 50px;
         width: 100%;
         .bock-item-style-1 {
             .item__img {

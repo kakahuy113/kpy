@@ -15,8 +15,8 @@
 
 .nav-wrapper {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 25%;
+    // transform: translateY(-50%);
     width: 100%;
 }
 
@@ -63,27 +63,11 @@
 }
 
 .isSubMenu {
-    @media (min-width: 1025px) {
-        &:hover {
-            >.nav-list {
-                height: 100%;
-                transform: scaleY(1);
-                transform-origin: top;
-                transition: all 1s ease-in-out;
-                .nav-item {
-                    margin-top: 30px;
-                    transition: all 1s ease-in-out;
-                }
-            }
-        }
-    }
+       
     >.nav-list {
-        @media (min-width: 1025px) {
-            height: 0;
-            transform: scaleY(0);
-            transform-origin: top;
+        opacity: 0;
+        display: none;
             transition: all 1s ease-in-out;
-        }
     }
     >.nav-link {
         transition: all 1s ease-in-out;
@@ -108,4 +92,17 @@
             }
         }
     }
+     &.active{
+         transition: 1s all ease-in-out;
+        >.nav-list {
+            opacity: 1;
+            height: 100%;
+            transition: all 1s ease-in-out;
+            .nav-item {
+                margin-top: 30px;
+                transition: all 1s ease-in-out;
+            }
+        }
+    
+}
 }

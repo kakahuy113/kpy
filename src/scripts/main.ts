@@ -1066,6 +1066,18 @@ const navigationGalleries = () => {
 // 	});
 // };
 
+const onMouseMenu = () => {
+	document.querySelectorAll(".nav-item.isSubMenu").forEach((item) => {
+		console.log(item);
+		item.addEventListener("mouseover" ,(e:any) => {
+			const temp:any = item.querySelector(".navBar--lv1");
+			temp.style.display = "block";
+			setTimeout(() => {
+				item.classList.add("active");
+			}, 100);
+		})
+	})
+}
 
 window.onload = () => {
 	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
@@ -1136,4 +1148,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	bulidSubMenu();
 	navigationGalleries();
 	scrollToSection();
+	onMouseMenu();
 });
