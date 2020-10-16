@@ -77,6 +77,9 @@
         font-size: 50px;
         &.line {
             line-height: 90px;
+            @media (max-width: 1024.98px) {
+                line-height: 0;
+            }
         }
         .letter {
             display: inline-block;
