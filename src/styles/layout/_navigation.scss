@@ -68,6 +68,9 @@
         opacity: 0;
         display: none;
             transition: all 1s ease-in-out;
+            &.toggle {
+                display: block;
+            }
     }
     >.nav-link {
         transition: all 1s ease-in-out;
@@ -91,6 +94,7 @@
                 content: none;
             }
         }
+        
     }
      &.active{
          transition: 1s all ease-in-out;

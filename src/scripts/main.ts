@@ -529,8 +529,6 @@ const popupImage = () => {
 	let service = new Swiper("._with-service .swiper-container", {
 		speed: 1500,
 		loop: true,
-		loopedSlides:6,
-		slidesPerView:'auto',
 		// autoplay: {
 		// 	delay: 1000,
 		// },
@@ -760,7 +758,6 @@ const swiperInSwiper = () => {
 	}
 }
 
-
 const ajaxContactForm = ()=>{
 	$('button.btn.btn-view-more').on('click', function(e:any) {
 		e.preventDefault();
@@ -914,6 +911,7 @@ const getLinkService = () =>{
 		
 	}
 }
+
 const recaptcha = () => {
 	var script = document.createElement('script');
 	script.onload = function() {
@@ -963,7 +961,6 @@ const changeENVN = () =>{
 	});
 	
 }
-
 
 const bulidSubMenu = () =>{
 	const itemMenu = document.querySelectorAll(".nav-wrapper>.nav-list>.nav-item");
@@ -1020,6 +1017,7 @@ const hiddenLink = () =>{
 		bannerLink.classList.add("d-n")
 	}
 }
+
 const navigationGalleries = () => {
 	if(document.querySelector(".pagination")) {
 		const oldFirst = document.querySelector(".pagination li")
@@ -1068,14 +1066,29 @@ const navigationGalleries = () => {
 
 const onMouseMenu = () => {
 	document.querySelectorAll(".nav-item.isSubMenu").forEach((item) => {
-		console.log(item);
-		item.addEventListener("mouseover" ,(e:any) => {
-			const temp:any = item.querySelector(".navBar--lv1");
-			temp.style.display = "block";
-			setTimeout(() => {
-				item.classList.add("active");
-			}, 100);
-		})
+		if(window.innerWidth > 1024) {
+			item.addEventListener("mouseenter" ,(e:any) => {
+				const temp:any = item.querySelector(".navBar--lv1");
+				temp.style.display = "block";
+				setTimeout(() => {
+					item.classList.add("active");
+				}, 100);
+			})
+			item.addEventListener("mouseleave" ,(e:any) => {
+				const temp:any = item.querySelector(".navBar--lv1");
+				temp.style.display = "none";
+				item.classList.remove("active");
+			})
+		} else {
+			item.addEventListener("click" ,(e) => {
+				
+				const temp:any = item.querySelector(".navBar--lv1");
+				temp.classList.toggle("toggle")
+				setTimeout(() => {
+					item.classList.toggle("active")
+				},  100);
+			})
+		}
 	})
 }
 
