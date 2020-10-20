@@ -1095,9 +1095,6 @@ const onMouseMenu = () => {
 window.onload = () => {
 	const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
 	button.click();
-}
-
-window.onload = () => {
 	// INIT WOW JS
 	initWowJs();
 }
