@@ -767,12 +767,16 @@ const ajaxContactForm = ()=>{
 		const responserRecaptcha: HTMLInputElement = document.querySelector(".g-recaptcha")
 		const valueToken = responserRecaptcha.value;
 		const nameRecaptcha = document.querySelector(".g-recaptcha").getAttribute("name");
+		const textarea:any = document.querySelector(".form-group textarea");
+		const nametext = textarea.getAttribute("name")
+		const valuetext = textarea.value;
         $('.index-contact-form-wrapper form .form-group input').each(function() {
             const name = $(this).attr('name');
             const value = $(this).val();
             formData.append(name, value);
 		});
 		formData.append(nameRecaptcha,valueToken);
+		formData.append(nametext, valuetext);
         if ($('.index-contact-form-wrapper form').valid() == true) {
             $.ajax({
                 url: url,
