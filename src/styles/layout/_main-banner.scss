@@ -34,7 +34,7 @@
 		top: 55%;
 		left: 10px;
         right: 0;
-        height: 55%;
+        height: 60%;
 		transform: translate(calc(-100% - 10px), -50%);
 		max-width: 50%;
 		transition: transform 1s;
@@ -81,9 +81,9 @@
 		}
 	}
 	.title {
-		overflow: hidden;
+		// overflow: hidden;
 		font-size: 7.5rem;
-		line-height: 1.2;
+		// line-height: 1.2;
 		.letter {
 			display: inline-block;
 			transform-origin: 0 100%;
@@ -271,5 +271,15 @@
 				margin-left: 5px;
 			}
 		}
+	}
+	.swiper-wrapper.disabled {
+		transform: translate3d(0px, 0, 0) !important;
+		transition-duration: unset !important;
+		.swiper-slide {
+			transition-duration: unset !important;
+		}	
+	}
+	.swiper-pagination.disabled {
+		display: none;
 	}
 }

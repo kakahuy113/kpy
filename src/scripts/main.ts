@@ -44,16 +44,17 @@ const toggleNavBar = () => {
 
 // INIT MAIN SLIDER
 const initMainSliderBanner = () => {
+	const slideNum = document.querySelectorAll(".main-slider-banner .swiper-container .swiper-slide").length;
 	var mainSlider = new Swiper(".main-slider-banner .swiper-container", {
 		direction: "vertical",
 		effect: "fade",
 		slidesPerView: 1,
 		loop: true,
 		speed: 2000,
-		simulateTouch: false,
 		autoplay: {
 			delay: 3000,
 		},
+		simulateTouch: false,
 		pagination: {
 			clickable: true,
 			el: ".swiper-pagination",
@@ -61,12 +62,10 @@ const initMainSliderBanner = () => {
 		},
 		on: {
 			init: function() {
-				const slideNum = document.querySelectorAll(".main-slider-banner .swiper-container .swiper-slide").length;
 				if(slideNum < 2) {
-					mainSlider.destroy(true , true);
-					mainSlider.setTransition(0)
+					$('.main-slider-banner .swiper-wrapper').addClass( "disabled" );
+					$('.main-slider-banner .swiper-pagination').addClass( "disabled" );
 				}
-				
 			}
 		// 	slideChange: function () {
 		// 		// RESET
@@ -95,6 +94,7 @@ const initMainSliderBanner = () => {
 		// 	},
 		},
 	});
+
 };
 
 // INIT INDEX ABOUT SLIDER

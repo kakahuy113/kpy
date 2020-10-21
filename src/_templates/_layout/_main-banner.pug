@@ -1,19 +1,20 @@
 .main-slider-banner
 	.swiper-container.h-100vh
 		.swiper-wrapper
-			.swiper-slide.item-banner
-				.banner__img.ov-h.h-100
-					img.object-cover.fullsize(src=`./assets/images/banners/main-slider-banner-1.png`, alt="BANNER")
-				.banner__text
-					.container.overflow-hidden.h-100
-						.background-multiply
-						.text
-							.text__wrapper
-								.title.cl-white The Customer’s
-								.title.cl-white.font-family-SVNBOLD first choice
-								.title.cl-white Của Khách Hàng
-								.desc Welcome to KPY Building Trading Ltd.,
-								.btn.btn-view-more Khám phá
+			-for(i=1;i<4;i++)
+				.swiper-slide.item-banner
+					.banner__img.ov-h.h-100
+						img.object-cover.fullsize(src=`./assets/images/banners/main-slider-banner-1.png`, alt="BANNER")
+					.banner__text
+						.container.overflow-hidden.h-100
+							.background-multiply
+							.text
+								.text__wrapper
+									.title.cl-white The Customer’s
+									.title.cl-white.font-family-SVNBOLD first choice
+									.title.cl-white Của Khách Hàng
+									.desc Welcome to KPY Building Trading Ltd.,
+									.btn.btn-view-more Khám phá
 		.pagination-wrapper
 			.container.h-100
 				.swiper-pagination
