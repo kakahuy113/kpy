@@ -44,7 +44,7 @@ const toggleNavBar = () => {
 
 // INIT MAIN SLIDER
 const initMainSliderBanner = () => {
-	let mainSlider = new Swiper(".main-slider-banner .swiper-container", {
+	var mainSlider = new Swiper(".main-slider-banner .swiper-container", {
 		direction: "vertical",
 		effect: "fade",
 		slidesPerView: 1,
@@ -59,7 +59,15 @@ const initMainSliderBanner = () => {
 			el: ".swiper-pagination",
 			type: "bullets",
 		},
-		// on: {
+		on: {
+			init: function() {
+				const slideNum = document.querySelectorAll(".main-slider-banner .swiper-container .swiper-slide").length;
+				if(slideNum < 2) {
+					mainSlider.destroy(true , true);
+					mainSlider.setTransition(0)
+				}
+				
+			}
 		// 	slideChange: function () {
 		// 		// RESET
 		// 		Array.from(this.slides).forEach((item: any) => {
@@ -85,7 +93,7 @@ const initMainSliderBanner = () => {
 		// 			);
 		// 		}, 1000);
 		// 	},
-		// },
+		},
 	});
 };
 
