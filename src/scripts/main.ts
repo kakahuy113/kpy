@@ -1,4 +1,4 @@
-import { getSVGs, Loading } from "./utilities/util";
+import { getSVGs } from "./utilities/util";
 import Axios from "axios";
 import * as animation from "./animations/animation";
 declare var Swiper: any;
@@ -1106,7 +1106,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
 	// LOADING
-	Loading();
+	// Loading();
 	// add recaptcha
 	recaptcha();
 
