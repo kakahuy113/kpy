@@ -1,0 +1,9 @@
+diff a/src/styles/layout/_main-banner.scss b/src/styles/layout/_main-banner.scss	(rejected hunks)
+@@ -0,6 +0,7 @@
+ 			}
+ 		}
+ 		@media (max-width: 1024.98px) {
++			font-size: 5rem;
+ 		}
+ 		@media (max-width: 767.98px) {
+ 			font-size: 4rem;
